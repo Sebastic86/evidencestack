@@ -6,7 +6,21 @@ import { allCompounds, regradeEvents } from '../lib/data';
 import { SITE_NAME } from '../config';
 
 const compounds = await allCompounds();
-const regrades = regradeEvents(compounds).slice(0, 4);
+// `regradeEvents` flattens every history entry, reaffirmations included — a
+// reaffirmation is a re-review that deliberately held the grade. That is real
+// editorial work and the compound page shows it, but it is not a regrade and
+// must not surface in this card. Filtered by entry key here rather than in
+// lib/data.ts, which other callers share.
+const reaffirmedKeys = new Set(
+  compounds.flatMap((c) =>
+    c.data.history
+      .filter((h) => h.kind === 'reaffirmed')
+      .map((h) => `${c.id}|${h.date}|${h.claim}`),
+  ),
+);
+const regrades = regradeEvents(compounds)
+  .filter((e) => !reaffirmedKeys.has(`${e.compoundId}|${e.date}|${e.claim}`))
+  .slice(0, 4);
 const hypeList = compounds.filter((c) => c.data.hype).slice(0, 5);
 const curated = ['creatine', 'magnesium', 'nr-nmn', 'omega-3', 'vitamin-d', 'berberine'];
 const mostSearched = curated

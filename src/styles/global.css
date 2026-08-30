@@ -81,6 +81,16 @@ h1, h2, h3, p { margin: 0; }
   letter-spacing: 0.1em;
   color: oklch(0.92 0.02 155);
 }
+/* The claims table's header only. Its fixed columns floor at 436px, and its
+   card — unlike the register's — has no `overflow-x`, so on a phone that width
+   escaped to the page and scrolled every compound page sideways (+141px at
+   320). By the time it bites, the rows beneath have already wrapped into
+   stacked lines, so the header is labelling columns that no longer exist.
+   Hidden rather than wrapped: wrapping stacks it into four black label rows,
+   which reads worse than no header at all. */
+@media (max-width: 460px) {
+  .claims-head { display: none; }
+}
 .grade-badge {
   border: 2px solid var(--ink);
   box-shadow: 3px 3px 0 var(--ink);

@@ -1,17 +1,47 @@
 ---
 import Layout from '../../components/Layout.astro';
 import RegisterTable from '../../islands/RegisterTable';
+import type { RegisterRowView } from '../../islands/RegisterTable';
 import { allCompounds, registerRows, sortRows } from '../../lib/data';
+import { isDraftRecord, registerDataset } from '../../lib/jsonld';
 
 const compounds = await allCompounds();
 const rows = sortRows(registerRows(compounds), 'grade');
+
+// `registerRows` writes every newest history entry as "<from> → <to> · <date>",
+// which reads as a grade movement even when the entry is a reaffirmation — a
+// re-review that deliberately held the grade. Rewrite that one cell here and pass
+// the entry kind through so the island can style it as the non-movement it is.
+const newestEvent = new Map(compounds.map((c) => [c.id, c.data.history[0]]));
+const tableRows: RegisterRowView[] = rows.map((r) => {
+  const h = newestEvent.get(r.id);
+  if (h?.kind === 'reaffirmed')
+    return { ...r, lastMove: `${h.to} held · ${h.date}`, lastMoveKind: 'reaffirmed' };
+  return { ...r, lastMoveKind: h ? 'move' : null };
+});
+
+// The register really is a dataset, and it is really published as JSON — so a
+// `Dataset` node pointing at /api/compounds.json is the strongest claim the
+// site can make about itself without asserting review that has not happened.
+// The draft count is computed rather than hardcoded, so the description stops
+// saying "unverified" on its own as records are verified (TODO item 1).
+const jsonLd = registerDataset(
+  {
+    compoundCount: compounds.length,
+    claimCount: rows.reduce((a, r) => a + r.claimCount, 0),
+    studyCount: rows.reduce((a, r) => a + r.studyCount, 0),
+    draftCount: compounds.filter((c) => isDraftRecord(c.data.reviewer)).length,
+  },
+  Astro.site,
+);
 ---
 
 <Layout
   title="Compound register"
   description="Every longevity supplement in the register, graded per claim against the studies behind it. Filter by evidence grade, claim category, and species of best evidence."
+  jsonLd={jsonLd}
 >
-  <RegisterTable client:load rows={rows} total={rows.length} />
+  <RegisterTable client:load rows={tableRows} total={tableRows.length} />
   <noscript>
     <ul>
       {rows.map((r) => (
