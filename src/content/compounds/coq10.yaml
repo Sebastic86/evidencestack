@@ -30,7 +30,7 @@ claims:
         duration: 2 years
         dose: 300 mg/day
         funding: industry
-        registry: NCT00374465
+        registry: ISRCTN94506234
         outcome: major adverse cardiovascular events, mortality
         note: >-
           Halved cardiovascular mortality as an add-on to standard therapy — a
@@ -42,5 +42,46 @@ claims:
     effect: unclear
     species: human-rct
     flags: []
-    studies: []
+    studies:
+      - cite: Kovacic et al.
+        year: 2025
+        url: https://doi.org/10.1017/jns.2025.10043
+        species: human
+        design: meta-analysis of 7 RCTs
+        n: 389
+        duration: 30–90 days
+        dose: "100–600 mg/day"
+        funding: mixed
+        registry: PROSPERO CRD42023467604
+        outcome: statin-associated muscle symptoms, measured as pain intensity
+        note: >-
+          Pain intensity fell by a weighted mean difference of −0.96, with the
+          confidence interval reaching −0.03 — statistically significant, barely.
+          Four of the seven trials found a reduction and three found none, and
+          heterogeneity is extreme (I² = 93.3%). The subgroup that matters most
+          here is the inconvenient one: in the trials that actually required
+          statin-associated muscle symptoms for entry, the pooled effect was not
+          significant (−0.94, 95% CI −2.65 to 0.79); the significant overall
+          result comes from trials that did not select for those symptoms.
+          Funding was declared as "the Society for Applied Vitamin Research (GVF,
+          Jena, Germany)", a scientific society rather than a public body or a
+          named manufacturer.
+      - cite: Kennedy et al.
+        year: 2020
+        url: https://doi.org/10.1016/j.atherosclerosis.2020.03.006
+        species: human
+        design: meta-analysis of 7 RCTs
+        n: 321
+        duration: not stated in the abstract
+        dose: not stated in the abstract
+        funding: not-declared
+        outcome: myalgia symptom scores, and whether patients stayed on their statin
+        note: >-
+          The opposite conclusion from an overlapping trial set: no benefit on
+          myalgia (WMD −0.42, CI −1.47 to 0.62) and no effect on statin
+          adherence (RR 0.99, CI 0.81 to 1.20). Only two of the eight reviewed
+          trials showed a positive effect. Two meta-analyses of the same small
+          literature disagree, which is why this claim sits at C. The full text
+          is behind the publisher's bot protection, so funding could not be
+          verified past the abstract.
 history: []

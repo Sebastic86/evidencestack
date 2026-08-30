@@ -4,8 +4,10 @@ import { GradeBadge } from '../components/ui';
 import { GRADES, GRADE_ORDER } from '../lib/grades';
 import { FLAG_LABELS, FLAG_DEFINITIONS } from '../lib/flags';
 import type { Flag } from '../lib/flags';
+import { CONTACT_EMAIL } from '../config';
 
 const flags = Object.keys(FLAG_LABELS) as Flag[];
+const contact = CONTACT_EMAIL.trim();
 ---
 
 <Layout
@@ -94,7 +96,16 @@ const flags = Object.keys(FLAG_LABELS) as Flag[];
         Each compound page names its reviewer and the date of last review. Records marked
         <i>"draft — unverified"</i> have not yet been through full editorial review and should
         be read accordingly. If you find an error — a mis-cited study, a wrong number, a grade
-        that doesn't survive contact with the literature — write to the address in the footer.
+        that doesn't survive contact with the literature —
+        {contact ? (
+          <span>write to <a href={`mailto:${contact}`}>{contact}</a>.</span>
+        ) : (
+          <span>
+            we want to hear it, but there is nowhere to send it yet: no contact address is
+            published. One will appear here, on the <a href="/about/">about page</a> and in the
+            footer as soon as it exists.
+          </span>
+        )}
         Corrections are made in the open: material changes appear in the grade timeline, and
         the full edit history of every record is public in the site's source repository.
       </p>

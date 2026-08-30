@@ -1,0 +1,38 @@
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      # Build-time canonical URL. In production Coolify supplies this; it is not in the repo,
+      # and astro.config.mjs falls back to evidencestack.example.com when it is unset. Setting
+      # it here makes CI build the same artifact production builds, so canonicals and
+      # sitemap-index.xml carry the real domain instead of a placeholder that misleads anyone
+      # reading CI output. Changing the domain now means three edits: Coolify, public/robots.txt,
+      # and this line.
+      SITE_URL: https://evidencestack.sebastienwouters.dev
+
+    steps:
+      - uses: actions/checkout@v4
+
+      # Node 22 to match `FROM node:22-alpine` in the Dockerfile — CI that passes on a
+      # different major than production is worth less. `cache: npm` keys on package-lock.json.
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      - run: npm ci
+
+      # astro check: types and content-collection schemas.
+      - run: npm run check
+
+      # `astro build` is this project's content schema validator — a bad YAML edit in
+      # src/content/ fails the build. This job is therefore the editorial safety net as
+      # much as the engineering one: it catches a broken study or claim record here
+      # instead of at deploy time.
+      - run: npm run build
+
+      - run: npm test

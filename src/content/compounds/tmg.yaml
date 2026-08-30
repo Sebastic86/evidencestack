@@ -23,7 +23,7 @@ claims:
     studies:
       - cite: Olthof et al.
         year: 2003
-        url: https://doi.org/10.1093/ajcn/77.5.1187
+        url: https://doi.org/10.1093/jn/133.12.4135
         species: human
         design: RCT, double-blind
         n: 76
@@ -40,5 +40,23 @@ claims:
     effect: unclear
     species: human-rct
     flags: []
-    studies: []
+    studies:
+      - cite: Zawieja et al.
+        year: 2024
+        url: https://doi.org/10.1080/02640414.2024.2423578
+        species: human
+        design: systematic review and meta-analysis of 17 RCTs
+        n: 317
+        duration: at least 7 days of chronic supplementation
+        dose: not stated in the abstract
+        funding: not-declared
+        outcome: maximal strength, sprint and throw power, muscular endurance, vertical jump
+        note: >-
+          Splits the claim in two. Maximal strength improved (SMD 0.47), driven
+          almost entirely by the lower body, and the confidence interval nearly
+          touches zero. Power did not: no effect on cycling sprint power, bench
+          press throw power, upper body strength or muscular endurance. Vertical
+          jump improved only after a low-quality study was removed. 317 people
+          across 17 trials, 21% of them female. The full text is paywalled with
+          no open copy, so funding could not be verified past the abstract.
 history: []

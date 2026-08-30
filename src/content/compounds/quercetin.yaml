@@ -40,6 +40,46 @@ claims:
     grade: C
     effect: small
     species: human-rct
-    flags: []
-    studies: []
+    flags: [industry-funded]
+    studies:
+      - cite: Heinz et al.
+        year: 2010
+        url: https://doi.org/10.1016/j.phrs.2010.05.001
+        species: human
+        design: RCT, double-blind, placebo-controlled
+        n: 1002
+        duration: 12 weeks
+        dose: "500 or 1000 mg/day"
+        funding: industry
+        outcome: upper respiratory tract infection rates and symptom severity (WURSS diary)
+        note: >-
+          By far the largest trial here, and it was negative: no effect on
+          infection rates for all subjects combined, or split by sex, BMI or age.
+          A subgroup of 325 self-rated-fit people over 40 showed fewer sick days,
+          which is a subgroup finding in a null trial, not a result. Two things
+          the abstract does not tell you. The supplement was not quercetin alone
+          — the chews also carried vitamin C at the same milligram dose and
+          niacin, so nothing here is attributable to quercetin by itself. And the
+          paper states that the work "was supported by grants from Coca-Cola and
+          Quercegen Pharma", that both "were involved in designing the study",
+          and that the senior author sits on Quercegen Pharma's science advisory
+          board. Quercegen sells quercetin.
+      - cite: Nieman et al.
+        year: 2007
+        url: https://doi.org/10.1249/mss.0b013e318076b566
+        species: human
+        design: RCT, double-blind, placebo-controlled
+        n: 40
+        duration: 3 weeks before, during, and 2 weeks after a 3-day cycling block
+        dose: "1000 mg/day"
+        funding: not-declared
+        outcome: upper respiratory infection incidence and immune measures after intensified exercise
+        note: >-
+          One infection in 20 on quercetin versus nine in 20 on placebo. A
+          striking difference in forty trained cyclists, with no accompanying
+          change in any immune measure to explain it — and the same group's
+          much larger community trial three years later found nothing. The full
+          text is paywalled with no open copy, so funding could not be verified
+          past the abstract; the senior author is the one recorded in that 2010
+          trial as sitting on Quercegen Pharma's science advisory board.
 history: []

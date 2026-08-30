@@ -30,6 +30,7 @@ claims:
         duration: 4 weeks
         dose: 200 mg/day
         funding: industry
+        registry: UMIN000028603
         outcome: stress and sleep questionnaires
         note: >-
           Lower stress scores and better sleep ratings — small sample, subjective
@@ -40,5 +41,24 @@ claims:
     effect: small
     species: human-rct
     flags: []
-    studies: []
+    studies:
+      - cite: Nawarathna et al.
+        year: 2025
+        url: https://doi.org/10.1017/S0007114525104169
+        species: human
+        design: RCT, double-blind, placebo-controlled two-way crossover
+        n: 37
+        duration: acute — measured 50 minutes after a single dose
+        dose: 200 mg L-theanine with 160 mg caffeine
+        funding: public
+        registry: SLCTR/2023/006
+        outcome: hit rate and target-distractor discriminability on a visual attention task, plus P3b event-related potentials
+        note: >-
+          Hit rate, discriminability and reaction time all moved further than
+          placebo, with matching changes in the brain's electrical response.
+          Thirty-seven people, one dose, one sitting — and all of them were
+          deliberately sleep-deprived, so this does not describe a rested user.
+          The trial had two arms, the combination against placebo, with no
+          theanine-alone and no caffeine-alone arm, so nothing in it separates
+          theanine's contribution from caffeine's.
 history: []

@@ -1,0 +1,49 @@
+---
+import Layout from '../components/Layout.astro';
+---
+
+<Layout
+  title="Page not found"
+  description="There is no page at this address on Evidence Stack. The compound register lists every record on the site."
+>
+  <div class="notfound">
+    <div class="micro-label kicker">HTTP 404 — NO PAGE AT THIS ADDRESS</div>
+    <h1>This page does not exist.</h1>
+    <p class="sub">
+      The address may be mistyped, or the record may have been removed. Nothing else is
+      implied — a missing page is not a statement about a compound.
+    </p>
+    <a href="/compounds/" class="card back">
+      <div class="micro-label">REGISTER</div>
+      <div class="back-title">Every compound in the register</div>
+      <div class="back-sub">
+        The full list, graded per claim, filterable by grade, category and species of best
+        evidence.
+      </div>
+    </a>
+    <div class="alt">
+      Or start from the <a href="/">home page</a>, or read the
+      <a href="/methodology/">methodology</a>.
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .notfound { padding: 56px 0 64px; max-width: 640px; }
+  .kicker { color: var(--green-text); letter-spacing: 0.18em; font-size: 12px; margin-bottom: 14px; }
+  h1 {
+    margin: 0 0 14px;
+    font-size: clamp(28px, 5vw, 40px);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    text-wrap: pretty;
+  }
+  .sub { margin: 0 0 28px; font-size: 16px; line-height: 1.5; color: var(--body-2); text-wrap: pretty; }
+  .back { display: block; padding: 16px; text-decoration: none; }
+  .back:hover { border-color: var(--green); background: oklch(0.97 0.02 152); }
+  .back .micro-label { margin-bottom: 6px; }
+  .back-title { font-size: 15px; font-weight: 700; color: var(--ink); }
+  .back-sub { font-size: 12px; color: var(--body-2); margin-top: 4px; line-height: 1.45; }
+  .alt { margin-top: 18px; font-family: var(--mono); font-size: 11px; color: var(--muted); }
+</style>

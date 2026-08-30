@@ -17,12 +17,78 @@ claims:
     effect: small
     species: human-rct
     flags: [industry-funded, biomarker-only]
-    studies: []
+    studies:
+      - cite: Ito et al.
+        year: 2018
+        url: https://doi.org/10.3390/nu10070817
+        species: human
+        design: RCT, double-blind, placebo-controlled
+        n: 23
+        duration: 9 weeks of supplementation (10-week study)
+        dose: 4 mg/day
+        funding: industry
+        registry: UMIN000028925
+        outcome: minimal erythema dose (primary); skin moisture and transepidermal water loss in irradiated skin, self-rated skin condition
+        note: >-
+          The primary outcome was met on a change-from-baseline basis: the dose
+          of UV needed to redden skin rose more than on placebo. The raw minimal
+          erythema dose after supplementation did not differ between groups
+          (48.4 vs 44.0 mJ/cm², p = 0.162). Irradiated skin held its moisture
+          better, but only at the lower of the two UV doses and only at day 7;
+          transepidermal water loss showed nothing, and two of seven self-rated
+          items moved. Twenty-three people randomised, 22 analysed. The study
+          was funded by FUJIFILM, which makes the astaxanthin tested and employs
+          all three authors.
   - outcome: lifespan extension
     cat: longevity
     grade: D
     effect: unclear
     species: rodent
-    flags: [rodent-only]
-    studies: []
+    flags: [rodent-only, under-review]
+    studies:
+      - cite: Harrison et al. (NIA Interventions Testing Program)
+        year: 2024
+        url: https://doi.org/10.1007/s11357-023-01011-0
+        species: rodent
+        design: controlled lifespan study in genetically heterogeneous UM-HET3 mice at three independent sites
+        n: 288
+        duration: lifelong, from 12 months of age
+        dose: 1840 ± 520 ppm in feed
+        funding: public
+        outcome: median and maximum lifespan
+        note: >-
+          156 male and 132 female treated mice against 298 male and 282 female
+          concurrent controls, run in parallel at Jackson Laboratory, Michigan
+          and Texas — the most rigorous design in the ageing field. Male median
+          lifespan rose 12% (p = 0.003); females showed nothing (3%, p = 0.64).
+          Survival to the 90th percentile rose 6% in males but was not
+          significant on the Wang-Allison test, and the diet delivered 46% of the
+          4000 ppm target. The programme's funding is public, but the astaxanthin
+          was supplied by Cardax, a company run by two of the co-authors. The
+          same programme's 2026 report, below, found no lifespan effect at a
+          lower dose and different starting ages. Nobody has tested whether
+          astaxanthin extends human lifespan.
+      - cite: Korstanje et al. (NIA Interventions Testing Program)
+        year: 2026
+        url: https://doi.org/10.1007/s11357-026-02201-2
+        species: rodent
+        design: controlled lifespan study in genetically heterogeneous UM-HET3 mice at three independent sites
+        n: 444
+        duration: lifelong, from 11 or 16 months of age
+        dose: 880 ppm achieved in feed against an 800 ppm target
+        funding: public
+        outcome: median and 90th-percentile lifespan
+        note: >-
+          The same programme, cohort 2022: two male astaxanthin arms of 210 and
+          102 mice and one female arm of 132, against 300 male and 272 female
+          concurrent controls. Neither male arm lived longer than control —
+          +3.7% median starting at 11 months (p = 0.21) and +2.2% starting at 16
+          months (p = 0.38). This is not a rerun of the 2024 conditions: the
+          achieved dose is roughly half the 2024 dose and the starting ages
+          differ, so it does not overturn that result — but the one positive
+          finding for astaxanthin now stands unreplicated. Pooled across all
+          three sites, treated females died sooner (−3.2%, p = 0.021); control
+          females at Jackson Laboratory that year were a 3.13-standard-deviation
+          outlier for longevity, and reanalysis without that site leaves no
+          astaxanthin effect (−0.5%, p = 0.28).
 history: []

@@ -68,7 +68,7 @@ claims:
         n: 151
         duration: up to 8 weeks
         dose: mixed
-        funding: public
+        funding: not-declared
         outcome: sleep onset latency, total sleep time
         note: >-
           Small improvement in sleep-onset latency; authors rate the evidence
@@ -82,7 +82,7 @@ claims:
     studies:
       - cite: Peikert et al.
         year: 1996
-        url: https://doi.org/10.1046/j.1468-2982.1996.1606257.x
+        url: https://doi.org/10.1046/j.1468-2982.1996.1604257.x
         species: human
         design: RCT, double-blind
         n: 81
@@ -102,7 +102,7 @@ claims:
     studies:
       - cite: Simental-Mendía et al.
         year: 2016
-        url: https://doi.org/10.1016/j.phrs.2016.07.019
+        url: https://doi.org/10.1016/j.phrs.2016.06.019
         species: human
         design: meta-analysis of 18 RCTs
         n: 670
@@ -115,7 +115,7 @@ claims:
           surrogate markers only, and heterogeneous trials.
 history:
   - date: "2026-01"
-    claim: sleep quality in older adults
+    claim: sleep quality in older adults with low magnesium
     from: B
     to: C
     why: >-

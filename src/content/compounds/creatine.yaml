@@ -47,7 +47,7 @@ claims:
         n: 266
         duration: 4–12 weeks
         dose: "2–25 g/day"
-        funding: public
+        funding: not-declared
         outcome: upper-limb maximal strength
         note: >-
           Strength gains replicated across independent labs and populations; the
@@ -115,6 +115,7 @@ claims:
         duration: 8 weeks
         dose: 5 g/day + escitalopram
         funding: public
+        registry: NCT00729755
         outcome: depression rating scale (HDRS)
         note: >-
           Faster and larger symptom improvement in women with major depression.
@@ -128,12 +129,14 @@ claims:
     studies:
       - cite: Chilibeck et al.
         year: 2023
+        url: https://doi.org/10.1249/mss.0000000000003202
         species: human
         design: RCT, double-blind, 2-year
         n: 237
         duration: 104 weeks
         dose: "0.14 g/kg/day + exercise"
         funding: public
+        registry: NCT02047864
         outcome: DXA bone mineral density, postmenopausal women
         note: >-
           The long, well-powered trial the field was waiting for: no effect on

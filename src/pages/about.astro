@@ -1,0 +1,116 @@
+---
+import Layout from '../components/Layout.astro';
+import { CONTACT_EMAIL } from '../config';
+
+const contact = CONTACT_EMAIL.trim();
+---
+
+<Layout
+  title="About"
+  description="Who runs Evidence Stack, how to reach us, how corrections are handled, and how the site is paid for."
+>
+  <article>
+    <div class="page-head">
+      <h1>About</h1>
+      <p class="lede">
+        Evidence Stack is an independent register of what is actually known about supplement
+        claims. It sells nothing, reviews no brands, and carries no advertising, affiliate
+        links or sponsorships. This page is the operator record: who runs it, how to reach
+        them, and what happens when something here is wrong.
+      </p>
+    </div>
+
+    <section>
+      <h2>Who runs it</h2>
+      <p>
+        Evidence Stack is a non-commercial project operated from the European Union. Every
+        compound page names its reviewer and the date of its last review; where a record still
+        reads <i>"draft — unverified"</i>, it has not been through that review yet and says so
+        rather than pretending otherwise.
+      </p>
+      <div class="pending">
+        <div class="micro-label pending-label">NOT YET PUBLISHED</div>
+        <p>
+          The operator's legal name and correspondence address are not yet shown here. Until
+          they are, treat this page as incomplete: an EU-operated site is normally expected to
+          identify its operator.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Contact</h2>
+      {contact ? (
+        <p>
+          Corrections, questions, and data-protection requests all go to
+          <a href={`mailto:${contact}`}>{contact}</a> — one address for all three.
+        </p>
+      ) : (
+        <p>
+          There is no contact address yet. Rather than print one that does not work, this page
+          says so plainly: nothing sent anywhere would reach us today. An address will appear
+          here, in the footer of every page, and in the corrections section of the
+          <a href="/methodology/">methodology</a> as soon as it exists, and it will be the same
+          address for corrections, questions and data-protection requests.
+        </p>
+      )}
+    </section>
+
+    <section>
+      <h2>Corrections</h2>
+      <p>
+        A mis-cited study, a wrong sample size, a grade that doesn't survive contact with the
+        literature — these are the reports worth making, and they are acted on rather than
+        filed. Material changes appear in the affected claim's grade timeline, so a correction
+        is visible to everyone, not just to whoever reported it. The full rules are in the
+        <a href="/methodology/">methodology</a>.
+      </p>
+    </section>
+
+    <section>
+      <h2>How it is paid for</h2>
+      <p>
+        Out of pocket. There are no ads, no sponsored records, no affiliate links, and no paid
+        placement in the register — product records exist only to compute cost per gram and are
+        facts from labels, not endorsements. If that ever changes, it changes on the
+        <a href="/methodology/">methodology</a> page first.
+      </p>
+    </section>
+
+    <section>
+      <h2>Your data</h2>
+      <p>
+        The site sets no cookies and runs no analytics. The only personal data it handles is
+        the email address of anyone who subscribes to regrade emails. What happens to it is in
+        the <a href="/privacy/">privacy notice</a>.
+      </p>
+    </section>
+
+    <section>
+      <h2>What this site is not</h2>
+      <p>
+        A summary of published research, however careful, is not medical advice. A grade
+        measures evidence, not what you should do — that depends on your health, your
+        medication, and your priorities, none of which this site knows.
+      </p>
+    </section>
+  </article>
+</Layout>
+
+<style>
+  article { max-width: 720px; padding: 32px 0 48px; }
+  .page-head h1 { font-size: 28px; font-weight: 800; margin: 0 0 12px; }
+  .lede { font-size: 16px; line-height: 1.55; color: var(--body); text-wrap: pretty; }
+  section { margin-top: 32px; }
+  h2 { font-size: 18px; font-weight: 700; margin: 0 0 10px; }
+  p { font-size: 14px; line-height: 1.6; color: var(--body); margin: 0 0 10px; }
+  .pending {
+    margin-top: 14px;
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--amber);
+    background: var(--paper);
+    padding: 12px 16px;
+  }
+  .pending-label { color: var(--amber); margin-bottom: 4px; }
+  .pending p { font-size: 13px; margin: 0; }
+</style>

@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+# Absolute URL, per the robots.txt spec. Keep in step with SITE_URL,
+# the build-time env var set in Coolify.
+Sitemap: https://evidencestack.sebastienwouters.dev/sitemap-index.xml

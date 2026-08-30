@@ -60,7 +60,7 @@ claims:
           Nobody has tested this endpoint in humans.
 history:
   - date: "2026-03"
-    claim: slower biological aging
+    claim: slower biological aging (methylation clocks)
     from: D
     to: C
     why: >-

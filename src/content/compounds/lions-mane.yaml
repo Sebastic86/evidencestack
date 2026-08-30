@@ -37,7 +37,27 @@ claims:
     cat: cognition
     grade: D
     effect: unclear
-    species: in-vitro
+    species: rodent
     flags: [rodent-only]
-    studies: []
+    studies:
+      - cite: Wong et al.
+        year: 2011
+        url: https://doi.org/10.1093/ecam/neq062
+        species: rodent
+        design: controlled animal study, four groups of 10 rats
+        n: 40
+        duration: 14 days before surgery plus 20 days after
+        dose: 10 or 20 mL/kg/day aqueous fruiting-body extract, by mouth
+        funding: public
+        outcome: peroneal functional index from walking tracks, axon regeneration, motor endplate reinnervation
+        note: >-
+          Most rats given the extract regained hind-limb function by day 10 after
+          the nerve crush and the rest by day 14, against day 14 to 17 in the
+          untreated group, and fewer of them showed moderate or severe axonal
+          damage at day 14 (2 to 3 of 10, against 8 of 10). Functional recovery
+          did not differ between the extract and the mecobalamin positive
+          control, though the authors describe mecobalamin's nerve regeneration
+          as the more advanced of the two. The two extract doses performed alike.
+          Forty rats. Nobody has tested whether lion's mane regenerates nerves in
+          humans.
 history: []

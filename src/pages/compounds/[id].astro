@@ -4,6 +4,7 @@ import ClaimsBlock from '../../islands/ClaimsBlock';
 import { StudyCard } from '../../components/ui';
 import { allCompounds, costSnapshot } from '../../lib/data';
 import { formatEurPerGram } from '../../lib/cost';
+import { compoundDataset } from '../../lib/jsonld';
 
 export async function getStaticPaths() {
   const compounds = await allCompounds();
@@ -12,13 +13,33 @@ export async function getStaticPaths() {
 
 const { compound } = Astro.props;
 const d = compound.data;
+// Null while there are no product records for this compound. The cost strip is
+// then omitted entirely rather than shown empty; it returns when a record exists.
 const cost = await costSnapshot(compound.id);
 const bestClaim = d.claims[0]!;
-const description = `${d.name} — ${bestClaim.outcome}: evidence grade ${bestClaim.grade}, ${bestClaim.effect} effect. ${d.claims.length} claims graded against ${d.claims.reduce((a, c) => a + c.studies.length, 0)} studies.`;
+const studyCount = d.claims.reduce((a, c) => a + c.studies.length, 0);
+const description = `${d.name} — ${bestClaim.outcome}: evidence grade ${bestClaim.grade}, ${bestClaim.effect} effect. ${d.claims.length} claims graded against ${studyCount} studies.`;
 const reviewedDate = d.reviewed.toISOString().slice(0, 10);
+
+// A `Dataset` subset of the register, not an `Article` — nobody has authored or
+// signed this record off, and `reviewer` still reads "draft — unverified". The
+// builder carries that marker through as `creativeWorkStatus`, so the markup
+// says the same thing the byline on this page says.
+const jsonLd = compoundDataset(
+  {
+    id: compound.id,
+    name: d.name,
+    blurb: d.blurb,
+    cats: d.cats,
+    reviewer: d.reviewer,
+    claimCount: d.claims.length,
+    studyCount,
+  },
+  Astro.site,
+);
 ---
 
-<Layout title={d.name} description={description}>
+<Layout title={d.name} description={description} jsonLd={jsonLd}>
   <div class="detail">
     <a href="/compounds/" class="back">← REGISTER</a>
 
@@ -57,10 +78,19 @@ const reviewedDate = d.reviewed.toISOString().slice(0, 10);
           d.history.length > 0 ? (
             d.history.map((t) => (
               <div class="timeline-row">
-                <div class="timeline-date">{t.date}</div>
+                <div class:list={['timeline-date', t.kind === 'reaffirmed' && 'held']}>{t.date}</div>
                 <div>
                   <div class="timeline-move">
-                    {t.claim}: {t.from} → {t.to}
+                    {t.claim}:{' '}
+                    {t.kind === 'reaffirmed' ? (
+                      <Fragment>
+                        {t.to} held<span class="timeline-tag">REAFFIRMED</span>
+                      </Fragment>
+                    ) : (
+                      <Fragment>
+                        {t.from} → {t.to}
+                      </Fragment>
+                    )}
                   </div>
                   <div class="timeline-why">{t.why}</div>
                 </div>
@@ -89,27 +119,25 @@ const reviewedDate = d.reviewed.toISOString().slice(0, 10);
       </div>
     </div>
 
-    <div class="card cost-strip">
-      <div class="micro-label">COST SNAPSHOT</div>
-      {
-        cost ? (
+    {
+      cost && (
+        <div class="card cost-strip">
+          <div class="micro-label">COST SNAPSHOT</div>
           <div class="cost-value">
             <b>{formatEurPerGram(cost.eurPerGram)}</b>
             <span> cheapest per gram of active · {cost.formLabel}</span>
           </div>
-        ) : (
-          <div class="cost-value">
-            <span>No product records for this compound yet.</span>
-          </div>
-        )
-      }
-      <a href="/tools/cost-per-gram/" class="cost-cta">OPEN CALCULATOR →</a>
-    </div>
+          <a href="/tools/cost-per-gram/" class="cost-cta">OPEN CALCULATOR →</a>
+        </div>
+      )
+    }
   </div>
 </Layout>
 
 <style>
-  .detail { padding: 24px 0 0; }
+  /* Bottom room sits on the wrapper, not the cost strip — the strip is absent
+     for compounds with no product records. */
+  .detail { padding: 24px 0 48px; }
   .back {
     font-family: var(--mono);
     font-size: 11px;
@@ -165,7 +193,21 @@ const reviewedDate = d.reviewed.toISOString().slice(0, 10);
     font-weight: 700;
     flex: 0 0 64px;
   }
+  /* A reaffirmation is not a movement, so it does not take the green the
+     timeline uses for grade changes — it steps back to the muted register. */
+  .timeline-date.held { color: var(--muted); }
   .timeline-move { font-size: 13px; font-weight: 600; }
+  .timeline-tag {
+    font-family: var(--mono);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--muted-2);
+    border: 1px solid var(--line-mid);
+    padding: 1px 5px;
+    margin-left: 8px;
+    white-space: nowrap;
+  }
   .timeline-why {
     font-size: 12px;
     color: oklch(0.45 0.02 160);
@@ -191,7 +233,6 @@ const reviewedDate = d.reviewed.toISOString().slice(0, 10);
   .caution-label { color: var(--amber); }
   .cost-strip {
     padding: 14px 20px;
-    margin-bottom: 48px;
     display: flex;
     align-items: center;
     gap: 16px;

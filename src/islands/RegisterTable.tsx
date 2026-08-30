@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'preact/hooks';
+import { useEffect, useMemo, useRef, useState } from 'preact/hooks';
 import type { RegisterRow } from '../lib/data';
 import { GRADE_ORDER, GRADE_STYLE, gradeRank, type Grade } from '../lib/grades';
 import { GradeBadge, SpeciesLabel } from '../components/ui';
@@ -21,11 +21,35 @@ const inputStyle = {
   background: 'var(--paper)',
 };
 
-export default function RegisterTable({ rows, total }: { rows: RegisterRow[]; total: number }) {
+/**
+ * A register row plus how its movement cell should be read. `RegisterRow.lastMove`
+ * is a display string and cannot say whether the newest history entry was a grade
+ * move or a reaffirmation — a re-review that deliberately held the grade — so the
+ * page supplies the kind alongside it. `null` when the compound has no history.
+ */
+export type RegisterRowView = RegisterRow & { lastMoveKind: 'move' | 'reaffirmed' | null };
+
+export default function RegisterTable({ rows, total }: { rows: RegisterRowView[]; total: number }) {
+  // `?q=` is read during the first render so the rows arrive already filtered —
+  // the home page's search is a GET form posting here, so this is the primary
+  // way people reach this page with a term.
   const [query, setQuery] = useState(() => {
     if (typeof window === 'undefined') return '';
     return new URLSearchParams(window.location.search).get('q') ?? '';
   });
+
+  // The server rendered `value=""` because it cannot see the query string, and
+  // Preact's hydration deliberately skips the prop diff — for `value` it only
+  // re-applies to a <textarea>. So the box sat empty above a correctly filtered
+  // one-row register, which reads as broken. Written once on mount; later
+  // keystrokes are unaffected, since Preact diffs `value` against the live DOM
+  // value rather than the previous props. Same hydration gap, and same fix, as
+  // the claim permalinks in ClaimsBlock.
+  const queryInput = useRef<HTMLInputElement | null>(null);
+  useEffect(() => {
+    const el = queryInput.current;
+    if (el && query && el.value !== query) el.value = query;
+  }, []);
   const [fGrade, setFGrade] = useState<Grade | null>(null);
   const [fCat, setFCat] = useState('');
   const [fSpecies, setFSpecies] = useState('');
@@ -69,6 +93,7 @@ export default function RegisterTable({ rows, total }: { rows: RegisterRow[]; to
 
       <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap', alignItems: 'center', padding: '8px 0 14px' }}>
         <input
+          ref={queryInput}
           value={query}
           onInput={(e) => setQuery((e.target as HTMLInputElement).value)}
           placeholder="Filter by name or claim…"
@@ -175,7 +200,17 @@ export default function RegisterTable({ rows, total }: { rows: RegisterRow[]; to
             <div style={{ flex: '0 0 110px' }}>
               <SpeciesLabel species={r.species} />
             </div>
-            <div style={{ flex: '0 0 120px', fontFamily: 'var(--mono)', fontSize: '10px', fontWeight: 700, color: 'var(--green-text)' }}>
+            {/* Green is for grade movement. A reaffirmation held the grade, so it
+                reads "B held · 2025-12" in muted ink rather than as a move. */}
+            <div
+              style={{
+                flex: '0 0 120px',
+                fontFamily: 'var(--mono)',
+                fontSize: '10px',
+                fontWeight: 700,
+                color: r.lastMoveKind === 'reaffirmed' ? 'var(--muted)' : 'var(--green-text)',
+              }}
+            >
               {r.lastMove ?? '—'}
             </div>
             <div

@@ -1,10 +1,12 @@
 ---
 import Logo from './Logo.astro';
-import { BUTTONDOWN_USERNAME, DISCLAIMER } from '../config';
+import { BUTTONDOWN_USERNAME, CONTACT_EMAIL, DISCLAIMER } from '../config';
 
 // Buttondown's embed endpoint must be a plain form action — it sends no CORS
 // headers, so posting to it with fetch() is blocked by the browser.
 const subscribeAction = `https://buttondown.com/api/emails/embed-subscribe/${BUTTONDOWN_USERNAME}`;
+
+const contact = CONTACT_EMAIL.trim();
 ---
 
 <footer>
@@ -17,18 +19,38 @@ const subscribeAction = `https://buttondown.com/api/emails/embed-subscribe/${BUT
       <div class="pitch-title">One email when a grade moves.</div>
       <div class="pitch-sub">No news feed, no digests — regrade events only.</div>
     </div>
-    <form action={subscribeAction} method="post" class="subscribe">
-      <input type="hidden" name="embed" value="1" />
-      <label class="sr-only" for="newsletter-email">Email address</label>
-      <input
-        id="newsletter-email"
-        type="email"
-        name="email"
-        placeholder="you@example.com"
-        required
-      />
-      <button type="submit">SUBSCRIBE</button>
-    </form>
+    <div class="signup">
+      <form action={subscribeAction} method="post" class="subscribe">
+        <input type="hidden" name="embed" value="1" />
+        <label class="sr-only" for="newsletter-email">Email address</label>
+        <input
+          id="newsletter-email"
+          type="email"
+          name="email"
+          placeholder="you@example.com"
+          required
+        />
+        <button type="submit">SUBSCRIBE</button>
+      </form>
+      <div class="consent">
+        Signing up shares your address with Buttondown, our newsletter processor in the US.
+        It is used for regrade emails only; unsubscribe any time.
+        <a href="/privacy/">Privacy</a>
+      </div>
+    </div>
+    <nav class="links" aria-label="Site information">
+      <a href="/about/">About</a>
+      <span class="sep" aria-hidden="true">·</span>
+      <a href="/privacy/">Privacy</a>
+      <span class="sep" aria-hidden="true">·</span>
+      <a href="/methodology/">Methodology</a>
+      <span class="sep" aria-hidden="true">·</span>
+      {contact ? (
+        <a href={`mailto:${contact}`}>{contact}</a>
+      ) : (
+        <span class="pending">Contact address not yet published</span>
+      )}
+    </nav>
     <div class="disclaimer">{DISCLAIMER}</div>
   </div>
 </footer>
@@ -60,13 +82,47 @@ const subscribeAction = `https://buttondown.com/api/emails/embed-subscribe/${BUT
   .pitch { flex: 1 1 320px; }
   .pitch-title { font-size: 14px; font-weight: 700; }
   .pitch-sub { font-size: 12px; color: var(--muted); margin-top: 2px; }
+  .links {
+    flex: 1 1 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 8px;
+    padding-top: 4px;
+    border-top: 1px solid var(--line-soft);
+    font-family: var(--mono);
+    font-size: 11px;
+  }
+  .links a { text-decoration: none; }
+  .links a:hover { text-decoration: underline; }
+  /* Purely decorative, and `--line` put them at 1.53:1 against the paper.
+     `aria-hidden` keeps them out of the accessibility tree; `--muted` makes
+     them legible for everyone reading them as separators. */
+  .sep { color: var(--muted); }
+  .pending { color: var(--muted-2); }
   .disclaimer {
     flex: 1 1 100%;
     font-family: var(--mono);
     font-size: 10px;
     color: var(--muted-2);
   }
-  .subscribe { display: flex; gap: 8px; flex: 1 1 300px; }
+  /* `min-width: 0` is load-bearing, not tidying. A flex item defaults to
+     `min-width: auto`, which floors it at its content's minimum — here the
+     email input's 265px min-content plus the SUBSCRIBE button, i.e. 386px.
+     Below a 434px viewport that pushed the whole page sideways (+90px at 320),
+     on every page, slicing the button off and running the consent line off
+     screen. The input already carries `min-width: 0`, so the form now shrinks
+     to the button's own min-content and nothing else here has a floor to lose:
+     `.consent` and `.links` are wrapping text. */
+  .signup { flex: 1 1 300px; min-width: 0; }
+  .subscribe { display: flex; gap: 8px; }
+  .consent {
+    margin-top: 8px;
+    font-size: 11px;
+    line-height: 1.45;
+    color: var(--muted-2);
+    text-wrap: pretty;
+  }
   .subscribe input[type='email'] {
     flex: 1;
     min-width: 0;
