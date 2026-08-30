@@ -1,5 +1,15 @@
 import { useEffect, useMemo, useState } from 'preact/hooks';
-import { analyzeStack, decodeStack, encodeStack, type DoseGuide, type StackEntry } from '../lib/stack';
+import {
+  analyzeStack,
+  decodeStack,
+  encodeStack,
+  newEntryId,
+  parseStackPaste,
+  type CompoundMatcher,
+  type DoseGuide,
+  type PasteResult,
+  type StackEntry,
+} from '../lib/stack';
 import { GradeBadge } from '../components/ui';
 
 const inputStyle = {
@@ -17,6 +27,14 @@ const VERDICT_LABEL = {
   'no-data': 'NO DOSE DATA IN REGISTER',
 } as const;
 
+const PASTE_PLACEHOLDER = ['magnesium 400 mg', 'Creatine 5 g', 'fish oil 1000 mg', 'Multivit Forte 500 mg'].join('\n');
+
+const isParsed = (r: PasteResult): r is Extract<PasteResult, { status: 'parsed' }> => r.status === 'parsed';
+
+function doseLabel(mg: number): string {
+  return mg >= 1000 ? `${(mg / 1000).toFixed(1)} g/day` : `${mg} mg/day`;
+}
+
 export default function StackChecker({
   guides,
   options,
@@ -30,7 +48,21 @@ export default function StackChecker({
     return s ? decodeStack(s) : [];
   });
   const [draft, setDraft] = useState({ compoundId: '', name: '', dailyMg: '', monthlyEur: '' });
+  const [paste, setPaste] = useState('');
   const [copied, setCopied] = useState(false);
+
+  // The guides carry the register's own names and synonyms, which is what a pasted
+  // line has to be matched against.
+  const matchers = useMemo<CompoundMatcher[]>(
+    () => Object.values(guides).map((g) => ({ compoundId: g.compoundId, name: g.name, synonyms: g.synonyms })),
+    [guides],
+  );
+
+  // Re-parsed on every keystroke so the reading is on screen before anything is added:
+  // nobody should have to add a line to find out what number it became.
+  const pasteResults = useMemo(() => parseStackPaste(paste, matchers), [paste, matchers]);
+  const pasteReady = pasteResults.filter(isParsed);
+  const pasteRefused = pasteResults.length - pasteReady.length;
 
   // Keep the URL shareable as the stack changes.
   useEffect(() => {
@@ -53,6 +85,7 @@ export default function StackChecker({
     setEntries([
       ...entries,
       {
+        id: newEntryId(),
         compoundId: compound?.id ?? null,
         name,
         dailyMg,
@@ -60,6 +93,37 @@ export default function StackChecker({
       },
     ]);
     setDraft({ compoundId: '', name: '', dailyMg: '', monthlyEur: '' });
+  }
+
+  /**
+   * Add every line that parsed. Each gets its own id even when two lines are
+   * identical — two products both carrying magnesium is the finding this tool
+   * exists to surface, so they stay separate, individually removable sources.
+   * Accepted lines leave the box; refused lines stay put with their reasons.
+   */
+  function addPasted() {
+    if (!pasteReady.length) return;
+    setEntries([
+      ...entries,
+      ...pasteReady.map((r) => ({
+        id: newEntryId(),
+        compoundId: r.compoundId,
+        name: r.name,
+        dailyMg: r.dailyMg,
+      })),
+    ]);
+    setPaste(
+      pasteResults
+        .filter((r) => !isParsed(r))
+        .map((r) => r.raw)
+        .join('\n'),
+    );
+  }
+
+  // Remove by entry id, not by compound: a doubled-up line offers one ✕ per source.
+  function removeEntries(ids: string[]) {
+    const drop = new Set(ids);
+    setEntries(entries.filter((e) => !drop.has(e.id)));
   }
 
   async function share() {
@@ -141,6 +205,99 @@ export default function StackChecker({
         </span>
       </form>
 
+      <div class="card" style={{ marginBottom: '20px' }}>
+        <div class="card-label">Or paste a list</div>
+        <div style={{ padding: '14px 16px' }}>
+          <label>
+            <span class="micro-label" style={{ fontSize: '10px', display: 'block', marginBottom: '4px' }}>
+              ONE PER LINE — NAME, THEN THE DAILY DOSE IN MG, G OR MCG
+            </span>
+            <textarea
+              rows={5}
+              value={paste}
+              placeholder={PASTE_PLACEHOLDER}
+              onInput={(e) => setPaste((e.target as HTMLTextAreaElement).value)}
+              style={{
+                ...inputStyle,
+                width: '100%',
+                fontFamily: 'var(--mono)',
+                fontSize: '12px',
+                lineHeight: 1.6,
+                resize: 'vertical',
+              }}
+            />
+          </label>
+
+          {pasteResults.length > 0 && (
+            <div style={{ marginTop: '10px', border: '1px solid var(--line-mid)' }}>
+              <div
+                class="micro-label"
+                style={{ fontSize: '10px', padding: '6px 10px', borderBottom: '1px solid var(--line-soft)' }}
+              >
+                {pasteReady.length} READY TO ADD{pasteRefused > 0 && ` · ${pasteRefused} NOT UNDERSTOOD`}
+              </div>
+              {pasteResults.map((r, i) => (
+                <div
+                  key={`${i}:${r.raw}`}
+                  style={{
+                    display: 'flex',
+                    gap: '10px',
+                    flexWrap: 'wrap',
+                    alignItems: 'baseline',
+                    padding: '6px 10px',
+                    borderTop: i === 0 ? 'none' : '1px solid var(--line-soft)',
+                    fontFamily: 'var(--mono)',
+                    fontSize: '11px',
+                  }}
+                >
+                  <span
+                    aria-hidden="true"
+                    style={{ flex: '0 0 12px', color: r.status === 'parsed' ? 'var(--green-text)' : 'var(--amber)' }}
+                  >
+                    {r.status === 'parsed' ? '→' : '✕'}
+                  </span>
+                  <span style={{ flex: '1 1 180px', color: 'var(--ink)' }}>{r.raw}</span>
+                  {r.status === 'parsed' ? (
+                    <span
+                      style={{
+                        flex: '2 1 260px',
+                        color: r.compoundId ? 'var(--green-text)' : 'var(--muted)',
+                      }}
+                    >
+                      {r.matchedName ?? 'not in the register — added as typed'} · {doseLabel(r.dailyMg)}
+                    </span>
+                  ) : (
+                    <span style={{ flex: '2 1 260px', color: 'var(--amber)' }}>{r.reason}</span>
+                  )}
+                </div>
+              ))}
+            </div>
+          )}
+
+          <button
+            type="button"
+            onClick={addPasted}
+            disabled={pasteReady.length === 0}
+            style={{
+              marginTop: '12px',
+              padding: '9px 16px',
+              fontSize: '13px',
+              fontWeight: 700,
+              cursor: pasteReady.length ? 'pointer' : 'default',
+              border: `2px solid ${pasteReady.length ? 'var(--ink)' : 'var(--line-input)'}`,
+              boxShadow: pasteReady.length ? '4px 4px 0 var(--card-shadow)' : 'none',
+              background: 'var(--paper)',
+              color: pasteReady.length ? 'var(--ink)' : 'var(--muted-2)',
+            }}
+          >
+            {pasteReady.length === 1 ? 'ADD 1 LINE' : `ADD ${pasteReady.length} LINES`}
+          </button>
+          <span style={{ marginLeft: '14px', fontFamily: 'var(--mono)', fontSize: '11px', color: 'var(--muted)' }}>
+            lines this tool cannot read are left in the box with the reason — nothing is added on a guess
+          </span>
+        </div>
+      </div>
+
       {entries.length === 0 && (
         <div style={{ fontFamily: 'var(--mono)', fontSize: '12px', color: 'var(--muted)', marginBottom: '48px' }}>
           Add what you take — products or raw compounds — and the overlaps, totals and costs appear here.
@@ -151,7 +308,7 @@ export default function StackChecker({
         <div class="card" style={{ marginBottom: '20px' }}>
           <div class="card-label">Your stack, merged by compound</div>
           {lines.map((l) => (
-            <div style={{ padding: '12px 16px', borderBottom: '1px solid var(--line-soft)', display: 'flex', gap: '14px', flexWrap: 'wrap', alignItems: 'center' }}>
+            <div key={l.groupKey} style={{ padding: '12px 16px', borderBottom: '1px solid var(--line-soft)', display: 'flex', gap: '14px', flexWrap: 'wrap', alignItems: 'center' }}>
               <div style={{ flex: '1 1 220px' }}>
                 <div style={{ fontSize: '14px', fontWeight: 700 }}>
                   {l.compoundId ? <a href={`/compounds/${l.compoundId}/`} style={{ color: 'var(--ink)' }}>{l.name}</a> : l.name}
@@ -162,8 +319,22 @@ export default function StackChecker({
                   )}
                 </div>
                 {l.duplicated && (
-                  <div style={{ fontFamily: 'var(--mono)', fontSize: '10px', color: 'var(--muted)', marginTop: '2px' }}>
-                    from: {l.sources.join(' + ')}
+                  <div style={{ fontFamily: 'var(--mono)', fontSize: '10px', color: 'var(--muted)', marginTop: '2px', display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '4px' }}>
+                    <span>from:</span>
+                    {l.sources.map((s, i) => (
+                      <span key={s.id} style={{ display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
+                        {i > 0 && <span>+</span>}
+                        <span>{s.name}</span>
+                        <button
+                          onClick={() => removeEntries([s.id])}
+                          aria-label={`remove ${s.name} from ${l.name}`}
+                          title={`remove ${s.name}`}
+                          style={{ background: 'none', border: 'none', cursor: 'pointer', padding: '0 2px', fontFamily: 'var(--mono)', fontSize: '10px', color: 'var(--muted)' }}
+                        >
+                          ✕
+                        </button>
+                      </span>
+                    ))}
                   </div>
                 )}
                 {l.guide && (
@@ -199,8 +370,9 @@ export default function StackChecker({
                 {VERDICT_LABEL[l.verdict]}
               </div>
               <button
-                onClick={() => setEntries(entries.filter((e) => !(l.compoundId ? e.compoundId === l.compoundId : e.name === l.name)))}
-                aria-label={`remove ${l.name}`}
+                onClick={() => removeEntries(l.sources.map((s) => s.id))}
+                aria-label={l.duplicated ? `remove all ${l.sources.length} sources of ${l.name}` : `remove ${l.name}`}
+                title={l.duplicated ? `remove all ${l.sources.length} sources` : `remove ${l.name}`}
                 style={{ background: 'none', border: 'none', cursor: 'pointer', fontFamily: 'var(--mono)', fontSize: '11px', color: 'var(--muted)' }}
               >
                 ✕

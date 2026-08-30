@@ -112,6 +112,9 @@ export function doseGuides(compounds: Compound[]): Record<string, DoseGuide> {
       name: c.data.name,
       bestGrade: best.grade,
       bestClaim: best.outcome,
+      // Carried for the stack checker's pasted-list parser, which matches a typed
+      // name against the register name and every synonym.
+      synonyms: c.data.synonyms,
       studiedMinMg: c.data.doseGuide?.studiedMinMg,
       studiedMaxMg: c.data.doseGuide?.studiedMaxMg,
       ulMg: c.data.doseGuide?.ulMg,
@@ -126,7 +129,11 @@ export interface CostSnapshot {
   brand: string;
 }
 
-/** Cheapest €/g of active for a compound, from the product records. */
+/**
+ * Cheapest €/g of active for a compound, from the product records. Null when
+ * the compound has no usable record — the collection is currently empty, and
+ * callers drop the cost strip rather than render a placeholder.
+ */
 export async function costSnapshot(compoundId: string): Promise<CostSnapshot | null> {
   const products = await getCollection('products', (p) => p.data.compoundId === compoundId);
   let best: CostSnapshot | null = null;
