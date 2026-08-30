@@ -39,5 +39,23 @@ claims:
     effect: small
     species: human-rct
     flags: [industry-funded, biomarker-only]
-    studies: []
+    studies:
+      - cite: Arjinpathana & Asawanonda
+        year: 2012
+        url: https://doi.org/10.3109/09546631003801619
+        species: human
+        design: RCT, double-blind, placebo-controlled
+        n: 60
+        duration: 4 weeks
+        dose: 500 mg/day in two divided doses
+        funding: not-declared
+        outcome: mean reduction in melanin index at six skin sites (primary); UV spots and other secondary outcomes recorded by VISIA imaging
+        note: >-
+          Melanin index fell at all six measured sites, but the reduction beat
+          placebo at only two of them — the right side of the face and the
+          sun-exposed left forearm (p = 0.021 and 0.036). Sixty medical students
+          over four weeks, all of whom completed, measuring skin colour with
+          instruments rather than anything a person would notice. The paper is
+          paywalled: these fields were checked against the published abstract,
+          which carries no funding statement.
 history: []

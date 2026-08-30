@@ -63,16 +63,63 @@ const compounds = defineCollection({
     claims: z.array(claim).min(1), // ordered best-supported first
     history: z
       .array(
-        z.object({
-          date: z.string().regex(/^\d{4}-\d{2}$/), // "2026-03"
-          claim: z.string(),
-          from: grade,
-          to: grade,
-          why: z.string(),
-        }),
+        z
+          .object({
+            date: z.string().regex(/^\d{4}-\d{2}$/), // "2026-03"
+            claim: z.string(),
+            // What kind of editorial event this was. 'move' — the grade changed.
+            // 'reaffirmed' — the claim was re-reviewed against new evidence and
+            // the grade deliberately held; from and to are the same grade.
+            // Defaults to 'move', so every entry written before this field
+            // existed stays valid untouched.
+            kind: z.enum(['move', 'reaffirmed']).default('move'),
+            from: grade,
+            to: grade,
+            why: z.string(),
+          })
+          // The two kinds must be told apart by `kind`, never by a reader
+          // noticing that two letters happen to match. So the pairing is
+          // enforced in both directions: an unmarked no-op regrade — the
+          // "B → B" that used to render as a meaningless movement — now fails
+          // the build instead of shipping.
+          .superRefine((h, ctx) => {
+            if (h.kind === 'move' && h.from === h.to)
+              ctx.addIssue({
+                code: z.ZodIssueCode.custom,
+                path: ['to'],
+                message: `history entry "${h.claim}" (${h.date}) is a grade move but from and to are both ${h.from}. A move must change the grade; write kind: reaffirmed for a re-review that held it.`,
+              });
+            if (h.kind === 'reaffirmed' && h.from !== h.to)
+              ctx.addIssue({
+                code: z.ZodIssueCode.custom,
+                path: ['to'],
+                message: `history entry "${h.claim}" (${h.date}) is marked reaffirmed but the grade moved ${h.from} → ${h.to}. A reaffirmation must keep the same grade; drop the kind field for a real move.`,
+              });
+          }),
       )
       .default([]), // newest first
-  }),
+  })
+    // A history entry names the claim whose grade moved, and the per-claim
+    // anchor the timeline, the home page and the newsletter script link to is
+    // slugged from the *claim's* `outcome`. So a `history[].claim` that matches
+    // no outcome on this compound is not a typo with cosmetic consequences —
+    // it is a link to an anchor that does not exist. Nothing downstream may
+    // guess: prefix or fuzzy matching would silently resolve to a plausible
+    // wrong claim, and the reader lands at the top of the page none the wiser.
+    // The only place this can be caught loudly is the build.
+    .superRefine((c, ctx) => {
+      const outcomes = c.claims.map((cl) => cl.outcome);
+      c.history.forEach((h, i) => {
+        if (outcomes.includes(h.claim)) return;
+        ctx.addIssue({
+          code: z.ZodIssueCode.custom,
+          path: ['history', i, 'claim'],
+          message: `history entry (${h.date}) names claim "${h.claim}", which is not an outcome on this compound. history[].claim must match a claim's outcome exactly — the per-claim anchor is slugged from it. Valid outcomes: ${outcomes
+            .map((o) => `"${o}"`)
+            .join(', ')}.`,
+        });
+      });
+    }),
 });
 
 const products = defineCollection({

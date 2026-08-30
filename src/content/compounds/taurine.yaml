@@ -43,5 +43,24 @@ claims:
     effect: small
     species: human-rct
     flags: [biomarker-only]
-    studies: []
+    studies:
+      - cite: Tzang et al.
+        year: 2024
+        url: https://doi.org/10.1038/s41387-024-00289-z
+        species: human
+        design: meta-analysis of 25 RCTs
+        n: 1024
+        duration: 5–365 days
+        dose: "0.5–6 g/day"
+        funding: public
+        registry: INPLASY2023120081
+        outcome: systolic and diastolic blood pressure, fasting glucose, triglycerides, HDL-C
+        note: >-
+          Pooled systolic pressure fell by 4.0 mmHg (95% CI −7.3 to −0.7) and
+          diastolic by 1.5 mmHg (95% CI −2.5 to −0.5). Real but small, and the
+          systolic pooling is very heterogeneous (I² = 84.9%). Eighteen of the 25
+          trials lacked any information on allocation concealment. The pooled
+          populations are mostly patients — heart failure, cardiomyopathy, type 1
+          and type 2 diabetes, alcoholism, post-surgical — rather than adults
+          with raised blood pressure, and several trials ran two weeks or less.
 history: []

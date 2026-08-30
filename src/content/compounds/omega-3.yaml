@@ -133,6 +133,7 @@ claims:
 history:
   - date: "2025-12"
     claim: cardiovascular events
+    kind: reaffirmed
     from: B
     to: B
     why: >-

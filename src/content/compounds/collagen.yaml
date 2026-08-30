@@ -42,5 +42,44 @@ claims:
     effect: small
     species: human-rct
     flags: [industry-funded]
-    studies: []
+    studies:
+      - cite: Clark et al.
+        year: 2008
+        url: https://doi.org/10.1185/030079908X291967
+        species: human
+        design: RCT, double-blind, placebo-controlled
+        n: 147
+        duration: 24 weeks
+        dose: 10 g/day collagen hydrolysate (CH-Alpha) in 25 mL liquid
+        funding: not-declared
+        outcome: visual-analogue joint pain, mobility and inflammation in athletes with no joint disease
+        note: >-
+          The only trial run in exactly this population — varsity and club
+          athletes, not patients. Six pain measures moved further than placebo,
+          all by well under one point on a ten-point scale, and five of the six
+          were rated by the participants themselves. Only 97 of the 147
+          randomised subjects could be evaluated, which is a large loss. The
+          larger differences the paper highlights come from a subgroup of 63
+          with knee pain, not the whole sample. The tested product is a named
+          brand, CH-Alpha; the full text is paywalled with no open copy, so
+          funding could not be verified past the abstract.
+      - cite: Liang et al.
+        year: 2024
+        url: https://doi.org/10.1016/j.joca.2023.12.010
+        species: human
+        design: trial-sequential meta-analysis of 35 RCTs
+        n: 3165
+        duration: not stated in the abstract
+        dose: not stated in the abstract
+        funding: not-declared
+        outcome: osteoarthritis pain and physical function
+        note: >-
+          Much larger and more rigorous, but in osteoarthritis patients rather
+          than active people without joint disease. Pain fell by a standardised
+          mean difference of −0.35 at moderate certainty, from 25 of the 35
+          trials (2856 of the 3165 patients); function improved by −0.31 at high
+          certainty. Listed here because it is the best evidence that oral
+          collagen does anything to a joint at all; the population is not the one
+          this claim is about. The full text is behind the publisher's bot
+          protection, so funding could not be verified past the abstract.
 history: []

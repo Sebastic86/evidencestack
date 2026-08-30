@@ -35,7 +35,7 @@ claims:
         n: 2569
         duration: mixed
         dose: mostly 900–1500 mg/day
-        funding: not-declared
+        funding: public
         outcome: HbA1c, fasting glucose, lipids
         note: >-
           HbA1c reductions approaching oral antidiabetic drugs — from mostly
@@ -47,5 +47,25 @@ claims:
     effect: small
     species: human-rct
     flags: [biomarker-only]
-    studies: []
+    studies:
+      - cite: Ju et al.
+        year: 2018
+        url: https://doi.org/10.1016/j.phymed.2018.09.212
+        species: human
+        design: meta-analysis of 16 RCTs
+        n: 2147
+        duration: not stated in the abstract
+        dose: not stated in the abstract
+        funding: public
+        outcome: LDL cholesterol, total cholesterol, triglycerides, HDL cholesterol, adverse events
+        note: >-
+          LDL cholesterol fell by 0.38 mmol/l (95% CI −0.53 to −0.22). The
+          authors themselves rate the included trials as high risk of bias on
+          randomisation, allocation concealment and blinding, and flag high
+          clinical heterogeneity — a consistent direction resting on weak
+          individual trials. The full text is paywalled; the two named funders,
+          the National Clinical Research Centre of Traditional Chinese Medicine
+          and Capital's Funds for Health Improvement and Research, come from the
+          publisher's deposited grant record rather than from a funding
+          statement we could read.
 history: []

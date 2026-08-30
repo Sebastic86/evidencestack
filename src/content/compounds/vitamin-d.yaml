@@ -21,7 +21,31 @@ claims:
     effect: large
     species: human-rct
     flags: [biomarker-only]
-    studies: []
+    studies:
+      - cite: Gallagher et al.
+        year: 2012
+        url: https://doi.org/10.7326/0003-4819-156-6-201203200-00005
+        species: human
+        design: RCT, placebo-controlled, eight dose arms
+        n: 163
+        duration: 1 year
+        dose: "400, 800, 1600, 2400, 3200, 4000 or 4800 IU/day vitamin D3, or placebo"
+        funding: public
+        registry: NCT00472823
+        outcome: serum 25-hydroxyvitamin D and parathyroid hormone at 6 and 12 months
+        note: >-
+          Postmenopausal white women at one US centre, starting at a mean 25(OH)D
+          of 39 nmol/L and all given enough calcium to reach 1200–1400 mg a day.
+          800 IU a day brought 97.5% of them above 50 nmol/L, and the
+          dose-response curve flattens above about 3200 IU — though the authors'
+          own model predicts 600 IU would do the same job. This is what the A
+          grade rests on: giving vitamin D to a deficient person reliably fixes
+          the blood level. It says nothing about how they then feel, which is
+          what the biomarker-only flag is for. Depending on the criterion used,
+          hypercalciuria occurred in 12–33% and hypercalcemia in 2.8–9.0% of
+          participants, neither related to dose. The authors caution that the
+          findings may not generalise to other age groups or to people with
+          substantial comorbid conditions.
   - outcome: preventing cancer & cardiovascular disease in non-deficient adults
     cat: cardiovascular
     grade: E
@@ -49,5 +73,25 @@ claims:
     effect: small
     species: human-rct
     flags: []
-    studies: []
+    studies:
+      - cite: Chapuy et al. (Decalyos)
+        year: 1992
+        url: https://doi.org/10.1056/NEJM199212033272305
+        species: human
+        design: RCT, double-placebo
+        n: 3270
+        duration: 18 months
+        dose: 1.2 g elemental calcium + 800 IU (20 µg) vitamin D3 daily
+        funding: not-declared
+        outcome: radiologically confirmed hip and other nonvertebral fractures
+        note: >-
+          3270 healthy ambulatory women, mean age 84. Hip fractures were 43%
+          lower (p = 0.043) and all nonvertebral fractures 32% lower (p = 0.015)
+          than placebo, with intention-to-treat and completer analyses agreeing.
+          Serum 25(OH)D rose 162% and parathyroid hormone fell 44%, and proximal
+          femur bone density rose 2.7% against a 4.6% fall on placebo — mechanism
+          and outcome agree, and a 162% rise is itself the signature of a
+          corrected deficiency rather than topping up the replete. The paper is
+          available only as an image scan with no machine-readable text, so
+          funding could not be verified past the abstract.
 history: []

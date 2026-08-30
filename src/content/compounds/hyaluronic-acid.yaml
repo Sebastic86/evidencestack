@@ -28,6 +28,7 @@ claims:
         duration: 12 weeks
         dose: 120 mg/day
         funding: industry
+        registry: JMA-IIA00234
         outcome: skin wrinkle measurements, questionnaires
         note: >-
           Modest improvement vs placebo, funded and run by a hyaluronan
@@ -38,5 +39,28 @@ claims:
     effect: small
     species: human-rct
     flags: [industry-funded]
-    studies: []
+    studies:
+      - cite: Tashiro et al.
+        year: 2012
+        url: https://doi.org/10.1100/2012/167928
+        species: human
+        design: RCT, double-blind, placebo-controlled
+        n: 60
+        duration: 12 months
+        dose: 200 mg/day oral polymer hyaluronic acid
+        funding: not-declared
+        outcome: Japanese Knee Osteoarthritis Measure symptom score
+        note: >-
+          Unusually long for this literature at a full year, and both groups also
+          did quadriceps strengthening — symptoms improved on placebo too. Across
+          all participants the total score never separated from placebo at any
+          timepoint; the hyaluronic acid group scored better only at 2 and 4
+          months, and only in the 21 participants aged 70 or under. One of the
+          four subscales, "health conditions", did stay lower throughout. That is
+          a subgroup at two timepoints, not a durable effect. Twenty-two of the
+          60 randomised were dropped before analysis, leaving 18 on hyaluronic
+          acid and 20 on placebo. The paper carries no funding or
+          conflict-of-interest statement at all, but four of its six authors
+          worked in the R&D division of Kewpie Corporation, which manufactured the
+          hyaluronic acid tested.
 history: []

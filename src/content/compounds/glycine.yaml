@@ -41,5 +41,26 @@ claims:
     effect: unclear
     species: human-rct
     flags: [biomarker-only]
-    studies: []
+    studies:
+      - cite: Kumar et al.
+        year: 2023
+        url: https://doi.org/10.1093/gerona/glac135
+        species: human
+        design: RCT, placebo-controlled (isonitrogenous alanine placebo)
+        n: 24
+        duration: 16 weeks
+        dose: not stated in the abstract
+        funding: public
+        registry: NCT01870193
+        outcome: glutathione concentration, oxidative stress markers, mitochondrial fuel oxidation, inflammation, insulin resistance, gait speed, muscle strength
+        note: >-
+          Twelve older adults on GlyNAC against twelve on an isonitrogenous
+          alanine placebo. Oxidative stress markers and glutathione moved, and so
+          did gait speed and strength. Twenty-four people is a very small
+          randomised comparison for a claim this broad, and it is a single-centre
+          trial. A third group of twelve young adults was studied for two weeks
+          as a reference, not as a randomised comparison. Funded by the US
+          National Institute on Aging (R01AG041782). The publisher serves only
+          the front matter of this paper, so the conflict-of-interest statement
+          could not be read.
 history: []
