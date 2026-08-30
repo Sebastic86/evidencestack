@@ -1,0 +1,43 @@
+name: Glutathione
+synonyms: [GSH, reduced glutathione, liposomal glutathione]
+forms: "reduced · liposomal · S-acetyl"
+cats: [other, metabolic]
+blurb: >-
+  The body's main intracellular antioxidant — which your gut largely digests when
+  you swallow it. The interesting question is whether any oral form meaningfully
+  raises levels at all.
+typicalDose: "250–1000 mg/day"
+studiedDose: "250–1000 mg/day"
+ul: none established
+reviewed: 2026-08-30
+reviewer: "draft — unverified"
+claims:
+  - outcome: raising body glutathione stores
+    cat: metabolic
+    grade: C
+    effect: unclear
+    species: human-rct
+    flags: [biomarker-only, industry-funded]
+    studies:
+      - cite: Richie et al.
+        year: 2015
+        url: https://doi.org/10.1007/s00394-014-0706-z
+        species: human
+        design: RCT, double-blind
+        n: 54
+        duration: 6 months
+        dose: 250 or 1000 mg/day
+        funding: industry
+        outcome: blood and cell glutathione levels
+        note: >-
+          Levels rose 30–35% at the high dose after months — contradicting an
+          earlier null trial. Bioavailability is genuinely contested; nothing here
+          touches a clinical outcome.
+  - outcome: skin brightening
+    cat: other
+    grade: C
+    effect: small
+    species: human-rct
+    flags: [industry-funded, biomarker-only]
+    studies: []
+history: []

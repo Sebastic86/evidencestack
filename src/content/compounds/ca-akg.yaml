@@ -1,0 +1,69 @@
+name: Ca-AKG
+synonyms: [calcium alpha-ketoglutarate, alpha-ketoglutarate, AKG]
+forms: "calcium alpha-ketoglutarate"
+cats: [longevity]
+blurb: >-
+  A Krebs-cycle intermediate whose levels decline with age, sold as a longevity
+  supplement on the strength of a striking mouse study. The human evidence so far is
+  one small, industry-run trial measuring a methylation clock.
+typicalDose: "1–2 g/day"
+studiedDose: "1 g/day in the human trial; ~510 mg/kg/day in mice"
+ul: none established
+hype: true
+reviewed: 2026-08-30
+reviewer: "draft — unverified"
+doseGuide:
+  studiedMinMg: 1000
+  studiedMaxMg: 2000
+claims:
+  - outcome: slower biological aging (methylation clocks)
+    cat: longevity
+    grade: C
+    effect: unclear
+    species: human-rct
+    flags: [industry-funded, biomarker-only, under-review]
+    studies:
+      - cite: Demidenko et al.
+        year: 2021
+        url: https://doi.org/10.18632/aging.203736
+        species: human
+        design: retrospective, single-arm
+        n: 42
+        duration: ~7 months average
+        dose: 1 g/day (Rejuvant)
+        funding: industry
+        outcome: TruAge DNA-methylation age
+        note: >-
+          Reported ~8 years of methylation-age reduction — with no control group,
+          run by the product's seller, on a proprietary clock. This is the study
+          that moved the grade from D to C, and every flag on it matters.
+  - outcome: healthspan & lifespan extension
+    cat: longevity
+    grade: D
+    effect: moderate
+    species: rodent
+    flags: [rodent-only]
+    studies:
+      - cite: Asadi Shahmirzadi et al.
+        year: 2020
+        url: https://doi.org/10.1016/j.cmet.2020.08.004
+        species: rodent
+        design: controlled lifespan study
+        n: 182
+        duration: from 18 months of age to death
+        dose: 2% of chow (Ca-AKG)
+        funding: mixed
+        outcome: median lifespan, frailty index in mice
+        note: >-
+          ~12% longer median lifespan in females and large frailty reductions in
+          both sexes, started late in life. Impressive — and entirely murine.
+          Nobody has tested this endpoint in humans.
+history:
+  - date: "2026-03"
+    claim: slower biological aging
+    from: D
+    to: C
+    why: >-
+      First human data appeared (Demidenko 2021 reassessed against our rubric):
+      human, but uncontrolled, industry-run, and biomarker-only — enough for C,
+      nowhere near B.

@@ -1,0 +1,45 @@
+name: Quercetin
+synonyms: [quercetin dihydrate, quercetin phytosome]
+forms: "dihydrate · phytosome"
+cats: [longevity, other]
+blurb: >-
+  A plant flavonoid promoted as a senolytic, almost always on the strength of
+  combination studies with the chemotherapy drug dasatinib. Alone, in humans, there
+  is very little.
+typicalDose: "500–1000 mg/day"
+studiedDose: "500–1000 mg/day; senolytic protocols use intermittent D+Q dosing"
+ul: none established
+hype: true
+reviewed: 2026-08-30
+reviewer: "draft — unverified"
+claims:
+  - outcome: clearing senescent cells (senolytic effect)
+    cat: longevity
+    grade: D
+    effect: unclear
+    species: in-vitro
+    flags: [under-review]
+    studies:
+      - cite: Hickson et al.
+        year: 2019
+        url: https://doi.org/10.1016/j.ebiom.2019.08.069
+        species: human
+        design: open-label pilot (D+Q combination)
+        n: 9
+        duration: 11 days
+        dose: dasatinib 100 mg + quercetin 1000 mg, 3 days
+        funding: public
+        registry: NCT02848131
+        outcome: senescence markers in adipose tissue
+        note: >-
+          Senescence markers fell — in nine people, unblinded, and with dasatinib
+          in the mix. Quercetin's own contribution is unknown; alone it fails as a
+          senolytic in most cell lines.
+  - outcome: upper respiratory infection prevention
+    cat: other
+    grade: C
+    effect: small
+    species: human-rct
+    flags: []
+    studies: []
+history: []

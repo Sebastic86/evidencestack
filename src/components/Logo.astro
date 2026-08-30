@@ -1,0 +1,17 @@
+---
+interface Props {
+  size?: number;
+  variant?: 'bright' | 'muted';
+}
+const { size = 24, variant = 'bright' } = Astro.props;
+const colors =
+  variant === 'bright'
+    ? ['oklch(0.75 0.16 152)', 'oklch(0.58 0.14 152)', 'oklch(0.45 0.1 152)']
+    : ['oklch(0.58 0.14 152)', 'oklch(0.48 0.11 152)', 'oklch(0.38 0.08 152)'];
+---
+
+<svg width={size} height={size} viewBox="0 0 24 24" style="flex-shrink: 0" aria-hidden="true">
+  <rect x="0" y="1" width="24" height="6" fill={colors[0]}></rect>
+  <rect x="0" y="9" width="17" height="6" fill={colors[1]}></rect>
+  <rect x="0" y="17" width="10" height="6" fill={colors[2]}></rect>
+</svg>

@@ -1,0 +1,44 @@
+name: L-theanine
+synonyms: [theanine]
+forms: "free amino acid, from tea or synthesis"
+cats: [cognition, sleep]
+blurb: >-
+  The amino acid that makes tea calming without sedation. Small trials support a
+  take-the-edge-off effect, especially paired with caffeine; nothing here is large.
+typicalDose: "100–400 mg/day"
+studiedDose: "200–400 mg/day"
+ul: none established
+reviewed: 2026-08-30
+reviewer: "draft — unverified"
+doseGuide:
+  studiedMinMg: 200
+  studiedMaxMg: 400
+claims:
+  - outcome: acute stress & anxiety reduction
+    cat: cognition
+    grade: C
+    effect: small
+    species: human-rct
+    flags: []
+    studies:
+      - cite: Hidese et al.
+        year: 2019
+        url: https://doi.org/10.3390/nu11102362
+        species: human
+        design: RCT, double-blind crossover
+        n: 30
+        duration: 4 weeks
+        dose: 200 mg/day
+        funding: industry
+        outcome: stress and sleep questionnaires
+        note: >-
+          Lower stress scores and better sleep ratings — small sample, subjective
+          endpoints, manufacturer involvement.
+  - outcome: attention, combined with caffeine
+    cat: cognition
+    grade: C
+    effect: small
+    species: human-rct
+    flags: []
+    studies: []
+history: []

@@ -1,0 +1,47 @@
+name: Taurine
+synonyms: [2-aminoethanesulfonic acid]
+forms: "free amino acid powder"
+cats: [longevity, cardiovascular]
+blurb: >-
+  An abundant amino acid that fell with age in a landmark 2023 animal study and
+  extended lifespan in mice. Human data is observational and short-term
+  interventional only.
+typicalDose: "1–3 g/day"
+studiedDose: "1–6 g/day in short human trials; ~1 g/kg/day in the mouse lifespan study"
+ul: none established
+hype: true
+reviewed: 2026-08-30
+reviewer: "draft — unverified"
+doseGuide:
+  studiedMinMg: 1000
+  studiedMaxMg: 6000
+claims:
+  - outcome: lifespan & healthspan extension
+    cat: longevity
+    grade: D
+    effect: moderate
+    species: rodent
+    flags: [rodent-only, dose-mismatch]
+    studies:
+      - cite: Singh et al.
+        year: 2023
+        url: https://doi.org/10.1126/science.abn9257
+        species: rodent
+        design: controlled lifespan study
+        n: 250
+        duration: lifelong from middle age
+        dose: 1000 mg/kg/day
+        funding: public
+        outcome: median lifespan, healthspan measures in mice
+        note: >-
+          ~10–12% longer median lifespan in mice, plus monkey health markers. The
+          mouse dose scales to far more than any human supplement provides —
+          hence the dose-mismatch flag.
+  - outcome: blood pressure reduction
+    cat: cardiovascular
+    grade: C
+    effect: small
+    species: human-rct
+    flags: [biomarker-only]
+    studies: []
+history: []

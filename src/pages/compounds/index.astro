@@ -1,0 +1,24 @@
+---
+import Layout from '../../components/Layout.astro';
+import RegisterTable from '../../islands/RegisterTable';
+import { allCompounds, registerRows, sortRows } from '../../lib/data';
+
+const compounds = await allCompounds();
+const rows = sortRows(registerRows(compounds), 'grade');
+---
+
+<Layout
+  title="Compound register"
+  description="Every longevity supplement in the register, graded per claim against the studies behind it. Filter by evidence grade, claim category, and species of best evidence."
+>
+  <RegisterTable client:load rows={rows} total={rows.length} />
+  <noscript>
+    <ul>
+      {rows.map((r) => (
+        <li>
+          <a href={`/compounds/${r.id}/`}>{r.name}</a> — {r.outcome}: grade {r.grade}, {r.effect} effect
+        </li>
+      ))}
+    </ul>
+  </noscript>
+</Layout>

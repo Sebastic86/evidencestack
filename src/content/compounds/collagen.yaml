@@ -1,0 +1,46 @@
+name: Collagen peptides
+synonyms: [hydrolyzed collagen, collagen hydrolysate]
+forms: "hydrolyzed peptides, bovine or marine"
+cats: [other, joint]
+blurb: >-
+  Hydrolyzed protein from skin and bone. The trials are numerous and positive, and
+  nearly every one of them is funded by a peptide manufacturer — the funding column
+  is the reason the grades stop where they do.
+typicalDose: "2.5–15 g/day"
+studiedDose: "2.5–15 g/day"
+ul: none established
+reviewed: 2026-08-30
+reviewer: "draft — unverified"
+doseGuide:
+  studiedMinMg: 2500
+  studiedMaxMg: 15000
+claims:
+  - outcome: skin elasticity & hydration
+    cat: other
+    grade: B
+    effect: small
+    species: human-rct
+    flags: [industry-funded]
+    studies:
+      - cite: Proksch et al.
+        year: 2014
+        url: https://doi.org/10.1159/000351376
+        species: human
+        design: RCT, double-blind
+        n: 69
+        duration: 8 weeks
+        dose: 2.5 or 5 g/day
+        funding: industry
+        outcome: skin elasticity measurements
+        note: >-
+          Measurable elasticity improvement, replicated in later
+          manufacturer-funded trials. Consistent enough for B; independent
+          replication would settle it.
+  - outcome: activity-related joint pain
+    cat: joint
+    grade: C
+    effect: small
+    species: human-rct
+    flags: [industry-funded]
+    studies: []
+history: []

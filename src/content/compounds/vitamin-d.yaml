@@ -1,0 +1,53 @@
+name: Vitamin D
+synonyms: [cholecalciferol, D3, calcifediol]
+forms: "D3 (cholecalciferol) · D2"
+cats: [other, cardiovascular]
+blurb: >-
+  The most-tested supplement of the last decade. Correcting a deficiency clearly
+  matters; giving it to people who aren't deficient has now failed in several of the
+  largest trials ever run on a supplement.
+typicalDose: "1000–2000 IU/day"
+studiedDose: "400–4000 IU/day"
+ul: "4000 IU/day (100 µg) for adults"
+caution: >-
+  Fat-soluble and accumulates; sustained intakes above the UL can cause
+  hypercalcemia. Blood testing is cheap — deficiency, not dose, is the question.
+reviewed: 2026-08-30
+reviewer: "draft — unverified"
+claims:
+  - outcome: correcting measured deficiency
+    cat: other
+    grade: A
+    effect: large
+    species: human-rct
+    flags: [biomarker-only]
+    studies: []
+  - outcome: preventing cancer & cardiovascular disease in non-deficient adults
+    cat: cardiovascular
+    grade: E
+    effect: negligible
+    species: human-rct
+    flags: []
+    studies:
+      - cite: Manson et al. (VITAL)
+        year: 2019
+        url: https://doi.org/10.1056/NEJMoa1809944
+        species: human
+        design: RCT, double-blind
+        n: 25871
+        duration: 5.3 years median
+        dose: 2000 IU/day
+        funding: public
+        registry: NCT01169259
+        outcome: invasive cancer, major cardiovascular events
+        note: >-
+          No effect on either primary endpoint in a generally replete population.
+          Tested at scale, found not to work — for this claim.
+  - outcome: fracture prevention in deficient or institutionalised elderly (with calcium)
+    cat: other
+    grade: B
+    effect: small
+    species: human-rct
+    flags: []
+    studies: []
+history: []

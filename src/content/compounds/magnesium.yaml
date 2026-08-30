@@ -1,0 +1,123 @@
+name: Magnesium
+synonyms: [magnesium oxide, magnesium citrate, magnesium glycinate, magnesium bisglycinate, magnesium threonate]
+forms: "oxide · citrate · glycinate · malate · taurate · threonate"
+cats: [sleep, cardiovascular, metabolic]
+blurb: >-
+  An essential mineral involved in hundreds of enzyme reactions. The interesting
+  questions are about the form — elemental content ranges from ~60% (oxide) down to
+  ~7% (threonate) by weight — and about who is actually deficient.
+typicalDose: "200–400 mg elemental/day"
+studiedDose: "300–600 mg elemental/day in most trials"
+ul: "350 mg/day elemental from supplements (food doesn't count)"
+caution: >-
+  Doses above the supplemental UL commonly cause diarrhea. People with impaired
+  kidney function should not supplement without medical supervision.
+hype: false
+reviewed: 2026-08-30
+reviewer: "draft — unverified"
+doseGuide:
+  studiedMinMg: 300
+  studiedMaxMg: 600
+  ulMg: 350
+claims:
+  - outcome: blood pressure reduction
+    cat: cardiovascular
+    grade: B
+    effect: small
+    species: human-rct
+    flags: []
+    studies:
+      - cite: Zhang et al.
+        year: 2016
+        url: https://doi.org/10.1161/HYPERTENSIONAHA.116.07664
+        species: human
+        design: meta-analysis of 34 RCTs
+        n: 2028
+        duration: median 3 months
+        dose: median 368 mg/day
+        funding: public
+        outcome: systolic & diastolic blood pressure
+        note: >-
+          About −2.0 mmHg systolic and −1.8 mmHg diastolic. Real, replicated —
+          and small. A textbook case of grade B with a small effect.
+  - outcome: sleep quality in older adults with low magnesium
+    cat: sleep
+    grade: C
+    effect: small
+    species: human-rct
+    flags: [biomarker-only]
+    studies:
+      - cite: Abbasi et al.
+        year: 2012
+        url: https://pubmed.ncbi.nlm.nih.gov/23853635/
+        species: human
+        design: RCT, double-blind
+        n: 46
+        duration: 8 weeks
+        dose: 500 mg oxide/day
+        funding: public
+        outcome: insomnia severity index, sleep efficiency, serum markers
+        note: >-
+          Better subjective sleep in elderly insomniacs — but n=46 and a
+          population likely to be deficient at baseline.
+      - cite: Mah & Pitre
+        year: 2021
+        url: https://doi.org/10.1186/s12906-021-03297-z
+        species: human
+        design: systematic review of 3 RCTs
+        n: 151
+        duration: up to 8 weeks
+        dose: mixed
+        funding: public
+        outcome: sleep onset latency, total sleep time
+        note: >-
+          Small improvement in sleep-onset latency; authors rate the evidence
+          quality as low. This is why the claim sits at C, not B.
+  - outcome: migraine prophylaxis
+    cat: other
+    grade: B
+    effect: small
+    species: human-rct
+    flags: []
+    studies:
+      - cite: Peikert et al.
+        year: 1996
+        url: https://doi.org/10.1046/j.1468-2982.1996.1606257.x
+        species: human
+        design: RCT, double-blind
+        n: 81
+        duration: 12 weeks
+        dose: 600 mg citrate/day
+        funding: not-declared
+        outcome: migraine attack frequency
+        note: >-
+          Attack frequency fell ~42% vs ~16% on placebo. Enough for several
+          neurology guidelines to list magnesium as probably effective.
+  - outcome: glycemic control in type 2 diabetes
+    cat: metabolic
+    grade: C
+    effect: small
+    species: human-rct
+    flags: [biomarker-only]
+    studies:
+      - cite: Simental-Mendía et al.
+        year: 2016
+        url: https://doi.org/10.1016/j.phrs.2016.07.019
+        species: human
+        design: meta-analysis of 18 RCTs
+        n: 670
+        duration: 4–24 weeks
+        dose: mixed
+        funding: not-declared
+        outcome: fasting glucose, insulin sensitivity indices
+        note: >-
+          Improvements in fasting glucose in deficient or diabetic participants —
+          surrogate markers only, and heterogeneous trials.
+history:
+  - date: "2026-01"
+    claim: sleep quality in older adults
+    from: B
+    to: C
+    why: >-
+      Re-review against the 2021 systematic review's low quality rating; the
+      original B leaned too heavily on one small trial.

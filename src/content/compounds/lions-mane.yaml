@@ -1,0 +1,43 @@
+name: "Lion's mane"
+synonyms: [Hericium erinaceus, yamabushitake]
+forms: "fruiting-body extract · mycelium powder"
+cats: [cognition]
+blurb: >-
+  A culinary mushroom with genuinely interesting nerve-growth-factor chemistry in
+  the dish, and one tiny elderly-cohort trial in people. The gap between those two
+  facts is where the marketing lives.
+typicalDose: "500–3000 mg extract/day"
+studiedDose: "3 g powder/day in the main human trial"
+ul: none established
+hype: true
+reviewed: 2026-08-30
+reviewer: "draft — unverified"
+claims:
+  - outcome: cognition in older adults with mild impairment
+    cat: cognition
+    grade: C
+    effect: small
+    species: human-rct
+    flags: [under-review]
+    studies:
+      - cite: Mori et al.
+        year: 2009
+        url: https://doi.org/10.1002/ptr.2634
+        species: human
+        design: RCT, double-blind
+        n: 30
+        duration: 16 weeks
+        dose: 3 g powder/day
+        funding: not-declared
+        outcome: cognitive function scale (revised HDS-R)
+        note: >-
+          Scores improved during treatment and declined after stopping — in 30
+          people, once, with no independent replication in 15 years.
+  - outcome: nerve regeneration
+    cat: cognition
+    grade: D
+    effect: unclear
+    species: in-vitro
+    flags: [rodent-only]
+    studies: []
+history: []

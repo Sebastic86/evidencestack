@@ -1,0 +1,26 @@
+---
+import Layout from '../../components/Layout.astro';
+import CostCalculator from '../../islands/CostCalculator';
+---
+
+<Layout
+  title="Cost per gram of active"
+  description="Convert a bottle price into cost per gram of elemental or active compound — the number the label never gives you. Magnesium oxide is ~60% elemental; glycinate ~14%."
+>
+  <div class="tool-head">
+    <h1>Cost per gram of active</h1>
+    <p>
+      A bottle price tells you what a serving of a <i>compound form</i> costs. What you're
+      buying is the elemental or active fraction — and that ranges from over 85% (creatine
+      monohydrate) down to 7% (magnesium threonate). This converts label numbers into the
+      one that matters. Two magnesium products are preloaded: the cheaper bottle loses.
+    </p>
+  </div>
+  <CostCalculator client:load />
+</Layout>
+
+<style>
+  .tool-head { padding: 32px 0 20px; max-width: 680px; }
+  h1 { font-size: 24px; font-weight: 800; margin: 0 0 10px; }
+  p { font-size: 14px; line-height: 1.55; color: var(--body-2); text-wrap: pretty; }
+</style>

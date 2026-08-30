@@ -1,0 +1,205 @@
+---
+import Layout from '../components/Layout.astro';
+import { GradeBadge } from '../components/ui';
+import { GRADES, GRADE_ORDER } from '../lib/grades';
+import { allCompounds, regradeEvents } from '../lib/data';
+import { SITE_NAME } from '../config';
+
+const compounds = await allCompounds();
+const regrades = regradeEvents(compounds).slice(0, 4);
+const hypeList = compounds.filter((c) => c.data.hype).slice(0, 5);
+const curated = ['creatine', 'magnesium', 'nr-nmn', 'omega-3', 'vitamin-d', 'berberine'];
+const mostSearched = curated
+  .map((id) => compounds.find((c) => c.id === id))
+  .filter((c) => c !== undefined);
+const claimCount = compounds.reduce((a, c) => a + c.data.claims.length, 0);
+const studyCount = compounds.reduce(
+  (a, c) => a + c.data.claims.reduce((b, cl) => b + cl.studies.length, 0),
+  0,
+);
+---
+
+<Layout
+  title={SITE_NAME}
+  description="A searchable register of longevity supplements where every compound is graded per health claim against the actual studies behind it. Mouse results never dress up as human results."
+>
+  <div class="hero">
+    <div class="micro-label kicker">THE SUPPLEMENT EVIDENCE REGISTER</div>
+    <h1>Every claim <span class="hl">graded</span> against the studies behind it.</h1>
+    <p class="sub">
+      Grades are per claim, never per compound — creatine for muscle is not creatine for
+      cognition. Mouse results never dress up as human results.
+    </p>
+    <form action="/compounds/" method="get">
+      <input
+        type="search"
+        name="q"
+        placeholder="Search a compound — creatine, NMN, magnesium…"
+        aria-label="search the register"
+        class="search"
+      />
+    </form>
+    <div class="search-hint">
+      press enter to search the register · {compounds.length} compounds · {claimCount} claims · {studyCount} studies
+    </div>
+  </div>
+
+  <div class="legend card">
+    <div class="micro-label legend-title">HOW GRADING WORKS — TWO AXES, NEVER COLLAPSED</div>
+    <div class="legend-grid">
+      {GRADE_ORDER.map((g) => (
+        <div class="legend-item">
+          <GradeBadge grade={g} size={32} />
+          <div class="legend-text">{GRADES[g]}</div>
+        </div>
+      ))}
+    </div>
+    <div class="legend-foot">
+      The grade says how much we know. <b>Effect size</b> — large / moderate / small /
+      negligible — is shown separately: a compound can be grade A with an effect too small to
+      matter. That combination is one of the most useful things this register can tell you.
+    </div>
+  </div>
+
+  <div class="entry-grid">
+    <div class="card">
+      <div class="card-label">Recently regraded</div>
+      {regrades.map((e) => (
+        <a href={`/compounds/${e.compoundId}/`} class="entry-row">
+          <div class="entry-title">{e.compound} — {e.claim}</div>
+          <div class="entry-move">{e.from} → {e.to} · {e.date}</div>
+        </a>
+      ))}
+      {regrades.length === 0 && <div class="entry-empty">No regrades yet.</div>}
+    </div>
+
+    <div class="card">
+      <div class="card-label">Hype vs evidence</div>
+      {hypeList.map((c) => {
+        const best = c.data.claims[0]!;
+        return (
+          <a href={`/compounds/${c.id}/`} class="entry-row hype-row">
+            <GradeBadge grade={best.grade} size={24} />
+            <span class="hype-text"><b>{c.data.name}</b> · {best.outcome}</span>
+          </a>
+        );
+      })}
+      <div class="hype-foot">headline claim of the most-hyped compounds</div>
+    </div>
+
+    <div class="tools-col">
+      <a href="/tools/cost-per-gram/" class="card tool-card">
+        <div class="micro-label">TOOL</div>
+        <div class="tool-title">Cost per gram of active</div>
+        <div class="tool-sub">
+          Magnesium oxide is ~60% elemental; glycinate ~14%. The cheap bottle is often the
+          expensive one.
+        </div>
+      </a>
+      <a href="/tools/stack-check/" class="card tool-card">
+        <div class="micro-label">TOOL</div>
+        <div class="tool-title">Stack overlap check</div>
+        <div class="tool-sub">
+          Find doubled-up compounds, doses past the UL, and what you spend per month on
+          grade-D claims.
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <div class="most-searched">
+    <div class="micro-label">START HERE</div>
+    <div class="chips">
+      {mostSearched.map((c) => (
+        <a href={`/compounds/${c.id}/`} class="chip card">{c.data.name}</a>
+      ))}
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .hero { padding: 56px 0 24px; max-width: 780px; }
+  .kicker { color: var(--green-text); letter-spacing: 0.18em; font-size: 12px; margin-bottom: 14px; }
+  h1 {
+    margin: 0 0 14px;
+    font-size: clamp(34px, 6vw, 58px);
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    text-wrap: pretty;
+  }
+  .hl { background: linear-gradient(transparent 60%, oklch(0.85 0.1 152) 60%); }
+  .sub { margin: 0 0 28px; font-size: 16px; line-height: 1.5; color: var(--body-2); text-wrap: pretty; }
+  .search {
+    width: 100%;
+    padding: 14px 16px;
+    font-size: 16px;
+    border: 3px solid var(--ink);
+    box-shadow: 6px 6px 0 var(--green);
+    background: var(--paper);
+    font-family: var(--mono);
+  }
+  .search-hint { font-family: var(--mono); font-size: 11px; color: var(--muted); margin-top: 8px; }
+
+  .legend { border-top: 3px solid var(--green); margin-bottom: 32px; }
+  .legend-title { padding: 14px 20px 0; }
+  .legend-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    padding: 16px 20px 8px;
+  }
+  .legend-item { display: flex; gap: 10px; padding: 8px 12px 12px 0; align-items: flex-start; }
+  .legend-text { font-size: 12px; line-height: 1.4; color: var(--body); }
+  .legend-foot {
+    padding: 10px 20px 16px;
+    border-top: 1px solid var(--line-mid);
+    font-size: 12px;
+    color: var(--body-2);
+    line-height: 1.5;
+  }
+
+  .entry-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-bottom: 32px;
+  }
+  .entry-row {
+    display: block;
+    text-decoration: none;
+    border-bottom: 1px solid var(--line-soft);
+    padding: 10px 16px;
+  }
+  .entry-row:hover { background: var(--paper-hover); }
+  .entry-title { font-size: 13px; font-weight: 600; color: var(--ink); }
+  .entry-move {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--green-text);
+    font-weight: 700;
+    margin-top: 2px;
+  }
+  .entry-empty { padding: 14px 16px; font-size: 12px; color: var(--muted); }
+  .hype-row { display: flex; align-items: center; gap: 10px; padding: 9px 16px; }
+  .hype-text { font-size: 13px; color: var(--ink); }
+  .hype-foot { padding: 8px 16px 12px; font-size: 11px; color: var(--muted); font-family: var(--mono); }
+
+  .tools-col { display: flex; flex-direction: column; gap: 20px; }
+  .tool-card { display: block; text-decoration: none; padding: 16px; }
+  .tool-card:hover { border-color: var(--green); background: oklch(0.97 0.02 152); }
+  .tool-card .micro-label { margin-bottom: 6px; }
+  .tool-title { font-size: 15px; font-weight: 700; color: var(--ink); }
+  .tool-sub { font-size: 12px; color: var(--body-2); margin-top: 4px; line-height: 1.45; }
+
+  .most-searched { margin-bottom: 48px; }
+  .most-searched .micro-label { margin-bottom: 10px; }
+  .chips { display: flex; gap: 8px; flex-wrap: wrap; }
+  .chip {
+    padding: 7px 14px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .chip:hover { border-color: var(--ink); color: var(--ink); }
+</style>

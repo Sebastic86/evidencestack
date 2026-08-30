@@ -1,0 +1,10 @@
+# Sample product records — fictional brands, realistic label math.
+# They exist only to feed the cost calculator; no reviews, no endorsements.
+brand: DailyBasics
+name: "Magnesium Citrate 375 mg"
+compoundId: magnesium
+form: citrate
+dosePerServingMg: 375
+servings: 60
+priceEur: 5.99
+thirdPartyTested: false

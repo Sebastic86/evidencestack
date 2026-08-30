@@ -1,0 +1,44 @@
+name: TMG
+synonyms: [trimethylglycine, betaine, betaine anhydrous]
+forms: "betaine anhydrous"
+cats: [metabolic, muscle]
+blurb: >-
+  A methyl donor often stacked with NAD+ precursors "to support methylation." What
+  it demonstrably does is lower homocysteine; the rest is extrapolation.
+typicalDose: "500–2000 mg/day"
+studiedDose: "2–6 g/day (homocysteine trials)"
+ul: none established
+reviewed: 2026-08-30
+reviewer: "draft — unverified"
+doseGuide:
+  studiedMinMg: 2000
+  studiedMaxMg: 6000
+claims:
+  - outcome: homocysteine lowering
+    cat: metabolic
+    grade: B
+    effect: moderate
+    species: human-rct
+    flags: [biomarker-only]
+    studies:
+      - cite: Olthof et al.
+        year: 2003
+        url: https://doi.org/10.1093/ajcn/77.5.1187
+        species: human
+        design: RCT, double-blind
+        n: 76
+        duration: 6 weeks
+        dose: 1.5–6 g/day
+        funding: public
+        outcome: plasma homocysteine
+        note: >-
+          Dose-dependent ~10–20% reduction, well replicated. Whether lowering
+          homocysteine this way prevents anything is a different, unproven claim.
+  - outcome: strength & power performance
+    cat: muscle
+    grade: C
+    effect: unclear
+    species: human-rct
+    flags: []
+    studies: []
+history: []

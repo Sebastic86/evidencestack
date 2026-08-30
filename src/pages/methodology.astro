@@ -1,0 +1,148 @@
+---
+import Layout from '../components/Layout.astro';
+import { GradeBadge } from '../components/ui';
+import { GRADES, GRADE_ORDER } from '../lib/grades';
+import { FLAG_LABELS, FLAG_DEFINITIONS } from '../lib/flags';
+import type { Flag } from '../lib/flags';
+
+const flags = Object.keys(FLAG_LABELS) as Flag[];
+---
+
+<Layout
+  title="Methodology"
+  description="The full grading rubric behind Evidence Stack: how evidence grades and effect sizes are assigned, what the flags mean, who reviews, how corrections are handled, and how the site is funded."
+>
+  <article>
+    <div class="page-head">
+      <h1>Methodology</h1>
+      <p class="lede">
+        Everything on this site follows from two rules: grades are per claim, never per
+        compound, and the species behind the evidence is never hidden. This page is the full
+        contract — how grades are assigned, what can move them, and who is accountable.
+      </p>
+    </div>
+
+    <section>
+      <h2>The evidence grade — how much do we know?</h2>
+      <p>
+        Each claim (a compound → outcome pair, like "creatine → muscle mass") carries one
+        letter grade. The grade measures the <i>state of knowledge</i>, not how good the
+        compound is:
+      </p>
+      <div class="grade-list">
+        {GRADE_ORDER.map((g) => (
+          <div class="grade-row">
+            <GradeBadge grade={g} size={32} />
+            <div class="grade-text">{GRADES[g]}</div>
+          </div>
+        ))}
+      </div>
+      <p>
+        A grade never collapses across claims. A compound with an A for one outcome and a D
+        for another is shown exactly that way, because that <i>is</i> the state of knowledge.
+      </p>
+    </section>
+
+    <section>
+      <h2>Effect size — if it works, how much?</h2>
+      <p>
+        Shown separately as <b>large / moderate / small / negligible / unclear</b>, and never
+        merged into the grade. A compound can be grade A with a negligible effect — rigorously
+        proven to barely matter — and that combination is one of the most useful things this
+        register can tell you. Where trials report standardised effect sizes we use them;
+        where they don't, the call is the reviewer's and the studies to check it against are
+        listed on the claim.
+      </p>
+    </section>
+
+    <section>
+      <h2>Flags</h2>
+      <p>Small, factual annotations shown on both claims and individual studies:</p>
+      <dl>
+        {flags.map((f) => (
+          <>
+            <dt>{FLAG_LABELS[f]}</dt>
+            <dd>{FLAG_DEFINITIONS[f]}</dd>
+          </>
+        ))}
+      </dl>
+    </section>
+
+    <section>
+      <h2>What we record per study</h2>
+      <p>
+        Species · design · sample size · duration · dose and form · outcome measured · funding
+        source · trial registry ID · link to the primary source · the reviewer's note on what
+        this study contributes to the claim. Every one of these is displayed, not summarised
+        away. Mouse results and human results never share a visual treatment.
+      </p>
+    </section>
+
+    <section>
+      <h2>Grade movement</h2>
+      <p>
+        Every claim's grade is dated and carries its history. When new evidence moves a grade,
+        that change is a first-class event: it appears on the compound's timeline, on the home
+        page, and in the newsletter. The newsletter sends regrade events only — no digests, no
+        news feed.
+      </p>
+    </section>
+
+    <section>
+      <h2>Who reviews, and corrections</h2>
+      <p>
+        Each compound page names its reviewer and the date of last review. Records marked
+        <i>"draft — unverified"</i> have not yet been through full editorial review and should
+        be read accordingly. If you find an error — a mis-cited study, a wrong number, a grade
+        that doesn't survive contact with the literature — write to the address in the footer.
+        Corrections are made in the open: material changes appear in the grade timeline, and
+        the full edit history of every record is public in the site's source repository.
+      </p>
+    </section>
+
+    <section>
+      <h2>Funding and conflicts of interest</h2>
+      <p>
+        Evidence Stack sells nothing, reviews no brands, and carries no affiliate links or
+        sponsorships. Product records exist only to compute cost per gram and are facts from
+        labels, not endorsements. If that funding model ever changes, it changes on this page
+        first.
+      </p>
+    </section>
+
+    <section>
+      <h2>The data is citable</h2>
+      <p>
+        Every record on this site is available as JSON: <a href="/api/compounds.json"><code>/api/compounds.json</code></a>
+        for the register index, and <code>/api/compounds/&lt;id&gt;.json</code> for a full
+        compound record including claims, studies and grade history. No key, no rate limit
+        beyond fair use. If you build on it, a link back is appreciated.
+      </p>
+    </section>
+
+    <section>
+      <h2>What this site is not</h2>
+      <p>
+        A summary of published research, however careful, is not medical advice. A grade
+        measures evidence, not what you should do — that depends on your health, your
+        medication, and your priorities, none of which this site knows.
+      </p>
+    </section>
+  </article>
+</Layout>
+
+<style>
+  article { max-width: 720px; padding: 32px 0 48px; }
+  .page-head h1 { font-size: 28px; font-weight: 800; margin: 0 0 12px; }
+  .lede { font-size: 16px; line-height: 1.55; color: var(--body); text-wrap: pretty; }
+  section { margin-top: 32px; }
+  h2 { font-size: 18px; font-weight: 700; margin: 0 0 10px; }
+  p { font-size: 14px; line-height: 1.6; color: var(--body); margin: 0 0 10px; }
+  .grade-list { margin: 14px 0; display: flex; flex-direction: column; gap: 10px; }
+  .grade-row { display: flex; gap: 12px; align-items: flex-start; }
+  .grade-text { font-size: 13px; line-height: 1.5; color: var(--body); padding-top: 4px; }
+  dl { margin: 0; }
+  dt { font-family: var(--mono); font-size: 12px; color: var(--amber); margin-top: 10px; }
+  dd { margin: 2px 0 0; font-size: 13px; line-height: 1.5; color: var(--body); }
+  code { font-family: var(--mono); font-size: 12px; }
+</style>

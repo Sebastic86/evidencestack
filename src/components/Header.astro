@@ -1,0 +1,66 @@
+---
+import Logo from './Logo.astro';
+
+const path = Astro.url.pathname;
+const items = [
+  { href: '/compounds/', label: 'Register', active: path.startsWith('/compounds') },
+  { href: '/tools/cost-per-gram/', label: 'Cost per gram', active: path.startsWith('/tools/cost-per-gram') },
+  { href: '/tools/stack-check/', label: 'Stack check', active: path.startsWith('/tools/stack-check') },
+  { href: '/methodology/', label: 'Methodology', active: path.startsWith('/methodology') },
+];
+---
+
+<header>
+  <div class="inner">
+    <a href="/" class="brand">
+      <Logo size={24} variant="bright" />
+      <span class="wordmark"><span class="w1">Evidence</span><span class="w2">STACK</span></span>
+    </a>
+    <nav>
+      {items.map((it) => (
+        <a href={it.href} class:list={['nav-link', { active: it.active }]}>{it.label}</a>
+      ))}
+    </nav>
+  </div>
+</header>
+
+<style>
+  header {
+    border-bottom: 3px solid var(--green);
+    background: var(--header-bg);
+  }
+  .inner {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    flex-wrap: wrap;
+  }
+  .brand {
+    padding: 16px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+  }
+  .wordmark { display: flex; align-items: baseline; gap: 7px; }
+  .w1 { font-size: 17px; font-weight: 800; letter-spacing: -0.01em; color: white; }
+  .w2 {
+    font-family: var(--mono);
+    font-size: 13px;
+    letter-spacing: 0.16em;
+    color: var(--green-bright);
+  }
+  nav { display: flex; gap: 4px; flex-wrap: wrap; margin-left: auto; }
+  .nav-link {
+    padding: 8px 12px;
+    font-size: 13px;
+    font-weight: 600;
+    color: white;
+    text-decoration: none;
+  }
+  .nav-link:hover { background: var(--header-hover); color: white; }
+  .nav-link.active { background: var(--green); }
+</style>

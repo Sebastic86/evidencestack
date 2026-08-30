@@ -1,0 +1,51 @@
+name: Berberine
+synonyms: [berberine HCl]
+forms: "HCl · phytosome"
+cats: [metabolic, cardiovascular]
+blurb: >-
+  A plant alkaloid with real glucose-lowering pharmacology, hyped as "nature's
+  metformin." Many trials, mostly small and of mixed quality; the effect on blood
+  sugar is consistent, the long-term outcome data absent.
+typicalDose: "900–1500 mg/day, divided"
+studiedDose: "900–1500 mg/day"
+ul: none established
+caution: >-
+  GI side effects are common. Inhibits CYP3A4/2D6 — interacts with many
+  prescription drugs, and should not be combined with other glucose-lowering
+  medication without medical supervision. Avoid in pregnancy.
+hype: true
+reviewed: 2026-08-30
+reviewer: "draft — unverified"
+doseGuide:
+  studiedMinMg: 900
+  studiedMaxMg: 1500
+claims:
+  - outcome: glycemic control in type 2 diabetes
+    cat: metabolic
+    grade: B
+    effect: moderate
+    species: human-rct
+    flags: [biomarker-only]
+    studies:
+      - cite: Lan et al.
+        year: 2015
+        url: https://doi.org/10.1016/j.jep.2014.09.049
+        species: human
+        design: meta-analysis of 27 RCTs
+        n: 2569
+        duration: mixed
+        dose: mostly 900–1500 mg/day
+        funding: not-declared
+        outcome: HbA1c, fasting glucose, lipids
+        note: >-
+          HbA1c reductions approaching oral antidiabetic drugs — from mostly
+          small Chinese trials of variable quality. Consistent direction, weak
+          individual trials: textbook B with an asterisk.
+  - outcome: LDL cholesterol lowering
+    cat: cardiovascular
+    grade: B
+    effect: small
+    species: human-rct
+    flags: [biomarker-only]
+    studies: []
+history: []

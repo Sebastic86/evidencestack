@@ -1,0 +1,28 @@
+name: Astaxanthin
+synonyms: [Haematococcus pluvialis extract]
+forms: "natural (algae) · synthetic"
+cats: [other]
+blurb: >-
+  A red carotenoid from algae, marketed on antioxidant chemistry. Human trials are
+  small, short, mostly industry-funded, and measure blood markers or skin photos.
+typicalDose: "4–12 mg/day"
+studiedDose: "4–12 mg/day"
+ul: none established
+reviewed: 2026-08-30
+reviewer: "draft — unverified"
+claims:
+  - outcome: skin condition & UV resilience
+    cat: other
+    grade: C
+    effect: small
+    species: human-rct
+    flags: [industry-funded, biomarker-only]
+    studies: []
+  - outcome: lifespan extension
+    cat: longevity
+    grade: D
+    effect: unclear
+    species: rodent
+    flags: [rodent-only]
+    studies: []
+history: []

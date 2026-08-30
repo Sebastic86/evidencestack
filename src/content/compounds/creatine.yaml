@@ -1,0 +1,148 @@
+name: Creatine
+synonyms: [creatine monohydrate, creatine HCl]
+forms: "monohydrate · HCl · buffered"
+cats: [muscle, cognition]
+blurb: >-
+  A compound your body makes and stores in muscle to regenerate ATP during short,
+  intense effort. The most-studied sports supplement in existence — which makes it
+  a good showcase for why grades are per claim, not per compound.
+typicalDose: "3–5 g/day (monohydrate)"
+studiedDose: "3–5 g/day maintenance; 20 g/day short loading phases"
+ul: none established
+caution: >-
+  Expect 1–2 kg of water-weight gain in the first weeks. People with kidney disease
+  should talk to their doctor before supplementing.
+hype: true
+reviewed: 2026-08-30
+reviewer: "draft — unverified"
+doseGuide:
+  studiedMinMg: 3000
+  studiedMaxMg: 5000
+claims:
+  - outcome: muscle mass & strength with resistance training
+    cat: muscle
+    grade: A
+    effect: moderate
+    species: human-rct
+    flags: []
+    studies:
+      - cite: Chilibeck et al.
+        year: 2017
+        url: https://doi.org/10.2147/OAJSM.S123529
+        species: human
+        design: meta-analysis of 22 RCTs
+        n: 721
+        duration: 7–52 weeks
+        dose: "3–5 g/day + resistance training"
+        funding: not-declared
+        outcome: lean tissue mass, upper/lower-body strength
+        note: >-
+          Older adults gained ~1.4 kg more lean mass with creatine than with
+          resistance training alone. Consistent direction across trials.
+      - cite: Lanhers et al.
+        year: 2017
+        url: https://doi.org/10.1007/s40279-016-0571-4
+        species: human
+        design: meta-analysis of RCTs
+        n: 266
+        duration: 4–12 weeks
+        dose: "2–25 g/day"
+        funding: public
+        outcome: upper-limb maximal strength
+        note: >-
+          Strength gains replicated across independent labs and populations; the
+          companion 2015 analysis found the same for lower-limb strength.
+      - cite: Branch
+        year: 2003
+        url: https://doi.org/10.1123/ijsnem.13.2.198
+        species: human
+        design: meta-analysis of 100 studies
+        n: 1847
+        duration: mixed
+        dose: mostly 20 g load then 2–5 g/day
+        funding: not-declared
+        outcome: body composition & performance effect sizes
+        note: >-
+          Early quantitative summary; effect sizes largest for short, repeated
+          high-intensity work and lean body mass.
+  - outcome: cognition in healthy adults
+    cat: cognition
+    grade: C
+    effect: unclear
+    species: human-rct
+    flags: [under-review]
+    studies:
+      - cite: Avgerinos et al.
+        year: 2018
+        url: https://doi.org/10.1016/j.exger.2018.04.013
+        species: human
+        design: systematic review of 6 RCTs
+        n: 281
+        duration: 5 days – 6 weeks
+        dose: "5–20 g/day"
+        funding: public
+        outcome: memory, reasoning, reaction-time test batteries
+        note: >-
+          Short-term memory and intelligence/reasoning may improve; other domains
+          inconsistent. Trials are small and short — this is why the grade is C
+          despite the hype.
+      - cite: Rae et al.
+        year: 2003
+        url: https://doi.org/10.1098/rspb.2003.2492
+        species: human
+        design: RCT, double-blind crossover
+        n: 45
+        duration: 6 weeks
+        dose: 5 g/day
+        funding: public
+        outcome: working memory & processing speed in vegetarians
+        note: >-
+          Positive — but in vegetarians, who start with low creatine stores.
+          Doesn't generalise to omnivores without more data.
+  - outcome: depression, as an adjunct to SSRIs
+    cat: cognition
+    grade: C
+    effect: small
+    species: human-rct
+    flags: []
+    studies:
+      - cite: Lyoo et al.
+        year: 2012
+        url: https://doi.org/10.1176/appi.ajp.2012.12010009
+        species: human
+        design: RCT, double-blind
+        n: 52
+        duration: 8 weeks
+        dose: 5 g/day + escitalopram
+        funding: public
+        outcome: depression rating scale (HDRS)
+        note: >-
+          Faster and larger symptom improvement in women with major depression.
+          One trial, one population — needs replication before this moves.
+  - outcome: bone mineral density in older adults
+    cat: muscle
+    grade: E
+    effect: negligible
+    species: human-rct
+    flags: []
+    studies:
+      - cite: Chilibeck et al.
+        year: 2023
+        species: human
+        design: RCT, double-blind, 2-year
+        n: 237
+        duration: 104 weeks
+        dose: "0.14 g/kg/day + exercise"
+        funding: public
+        outcome: DXA bone mineral density, postmenopausal women
+        note: >-
+          The long, well-powered trial the field was waiting for: no effect on
+          bone density. Earlier small positive signals didn't replicate.
+history:
+  - date: "2026-05"
+    claim: bone mineral density in older adults
+    from: C
+    to: E
+    why: >-
+      Two-year RCT in 237 postmenopausal women found no effect on bone density,
+      overriding earlier small mixed trials.

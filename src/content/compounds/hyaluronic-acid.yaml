@@ -1,0 +1,42 @@
+name: Hyaluronic acid
+synonyms: [sodium hyaluronate, HA]
+forms: "oral, mixed molecular weights"
+cats: [joint, other]
+blurb: >-
+  Famous as an injectable and a skincare ingredient; the oral supplement question is
+  whether swallowing it does anything. Trials exist, are positive, and are almost
+  entirely run by the companies selling it.
+typicalDose: "120–240 mg/day"
+studiedDose: "120–240 mg/day"
+ul: none established
+reviewed: 2026-08-30
+reviewer: "draft — unverified"
+claims:
+  - outcome: skin hydration & wrinkle depth
+    cat: other
+    grade: C
+    effect: small
+    species: human-rct
+    flags: [industry-funded]
+    studies:
+      - cite: Oe et al.
+        year: 2017
+        url: https://doi.org/10.2147/CCID.S141845
+        species: human
+        design: RCT, double-blind
+        n: 60
+        duration: 12 weeks
+        dose: 120 mg/day
+        funding: industry
+        outcome: skin wrinkle measurements, questionnaires
+        note: >-
+          Modest improvement vs placebo, funded and run by a hyaluronan
+          manufacturer — a pattern this claim repeats across nearly every trial.
+  - outcome: knee joint pain
+    cat: joint
+    grade: C
+    effect: small
+    species: human-rct
+    flags: [industry-funded]
+    studies: []
+history: []

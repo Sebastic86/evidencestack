@@ -1,0 +1,140 @@
+name: Omega-3 (EPA/DHA)
+synonyms: [fish oil, EPA, DHA, icosapent ethyl]
+forms: "triglyceride · ethyl ester · icosapent ethyl (prescription)"
+cats: [cardiovascular, cognition, metabolic]
+blurb: >-
+  Long-chain marine fatty acids with one of the largest and most contested trial
+  records in the field. The honest summary is three different answers to three
+  different questions — which is exactly what per-claim grading is for.
+typicalDose: "500–1000 mg EPA+DHA/day"
+studiedDose: "840 mg – 4 g EPA+DHA/day in outcome trials"
+ul: "~5 g/day EPA+DHA from supplements (EFSA: no safety concern up to this)"
+caution: >-
+  High doses increase bleeding tendency and, in the 4 g icosapent ethyl trials,
+  atrial fibrillation risk. Talk to your doctor if you take anticoagulants.
+hype: false
+reviewed: 2026-08-30
+reviewer: "draft — unverified"
+doseGuide:
+  studiedMinMg: 840
+  studiedMaxMg: 4000
+  ulMg: 5000
+claims:
+  - outcome: triglyceride lowering
+    cat: metabolic
+    grade: A
+    effect: large
+    species: human-rct
+    flags: [biomarker-only]
+    studies:
+      - cite: Skulas-Ray et al. (AHA advisory)
+        year: 2019
+        url: https://doi.org/10.1161/CIR.0000000000000709
+        species: human
+        design: review of RCTs
+        n: 4000
+        duration: mixed
+        dose: 2–4 g EPA+DHA/day
+        funding: public
+        outcome: fasting triglycerides
+        note: >-
+          20–30% reduction at prescription doses, replicated for decades. Grade A
+          — but note the flag: triglycerides are a biomarker, not an outcome you
+          feel.
+  - outcome: cardiovascular events
+    cat: cardiovascular
+    grade: B
+    effect: small
+    species: human-rct
+    flags: [industry-funded, under-review]
+    studies:
+      - cite: Bhatt et al. (REDUCE-IT)
+        year: 2019
+        url: https://doi.org/10.1056/NEJMoa1812792
+        species: human
+        design: RCT, double-blind
+        n: 8179
+        duration: 4.9 years median
+        dose: 4 g/day icosapent ethyl
+        funding: industry
+        registry: NCT01492361
+        outcome: major adverse cardiovascular events
+        note: >-
+          25% relative risk reduction in high-risk statin-treated patients — the
+          strongest positive card. Industry-funded, mineral-oil placebo debated.
+      - cite: Nicholls et al. (STRENGTH)
+        year: 2020
+        url: https://doi.org/10.1001/jama.2020.22258
+        species: human
+        design: RCT, double-blind
+        n: 13078
+        duration: 3.5 years median
+        dose: 4 g/day EPA+DHA carboxylic acid
+        funding: industry
+        registry: NCT02104817
+        outcome: major adverse cardiovascular events
+        note: >-
+          No benefit with a corn-oil placebo — the direct contradiction that keeps
+          this claim at B instead of A.
+      - cite: ASCEND Study Group
+        year: 2018
+        url: https://doi.org/10.1056/NEJMoa1804989
+        species: human
+        design: RCT, double-blind
+        n: 15480
+        duration: 7.4 years
+        dose: 840 mg/day EPA+DHA
+        funding: mixed
+        registry: NCT00135226
+        outcome: serious vascular events, diabetics without CVD
+        note: >-
+          Supplement-dose omega-3 did nothing for primary prevention. Dose and
+          population matter enormously for this claim.
+  - outcome: depression, as adjunct treatment
+    cat: cognition
+    grade: C
+    effect: small
+    species: human-rct
+    flags: []
+    studies:
+      - cite: Appleton et al. (Cochrane)
+        year: 2021
+        url: https://doi.org/10.1002/14651858.CD004692.pub5
+        species: human
+        design: Cochrane review of 35 RCTs
+        n: 1924
+        duration: mixed
+        dose: mixed, mostly EPA-heavy
+        funding: public
+        outcome: depressive symptom scales
+        note: >-
+          Small-to-modest benefit over placebo with low-certainty evidence and
+          publication-bias concerns.
+  - outcome: preventing cognitive decline in healthy older adults
+    cat: cognition
+    grade: E
+    effect: negligible
+    species: human-rct
+    flags: []
+    studies:
+      - cite: Sydenham et al. (Cochrane)
+        year: 2012
+        url: https://doi.org/10.1002/14651858.CD005379.pub3
+        species: human
+        design: Cochrane review of 3 RCTs
+        n: 3536
+        duration: 6–40 months
+        dose: mixed
+        funding: public
+        outcome: cognitive test batteries
+        note: >-
+          No effect on cognition in cognitively healthy older adults. Tested
+          properly, found not to work — that's what grade E means.
+history:
+  - date: "2025-12"
+    claim: cardiovascular events
+    from: B
+    to: B
+    why: >-
+      Re-reviewed after new icosapent-ethyl subgroup analyses; the
+      REDUCE-IT/STRENGTH contradiction still caps this at B. Kept under review.

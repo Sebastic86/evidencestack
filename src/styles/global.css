@@ -1,0 +1,91 @@
+/* Design tokens extracted from the approved Claude Design prototype. */
+:root {
+  --bg: oklch(0.955 0.015 155);
+  --paper: oklch(0.99 0.004 160);
+  --paper-hover: oklch(0.955 0.008 160);
+  --ink: oklch(0.24 0.015 160);
+  --muted: oklch(0.5 0.02 160);
+  --muted-2: oklch(0.55 0.02 160);
+  --body: oklch(0.35 0.02 160);
+  --body-2: oklch(0.4 0.02 160);
+  --green: oklch(0.5 0.13 152);
+  --green-lt: oklch(0.87 0.08 152);
+  --green-text: oklch(0.45 0.12 152);
+  --green-bright: oklch(0.75 0.16 152);
+  --amber: oklch(0.45 0.09 75);
+  --amber-dark: oklch(0.35 0.09 75);
+  --header-bg: oklch(0.27 0.03 160);
+  --header-hover: oklch(0.38 0.06 155);
+  --line: oklch(0.85 0.015 160);
+  --line-soft: oklch(0.93 0.008 160);
+  --line-mid: oklch(0.9 0.01 160);
+  --line-input: oklch(0.75 0.015 160);
+  --card-shadow: oklch(0.9 0.04 155);
+  --grade-d-bg: oklch(0.93 0.05 80);
+  --grade-e-bg: oklch(0.35 0.02 160);
+  --expand-bg: oklch(0.965 0.008 160);
+
+  --sans: 'Libre Franklin', system-ui, sans-serif;
+  --mono: 'Fragment Mono', ui-monospace, monospace;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  font-family: var(--sans);
+  color: var(--ink);
+}
+
+a { color: var(--amber); }
+a:hover { color: var(--amber-dark); }
+
+input, select, button, textarea { font-family: inherit; font-size: inherit; }
+input:focus-visible, select:focus-visible, button:focus-visible, a:focus-visible, textarea:focus-visible {
+  outline: 2px solid var(--amber);
+  outline-offset: 1px;
+}
+
+h1, h2, h3, p { margin: 0; }
+
+/* Recurring primitives */
+.card {
+  border: 1px solid var(--line);
+  background: var(--paper);
+  box-shadow: 5px 5px 0 var(--card-shadow);
+}
+.card-label {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--line-mid);
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+.micro-label {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+.table-head {
+  display: flex;
+  gap: 16px;
+  padding: 10px 20px;
+  background: var(--ink);
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  color: oklch(0.92 0.02 155);
+}
+.grade-badge {
+  border: 2px solid var(--ink);
+  box-shadow: 3px 3px 0 var(--ink);
+  display: grid;
+  place-items: center;
+  font-family: var(--mono);
+  flex-shrink: 0;
+}

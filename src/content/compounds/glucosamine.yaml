@@ -1,0 +1,78 @@
+name: Glucosamine
+synonyms: [glucosamine sulfate, glucosamine hydrochloride]
+forms: "sulfate 2KCl · hydrochloride"
+cats: [joint, longevity]
+blurb: >-
+  An amino sugar taken for joints for thirty years. The joint evidence is a mess of
+  industry-positive and public-negative trials; meanwhile a huge cohort keeps finding
+  users die less often — an association nobody has tested in a trial.
+typicalDose: "1500 mg/day"
+studiedDose: "1500 mg/day in nearly all trials"
+ul: none established
+caution: >-
+  Made from shellfish; caution with shellfish allergy. May affect glucose tolerance
+  at the margins and interacts with warfarin.
+hype: false
+reviewed: 2026-08-30
+reviewer: "draft — unverified"
+doseGuide:
+  studiedMinMg: 1500
+  studiedMaxMg: 1500
+claims:
+  - outcome: knee osteoarthritis pain
+    cat: joint
+    grade: C
+    effect: small
+    species: human-rct
+    flags: [industry-funded]
+    studies:
+      - cite: Clegg et al. (GAIT)
+        year: 2006
+        url: https://doi.org/10.1056/NEJMoa052771
+        species: human
+        design: RCT, double-blind, 5-arm
+        n: 1583
+        duration: 24 weeks
+        dose: 1500 mg HCl/day ± chondroitin
+        funding: public
+        registry: NCT00032890
+        outcome: WOMAC pain response
+        note: >-
+          The big public trial: no significant benefit over placebo overall. A
+          moderate-to-severe-pain subgroup responded — hypothesis, not proof.
+      - cite: Towheed et al. (Cochrane)
+        year: 2005
+        url: https://doi.org/10.1002/14651858.CD002946.pub2
+        species: human
+        design: Cochrane review of 25 RCTs
+        n: 4963
+        duration: mixed
+        dose: mostly 1500 mg sulfate/day
+        funding: public
+        outcome: pain and function scores
+        note: >-
+          Benefits concentrate in trials of one manufacturer's sulfate
+          preparation; independent trials trend null. The funding column on this
+          claim is the story.
+  - outcome: lower all-cause mortality (association)
+    cat: longevity
+    grade: B
+    effect: small
+    species: observational
+    flags: []
+    studies:
+      - cite: Li et al. (UK Biobank)
+        year: 2020
+        url: https://doi.org/10.1136/annrheumdis-2020-217176
+        species: human
+        design: prospective cohort
+        n: 495077
+        duration: 8.9 years median
+        dose: habitual use (self-report)
+        funding: public
+        outcome: all-cause and cause-specific mortality
+        note: >-
+          ~15% lower all-cause mortality in users, surviving adjustment. Consistent
+          with other cohorts and a plausible anti-inflammatory mechanism — but
+          observational: healthy-user bias can't be excluded and no RCT exists.
+history: []

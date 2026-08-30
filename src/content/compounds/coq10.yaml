@@ -1,0 +1,46 @@
+name: CoQ10
+synonyms: [coenzyme Q10, ubiquinone, ubiquinol]
+forms: "ubiquinone · ubiquinol"
+cats: [cardiovascular, muscle]
+blurb: >-
+  A mitochondrial electron carrier that declines with age and with statin use. One
+  solid trial in heart failure; a long argument about statin muscle pain.
+typicalDose: "100–300 mg/day"
+studiedDose: "100–300 mg/day"
+ul: none established
+reviewed: 2026-08-30
+reviewer: "draft — unverified"
+doseGuide:
+  studiedMinMg: 100
+  studiedMaxMg: 300
+claims:
+  - outcome: outcomes in chronic heart failure (adjunct)
+    cat: cardiovascular
+    grade: B
+    effect: moderate
+    species: human-rct
+    flags: [industry-funded, under-review]
+    studies:
+      - cite: Mortensen et al. (Q-SYMBIO)
+        year: 2014
+        url: https://doi.org/10.1016/j.jchf.2014.06.008
+        species: human
+        design: RCT, double-blind
+        n: 420
+        duration: 2 years
+        dose: 300 mg/day
+        funding: industry
+        registry: NCT00374465
+        outcome: major adverse cardiovascular events, mortality
+        note: >-
+          Halved cardiovascular mortality as an add-on to standard therapy — a
+          striking result from a modest trial that has not been independently
+          replicated at scale.
+  - outcome: statin-associated muscle pain
+    cat: muscle
+    grade: C
+    effect: unclear
+    species: human-rct
+    flags: []
+    studies: []
+history: []

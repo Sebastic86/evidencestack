@@ -1,0 +1,79 @@
+name: NR / NMN
+synonyms: [nicotinamide riboside, nicotinamide mononucleotide, NAD+ precursors]
+forms: "NR chloride · NMN"
+cats: [longevity, metabolic]
+blurb: >-
+  NAD+ precursors and the flagship compounds of the longevity boom. They reliably
+  raise blood NAD+ — and so far that is nearly the whole human story.
+typicalDose: "250–1000 mg/day"
+studiedDose: "250–2000 mg/day"
+ul: none established
+hype: true
+reviewed: 2026-08-30
+reviewer: "draft — unverified"
+doseGuide:
+  studiedMinMg: 250
+  studiedMaxMg: 2000
+claims:
+  - outcome: raising blood NAD+ levels
+    cat: metabolic
+    grade: B
+    effect: large
+    species: human-rct
+    flags: [biomarker-only, industry-funded]
+    studies:
+      - cite: Martens et al.
+        year: 2018
+        url: https://doi.org/10.1038/s41467-018-03421-7
+        species: human
+        design: RCT, double-blind crossover
+        n: 24
+        duration: 6 weeks
+        dose: 1000 mg NR/day
+        funding: mixed
+        registry: NCT02921659
+        outcome: blood NAD+ metabolome, vascular measures
+        note: >-
+          NAD+ up ~60%, replicated across trials. Raising the biomarker is
+          settled; whether raising it does anything for aging humans is not.
+  - outcome: healthspan & lifespan extension
+    cat: longevity
+    grade: D
+    effect: moderate
+    species: rodent
+    flags: [rodent-only]
+    studies:
+      - cite: Mills et al.
+        year: 2016
+        url: https://doi.org/10.1016/j.cmet.2016.09.013
+        species: rodent
+        design: controlled long-term study
+        n: 80
+        duration: 12 months
+        dose: 100–300 mg/kg/day NMN
+        funding: mixed
+        outcome: metabolic decline, physical function in aging mice
+        note: >-
+          Broad improvements in aging mice. Nobody has tested this endpoint in
+          humans, and at these doses nobody soon will.
+  - outcome: insulin sensitivity in prediabetic women
+    cat: metabolic
+    grade: C
+    effect: small
+    species: human-rct
+    flags: [biomarker-only]
+    studies:
+      - cite: Yoshino et al.
+        year: 2021
+        url: https://doi.org/10.1126/science.abe9985
+        species: human
+        design: RCT, double-blind
+        n: 25
+        duration: 10 weeks
+        dose: 250 mg NMN/day
+        funding: public
+        registry: NCT03151239
+        outcome: muscle insulin sensitivity (clamp)
+        note: >-
+          A real but isolated metabolic signal in one small, specific population.
+history: []

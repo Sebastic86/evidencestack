@@ -1,0 +1,45 @@
+name: Glycine
+synonyms: [aminoacetic acid]
+forms: "free amino acid powder"
+cats: [sleep, metabolic]
+blurb: >-
+  The smallest amino acid, cheap and abundant in food. Sold for sleep on a handful
+  of small trials, and studied in combination with NAC in older adults.
+typicalDose: "3 g before bed"
+studiedDose: "3 g/day (sleep trials); 100 mg/kg/day (GlyNAC trials)"
+ul: none established
+reviewed: 2026-08-30
+reviewer: "draft — unverified"
+doseGuide:
+  studiedMinMg: 3000
+  studiedMaxMg: 3000
+claims:
+  - outcome: subjective sleep quality
+    cat: sleep
+    grade: C
+    effect: small
+    species: human-rct
+    flags: [industry-funded]
+    studies:
+      - cite: Yamadera et al.
+        year: 2007
+        url: https://doi.org/10.1111/j.1479-8425.2007.00262.x
+        species: human
+        design: RCT, single-blind crossover
+        n: 11
+        duration: acute (single nights)
+        dose: 3 g before bed
+        funding: industry
+        outcome: polysomnography, subjective sleep quality
+        note: >-
+          Faster sleep onset and better-rated sleep — in eleven people, funded by
+          the amino-acid manufacturer. Cheap enough that nobody has run the big
+          trial.
+  - outcome: oxidative stress in older adults (with NAC)
+    cat: metabolic
+    grade: C
+    effect: unclear
+    species: human-rct
+    flags: [biomarker-only]
+    studies: []
+history: []

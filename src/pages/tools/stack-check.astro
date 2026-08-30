@@ -1,0 +1,31 @@
+---
+import Layout from '../../components/Layout.astro';
+import StackChecker from '../../islands/StackChecker';
+import { allCompounds, doseGuides } from '../../lib/data';
+
+const compounds = await allCompounds();
+const guides = doseGuides(compounds);
+const options = compounds.map((c) => ({ id: c.id, name: c.data.name }));
+---
+
+<Layout
+  title="Stack overlap check"
+  description="Add your supplements and find doubled-up compounds, totals compared against studied doses and upper limits, and what each evidence grade costs you per month. Shareable by URL, no account."
+>
+  <div class="tool-head">
+    <h1>Stack overlap check</h1>
+    <p>
+      Add what you take — products or raw compounds with doses. You get duplicated compounds
+      with summed daily totals, each total compared against the doses used in studies and the
+      upper limit where one exists, and what you spend per month on each evidence grade. The
+      URL updates as you build the stack, so you can share or bookmark it — no account.
+    </p>
+  </div>
+  <StackChecker client:load guides={guides} options={options} />
+</Layout>
+
+<style>
+  .tool-head { padding: 32px 0 20px; max-width: 680px; }
+  h1 { font-size: 24px; font-weight: 800; margin: 0 0 10px; }
+  p { font-size: 14px; line-height: 1.55; color: var(--body-2); text-wrap: pretty; }
+</style>

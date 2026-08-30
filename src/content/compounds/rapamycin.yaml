@@ -1,0 +1,63 @@
+name: Rapamycin
+synonyms: [sirolimus, mTOR inhibitor]
+forms: "prescription drug — reference entry, not a supplement"
+cats: [longevity]
+blurb: >-
+  A prescription immunosuppressant and the most robust lifespan-extending
+  intervention in mammals to date. Included as a reference point: this is what
+  strong animal longevity evidence actually looks like — and it still isn't a
+  supplement.
+typicalDose: "not applicable — prescription only"
+studiedDose: "longevity dosing in humans is experimental (off-label, typically weekly)"
+ul: not applicable
+caution: >-
+  An immunosuppressant with real side effects (infections, metabolic changes,
+  impaired wound healing). Off-label longevity use is self-experimentation under
+  medical supervision, not supplementation.
+reviewed: 2026-08-30
+reviewer: "draft — unverified"
+claims:
+  - outcome: lifespan extension
+    cat: longevity
+    grade: D
+    effect: large
+    species: rodent
+    flags: [rodent-only]
+    studies:
+      - cite: Harrison et al. (NIA ITP)
+        year: 2009
+        url: https://doi.org/10.1038/nature08221
+        species: rodent
+        design: multi-site controlled lifespan study
+        n: 1901
+        duration: from 20 months of age to death
+        dose: 14 ppm in feed
+        funding: public
+        outcome: lifespan in genetically heterogeneous mice
+        note: >-
+          9–14% median lifespan extension, started late in life, replicated
+          across three sites and many follow-ups. The best animal longevity
+          result there is — and still grade D, because no human lifespan data
+          exists or is likely soon.
+  - outcome: improved vaccine response in older adults (low-dose mTOR inhibition)
+    cat: longevity
+    grade: C
+    effect: small
+    species: human-rct
+    flags: [industry-funded, biomarker-only]
+    studies:
+      - cite: Mannick et al.
+        year: 2014
+        url: https://doi.org/10.1126/scitranslmed.3009892
+        species: human
+        design: RCT, double-blind (everolimus)
+        n: 218
+        duration: 6 weeks
+        dose: 0.5 mg/day – 5 mg/week everolimus
+        funding: industry
+        registry: NCT01190800
+        outcome: influenza vaccine antibody titers
+        note: >-
+          ~20% better vaccine response at low doses — the closest thing to a
+          human "aging" endpoint for this pathway, using a related drug.
+history: []
