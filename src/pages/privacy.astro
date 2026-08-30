@@ -1,0 +1,152 @@
+---
+import Layout from '../components/Layout.astro';
+import { CONTACT_EMAIL } from '../config';
+
+const contact = CONTACT_EMAIL.trim();
+const updated = '30 August 2026';
+---
+
+<Layout
+  title="Privacy"
+  description="What Evidence Stack collects: no cookies, no analytics, no third-party scripts. Only a newsletter email address, processed by Buttondown, and standard web server logs."
+>
+  <article>
+    <div class="page-head">
+      <div class="micro-label kicker">Last updated {updated}</div>
+      <h1>Privacy</h1>
+      <p class="lede">
+        Reading this site leaves nothing behind but an ordinary web server log line. There are
+        no cookies, no analytics, no tracking pixels and no third-party scripts — pages, fonts
+        and data all come from this domain. The only personal data collected on purpose is an
+        email address, and only if you type one into the newsletter form.
+      </p>
+    </div>
+
+    <section>
+      <h2>What the site does not do</h2>
+      <p>
+        No cookies are set, and nothing is stored in your browser. No analytics or measurement
+        service runs on any page. No content is loaded from another company's servers: the
+        typefaces are served from this domain rather than from a font CDN, and there are no
+        embeds, share buttons or ad tags. Nothing on this site is sold or handed to anyone for
+        advertising, and there is no profiling of any kind.
+      </p>
+    </section>
+
+    <section>
+      <h2>The newsletter</h2>
+      <p>
+        The footer form submits directly to <b>Buttondown</b>, a newsletter service operated
+        from the United States. Submitting it sends Buttondown your email address, along with
+        the details any web request carries — your IP address, browser user agent and the time
+        — plus whatever delivery records the service keeps for mail it sends. Buttondown is our
+        processor: it stores and sends on our instructions and for no other purpose.
+      </p>
+      <p>
+        The address is used for one thing: an email when a claim's grade moves. No digests, no
+        news feed, no other mailings, and the list is never shared, sold or rented. The legal
+        basis is your consent, given by submitting the form and withdrawn at any time — every
+        email carries an unsubscribe link, and unsubscribing stops the mailing. Ask, and the
+        address is deleted outright rather than only suppressed.
+      </p>
+      <div class="pending">
+        <div class="micro-label pending-label">TO BE CONFIRMED</div>
+        <p>
+          The lawful transfer mechanism for sending personal data to a US processor is not yet
+          stated here. It is being confirmed and will be named on this page.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Server logs</h2>
+      <p>
+        The web server records ordinary access logs: IP address, timestamp, requested URL,
+        response status, browser user agent and referring page. These exist to keep the site
+        running and to spot abuse, and they are not linked to any newsletter address or used to
+        build a profile.
+      </p>
+      <div class="pending">
+        <div class="micro-label pending-label">TO BE CONFIRMED</div>
+        <p>
+          The hosting provider and how long these logs are kept are not yet stated here.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <h2>How long anything is kept</h2>
+      <p>
+        A newsletter address is kept until you unsubscribe or ask for it to be deleted, and no
+        separate copy of the list is kept outside Buttondown. Server log retention is the
+        open question above. Everything else — the register itself — is public research
+        content and contains no personal data about readers.
+      </p>
+    </section>
+
+    <section>
+      <h2>Your rights</h2>
+      <p>
+        Under the GDPR you can ask what data is held about you, have it corrected or deleted,
+        object to or restrict its use, receive a copy of it, and withdraw consent at any time.
+        For the newsletter, unsubscribing withdraws consent and stops the mailing; the rest
+        work by asking, and are done rather than argued with. You can also complain to a data
+        protection supervisory authority.
+      </p>
+      <div class="pending">
+        <div class="micro-label pending-label">TO BE CONFIRMED</div>
+        <p>
+          The supervisory authority to complain to depends on where the operator is
+          established. It will be named here once the operator record on the
+          <a href="/about/">about page</a> is complete.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Who is responsible, and how to reach them</h2>
+      {contact ? (
+        <p>
+          Data protection requests go to <a href={`mailto:${contact}`}>{contact}</a>, the same
+          address as corrections. The operator record is on the
+          <a href="/about/">about page</a>.
+        </p>
+      ) : (
+        <p>
+          The controller is the operator of this site, in the European Union. The operator's
+          legal name and a contact address are not published yet — which means there is
+          currently no way to send a request, and this notice is incomplete until there is.
+          Both will appear here and on the <a href="/about/">about page</a>. Until then, the
+          unsubscribe link in any email remains the working route for removing an address.
+        </p>
+      )}
+    </section>
+
+    <section>
+      <h2>Changes</h2>
+      <p>
+        If what the site collects changes, this page changes with it and the date at the top
+        moves. The site's full edit history, this page included, is kept in version control.
+      </p>
+    </section>
+  </article>
+</Layout>
+
+<style>
+  article { max-width: 720px; padding: 32px 0 48px; }
+  .kicker { color: var(--green-text); letter-spacing: 0.14em; margin-bottom: 10px; }
+  .page-head h1 { font-size: 28px; font-weight: 800; margin: 0 0 12px; }
+  .lede { font-size: 16px; line-height: 1.55; color: var(--body); text-wrap: pretty; }
+  section { margin-top: 32px; }
+  h2 { font-size: 18px; font-weight: 700; margin: 0 0 10px; }
+  p { font-size: 14px; line-height: 1.6; color: var(--body); margin: 0 0 10px; }
+  .pending {
+    margin-top: 14px;
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--amber);
+    background: var(--paper);
+    padding: 12px 16px;
+  }
+  .pending-label { color: var(--amber); margin-bottom: 4px; }
+  .pending p { font-size: 13px; margin: 0; }
+</style>
