@@ -11,11 +11,13 @@ interface Entry {
 
 /**
  * Empty state demonstrates the point instead of asking for input: the cheaper
- * bottle loses on cost per gram of elemental magnesium.
+ * bottle loses on cost per gram of elemental magnesium. The form factors are
+ * real; the prices are made up to make the arithmetic legible, and no brand is
+ * named. Typing over a row replaces it with a real product.
  */
 const DEMO: Entry[] = [
-  { name: 'DailyBasics Magnesium Citrate 375 mg', priceEur: '5.99', servings: '60', doseMg: '375', formKey: 'magnesium:citrate' },
-  { name: 'PowderWorks Magnesium Oxide 500 mg', priceEur: '12.99', servings: '120', doseMg: '500', formKey: 'magnesium:oxide' },
+  { name: 'Example — magnesium citrate 375 mg', priceEur: '5.99', servings: '60', doseMg: '375', formKey: 'magnesium:citrate' },
+  { name: 'Example — magnesium oxide 500 mg', priceEur: '12.99', servings: '120', doseMg: '500', formKey: 'magnesium:oxide' },
 ];
 
 const EMPTY: Entry = { name: '', priceEur: '', servings: '', doseMg: '', formKey: 'active' };
@@ -63,6 +65,18 @@ export default function CostCalculator() {
 
   return (
     <div>
+      <div
+        class="card"
+        style={{ borderLeft: '3px solid var(--amber)', padding: '12px 16px', marginBottom: '14px', fontSize: '13px', lineHeight: 1.5 }}
+      >
+        <span class="micro-label" style={{ fontSize: '10px', color: 'var(--amber)', marginRight: '8px' }}>
+          WORKED EXAMPLE
+        </span>
+        The calculator preloads two magnesium rows to show how the conversion behaves. The
+        percentages are real; the prices are invented, and no product on the market is being
+        described. Type over them with the labels of products you are actually looking at.
+      </div>
+
       {results.map((r, i) => (
         <div class="card" style={{ marginBottom: '14px', padding: '14px 16px' }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: '10px 14px' }}>

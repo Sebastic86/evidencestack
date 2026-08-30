@@ -9,12 +9,22 @@ import '../styles/global.css';
 import Header from './Header.astro';
 import Footer from './Footer.astro';
 import { SITE_NAME } from '../config';
+import { serializeJsonLd } from '../lib/jsonld';
 
 interface Props {
   title: string;
   description: string;
+  /**
+   * Optional schema.org node (or array of them) for this page, built by
+   * `src/lib/jsonld.ts`. Serialised there, not here — see that file for what
+   * this site deliberately does not assert in structured data.
+   */
+  jsonLd?: unknown;
 }
-const { title, description } = Astro.props;
+const { title, description, jsonLd } = Astro.props;
+// The JSON-LD block below must use `set:html`. As a plain child expression Astro
+// would HTML-escape every quote in the JSON and emit an unparseable block — and
+// nothing short of a browser would notice. `is:inline` keeps the bundler off it.
 const fullTitle = title === SITE_NAME ? title : `${title} — ${SITE_NAME}`;
 const canonical = new URL(Astro.url.pathname, Astro.site);
 const favicon =
@@ -36,6 +46,11 @@ const favicon =
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonical} />
     <meta property="og:site_name" content={SITE_NAME} />
+    {
+      jsonLd && (
+        <script type="application/ld+json" is:inline set:html={serializeJsonLd(jsonLd)}></script>
+      )
+    }
   </head>
   <body>
     <div class="page">
