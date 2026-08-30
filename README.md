@@ -28,9 +28,13 @@ One YAML file per compound in `src/content/compounds/`. Claims are ordered **bes
 
 ## Deploy (Coolify)
 
+Live at **https://evidencestack.sebastienwouters.dev** — Coolify project `evidencestack`, environment `production`, build pack **Dockerfile**, `SITE_URL` set as a build-time env var. Pushing to `main` and redeploying in Coolify ships the change.
+
+To recreate elsewhere:
+
 1. Push this repo to a git remote Coolify can reach.
-2. In Coolify: **New resource → Application → your repo**, build pack **Dockerfile**.
-3. Set build arg `SITE_URL=https://yourdomain.tld` (canonical URLs + sitemap), attach the domain, deploy.
+2. In Coolify: **New resource → Application → your repo**, build pack **Dockerfile**, exposed port **80**.
+3. Set the domain, and add `SITE_URL=https://yourdomain.tld` as a build-time env var (canonical URLs + sitemap).
 
 The container is nginx serving static files — a few MB of RAM. For scale, put free Cloudflare in front, or move `dist/` to any static host unchanged.
 
