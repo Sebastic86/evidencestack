@@ -317,7 +317,15 @@ A `Dataset` node on `/compounds/` and one per compound page, built in `src/lib/j
 
 ---
 
-## Before launch — undo the beta noindex
+## Before launch — undo the beta lockdown
+
+**The site is behind HTTP basic auth.** Enabled 2026-08-30 in Coolify → `evidencestack` → Configuration → General → HTTP Basic Auth. It runs at the Traefik proxy, *in front of* the container, which is why the `HEALTHCHECK` (`wget http://127.0.0.1/`, below the proxy) still passes and deploys still go `running:healthy`. Verified: every path returns 401, including `/api/compounds.json` and `/api/compounds/<id>.json` — a rule covering only `/` would have left the whole register readable as JSON.
+
+- Nothing about it lives in this repo, so there is no credential in git and nothing to strip out. Turning it off is the same two fields in the Coolify UI.
+- It is **not** a substitute for the noindex below, and vice versa. Auth stops crawlers with a 401; the noindex still stands if auth is ever lifted for a demo or a stakeholder. Two independent switches, deliberately.
+- Not verified by anyone but you: that the credentials actually *admit* someone. A mis-entered password looks identical from outside — 401 either way.
+
+### Undo the beta noindex
 
 **The site is deliberately not indexable.** Three places enforce it and **all three must change together**, or the site half-launches:
 
