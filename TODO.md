@@ -317,6 +317,24 @@ A `Dataset` node on `/compounds/` and one per compound page, built in `src/lib/j
 
 ---
 
+## Before launch — undo the beta noindex
+
+**The site is deliberately not indexable.** Three places enforce it and **all three must change together**, or the site half-launches:
+
+1. `NOINDEX = true` in `src/config.ts` → set to `false`. Removes `<meta name="robots" content="noindex, nofollow, noarchive">` from every page and restores the `<link rel="sitemap">`.
+2. `nginx.conf` → delete all four copies of the `X-Robots-Tag` line. This is the authoritative half: it covers the JSON API, the sitemap and every non-HTML response, which a meta tag cannot reach.
+3. `public/robots.txt` → uncomment the `Sitemap:` line.
+
+**Do not "fix" this by adding `Disallow: /`.** robots.txt governs crawling, not indexing. A disallowed URL can still be listed in results from third-party links, and a blocked crawler never fetches the page — so it never reads the noindex and the URL stays indexed. Blocking would make the site *more* likely to appear, not less. Crawling is allowed on purpose.
+
+Verify after any change to this, on the live site:
+```
+curl -sI https://evidencestack.sebastienwouters.dev/ | grep -i x-robots-tag
+curl -s  https://evidencestack.sebastienwouters.dev/ | grep -i 'name="robots"'
+```
+
+---
+
 ## Notes for whoever picks this up
 
 - `npm run build` is the content CI — a schema violation fails the build. Run it before assuming a YAML edit is valid.

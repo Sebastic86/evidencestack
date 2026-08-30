@@ -1,6 +1,20 @@
+# Evidence Stack is in beta and is deliberately kept out of search results.
+#
+# Crawling is ALLOWED on purpose. Every response carries
+# "X-Robots-Tag: noindex, nofollow" (nginx.conf) and every page a
+# <meta name="robots" content="noindex"> tag (NOINDEX in src/config.ts).
+# A crawler has to fetch a page to see those. "Disallow: /" would block the
+# fetch, so the noindex would never be read — and a blocked URL can still be
+# listed in results from third-party links. Blocking here would make the site
+# MORE likely to appear, not less.
+#
+# The sitemap is withheld while in beta: it exists at /sitemap-index.xml but
+# advertising it only invites crawl budget for pages that must not be indexed.
+#
+# To launch: set NOINDEX to false in src/config.ts, drop the X-Robots-Tag
+# lines from nginx.conf, and restore the Sitemap line below.
+
 User-agent: *
 Allow: /
 
-# Absolute URL, per the robots.txt spec. Keep in step with SITE_URL,
-# the build-time env var set in Coolify.
-Sitemap: https://evidencestack.sebastienwouters.dev/sitemap-index.xml
+# Sitemap: https://evidencestack.sebastienwouters.dev/sitemap-index.xml
