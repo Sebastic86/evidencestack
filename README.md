@@ -60,7 +60,7 @@ The container is nginx serving static files — a few MB of RAM. For scale, put 
 
 ## Before launch
 
-- [ ] Create the Buttondown account and set `BUTTONDOWN_USERNAME` in `src/config.ts`
+- [x] Create the Buttondown account and set `BUTTONDOWN_USERNAME` in `src/config.ts`
 - [ ] Pick the domain and set `SITE_URL`
 - [ ] Editorial review of every compound record (then set a real `reviewer`)
 - [ ] Add real product records (label data and prices from named retailers) to bring back the cost snapshot

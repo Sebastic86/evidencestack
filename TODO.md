@@ -145,7 +145,7 @@ A trap worth recording: `CRD42019156594` appears in Mah & Pitre's text but belon
 - [ ] Hosting provider name and access-log retention. nginx logs to stdout, Coolify retains container logs, retention period unknown.
 - [ ] Transfer mechanism for sending addresses to Buttondown in the US.
 - [ ] Which supervisory authority readers complain to — depends on member state.
-- [ ] Verify Buttondown actually *deletes* on request rather than only suppressing. The privacy page commits to deletion; that promise has to be honourable through Buttondown's UI or API.
+- [ ] Verify Buttondown actually *deletes* on request rather than only suppressing. The privacy page commits to deletion; that promise has to be honourable through Buttondown's UI or API. **Now directly testable** — there is a real confirmed subscriber on the list (the operator's own address, added 2026-08-31); delete it through the UI and check whether the record is gone or merely suppressed.
 - [ ] "No separate copy of the list is kept outside Buttondown" is a promise about future workflow, not just about code. Keep it true.
 
 Legal sufficiency was not assessed. The pages say what such pages need to say, with the facts left blank.
@@ -154,8 +154,14 @@ Legal sufficiency was not assessed. The pages say what such pages need to say, w
 
 ## P1 — Needed before promoting the site anywhere
 
-### 6. Register the Buttondown account `evidencestack` *(user action, not agent)*
-`BUTTONDOWN_USERNAME` in `src/config.ts` is set to `evidencestack`, but that newsletter does not exist yet — the signup form will 404 until it is claimed. If a different name is registered, change that one constant and redeploy.
+### 6. Register the Buttondown account `evidencestack` — **DONE 2026-08-31**
+The newsletter exists at `buttondown.com/evidencestack`, so `BUTTONDOWN_USERNAME` in `src/config.ts` is correct as it stands and no code change was needed.
+
+Verified end to end rather than assumed: the built site was served locally and the real footer form driven in a headless browser, submitting one live subscription. The rendered form posts `embed=1` and `email` to `https://buttondown.com/api/emails/embed-subscribe/evidencestack`, and Buttondown accepted it. The first subscriber then confirmed by email, so the whole path — form → endpoint → confirmation → active subscriber — is proven working.
+
+- Double opt-in is **on and cannot be turned off from the UI**; Buttondown mandates it, and overriding it needs their support to set a hidden `should_require_double_optin`. So the embed endpoint's "You've successfully subscribed" page is generic and does *not* mean the address is active — new subscribers sit at `unactivated` until they click the link. Do not read that page as proof of anything.
+- Untested: the live site's CSP. The local preview serves no headers, so `form-action 'self' https://buttondown.com` in `nginx.conf` has not actually been exercised against a real submission. Re-test from the deployed site once basic auth comes off.
+- Worth doing: the confirmation email's copy is Buttondown's default (**Settings → Subscribing → Confirmation**). It is the first thing a subscriber ever receives from this site, and the footer promises "one email when a grade moves, regrade events only" — the confirmation should say the same thing.
 
 ### 7. Content depth is roughly half the spec
 Spec calls for 3–6 claims per compound and 4–10 studies per compound: ~60–120 claims and ~80–200 studies. Current totals are **48 claims and 40 studies**. Fifteen of 20 compounds are thin stubs. Depends on item 1 — verify as you add, do not bulk-generate more unverified records.
