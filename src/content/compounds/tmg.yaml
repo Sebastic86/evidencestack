@@ -29,7 +29,23 @@ claims:
         n: 76
         duration: 6 weeks
         dose: 1.5–6 g/day
-        funding: public
+        funding: mixed
+        checked:
+          funding:
+            on: 2026-08-31
+            outcome: corrected
+            source: 'https://web.archive.org/web/20191228212052id_/https://academic.oup.com/jn/article/133/12/4135/4687457'
+            note: >-
+              Was public. The corrected DOI resolves, and the article's own
+              footnote 2 reads "Funded by the Wageningen Centre for Food
+              Sciences, an alliance of major Dutch food industries, University of
+              Maastricht, TNO Nutrition and Food Research, and Wageningen
+              University and Research Centre, with financial support by the Dutch
+              government." A public-private consortium that names the food
+              industry as a constituent funder alongside government money is
+              mixed, not public. Reached through an archived copy of the Oxford
+              Academic page; the live publisher pages (OUP, ScienceDirect) both
+              403, which is why the earlier pass recorded this as unreachable.
         outcome: plasma homocysteine
         note: >-
           Dose-dependent ~10–20% reduction, well replicated. Whether lowering
@@ -49,7 +65,26 @@ claims:
         n: 317
         duration: at least 7 days of chronic supplementation
         dose: not stated in the abstract
-        funding: not-declared
+        funding: none
+        checked:
+          funding:
+            on: 2026-08-31
+            outcome: corrected
+            source: 'https://web.archive.org/web/20250531142805id_/https://www.tandfonline.com/doi/full/10.1080/02640414.2024.2423578'
+            note: >-
+              Was not-declared, which under-reported it. The paper does declare,
+              and what it declares is nothing: "Funding: The author(s) reported
+              there is no funding associated with the work featured in this
+              article." The disclosure statement adds "No potential conflict of
+              interest was reported by the author(s)." An explicitly unfunded
+              independent meta-analysis is a different fact from silence, so this
+              is the first use of funding: none. Reached through an archived copy
+              of the Taylor & Francis page; the live page 403s, which is why the
+              record's own note still says funding could not be verified past the
+              abstract. That sentence is now stale. The archived copy carries the
+              abstract and the end matter but not the methods, so the absence of
+              a PROSPERO registration could not be confirmed either way and none
+              was added.
         outcome: maximal strength, sprint and throw power, muscular endurance, vertical jump
         note: >-
           Splits the claim in two. Maximal strength improved (SMD 0.47), driven
@@ -57,6 +92,13 @@ claims:
           touches zero. Power did not: no effect on cycling sprint power, bench
           press throw power, upper body strength or muscular endurance. Vertical
           jump improved only after a low-quality study was removed. 317 people
-          across 17 trials, 21% of them female. The full text is paywalled with
-          no open copy, so funding could not be verified past the abstract.
+          across 17 trials, 21% of them female. The end matter has since been
+          read, through an archived copy of the publisher's own page, and the
+          authors state outright that "there is no funding associated with the
+          work featured in this article" and that no conflict of interest was
+          reported. That is a declaration of having received nothing, not
+          silence about the question, which is what the funding field on this
+          record now records. The archived copy carries the abstract and the end
+          matter but not the methods, so whether this review was registered in
+          advance is still unknown.
 history: []

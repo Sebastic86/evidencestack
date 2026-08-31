@@ -30,6 +30,23 @@ claims:
         duration: 2 years
         dose: 300 mg/day
         funding: industry
+        checked:
+          funding:
+            on: 2026-08-31
+            outcome: confirmed
+            source: "https://www.isrctn.com/api/query/format/who?q=ISRCTN94506234"
+            note: >-
+              No funding sentence in the paper was read — the full text is
+              behind Elsevier's bot protection and the bronze open-access PDF
+              returns 403. This rests on the trial's own ISRCTN registry record,
+              whose sources-of-support line reads "Pharma Nord ApS (Denmark),
+              International Coenzyme Q10 Association (Italy), Kaneka Corporation
+              of Osaka (Japan)" — Pharma Nord and Kaneka both sell CoQ10.
+              Crossref and Europe PMC independently deposit Kaneka Corp. and the
+              International Coenzyme Q10 Association as funders. The same
+              registry record confirms ISRCTN94506234 belongs to Q-SYMBIO by
+              title, which matters: this record previously carried NCT00374465,
+              a real ID belonging to an unrelated heart-failure trial.
         registry: ISRCTN94506234
         outcome: major adverse cardiovascular events, mortality
         note: >-
@@ -52,6 +69,24 @@ claims:
         duration: 30–90 days
         dose: "100–600 mg/day"
         funding: mixed
+        checked:
+          funding:
+            on: 2026-08-31
+            outcome: confirmed
+            source: https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12554813/fullTextXML
+            note: >-
+              Financial statement read in full text: "Financial support was
+              provided by the Society for Applied Vitamin Research (GVF, Jena,
+              Germany)", with "The authors declare no conflict of interest."
+              Funding was declared, so not-declared would be wrong; the sole
+              funder is a scientific society, so neither public nor a named
+              manufacturer fits. Moving it to industry would require inferring
+              GVF's character from its corporate membership, which is the kind
+              of inference this register exists to avoid. Mixed is the
+              least-wrong value the enum allows, and this reviews the call left
+              open in TODO item 3b. The registration was read in the same text:
+              "registered on the PROSPERO register (registration number
+              CRD42023467604)."
         registry: PROSPERO CRD42023467604
         outcome: statin-associated muscle symptoms, measured as pain intensity
         note: >-
@@ -75,6 +110,18 @@ claims:
         duration: not stated in the abstract
         dose: not stated in the abstract
         funding: not-declared
+        checked:
+          funding:
+            on: 2026-08-31
+            outcome: unreachable
+            note: >-
+              No funding statement reached, so the existing value stands
+              unverified. Unpaywall and Semantic Scholar both report this as a
+              CC-BY hybrid open-access paper, but every route to the text —
+              the DOI, the journal's own article and PDF URLs — redirects into
+              Elsevier's bot protection and returns no document. There is no
+              PubMed Central record, and Crossref deposits no funder.
+              Nominally open and undeliverable in practice.
         outcome: myalgia symptom scores, and whether patients stayed on their statin
         note: >-
           The opposite conclusion from an overlapping trial set: no benefit on

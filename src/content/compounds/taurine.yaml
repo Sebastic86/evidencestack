@@ -32,6 +32,24 @@ claims:
         duration: lifelong from middle age
         dose: 1000 mg/kg/day
         funding: public
+        checked:
+          funding:
+            on: 2026-08-31
+            outcome: confirmed
+            source: 'https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pmc&id=10630957&retmode=xml'
+            note: >-
+              "Funding: Nathan Shock Center of Excellence in the Basic Biology of
+              Aging Project Grant (VKY), NIH R01HD107574 (VKY), Wellcome 098051
+              (VKY), DFG 450149205-TRR333/1, NIH P30AG013280, NIH T32AG066574,
+              INCa PLBIO21-228, SERB STR/2019/00064, DBT
+              BT/PR40325/BTIS/137/1/2020, Longevity Impetus Grant, The Academy of
+              Finland Center of Excellence in Complex Disease Genetics …, The
+              Sigrid Juselius Foundation, The Larry L. Hillblom Foundation
+              Fellowship, VCA Fellowship MCRF21002, DBT Ramalingaswamy
+              Fellowship (VKY)." Government agencies and academic foundations
+              throughout, no manufacturer. Separately from funding, the competing
+              interests read "Columbia University has filed provisional patent
+              applications for which VKY is an inventor."
         outcome: median lifespan, healthspan measures in mice
         note: >-
           ~10–12% longer median lifespan in mice, plus monkey health markers. The
@@ -53,6 +71,22 @@ claims:
         duration: 5–365 days
         dose: "0.5–6 g/day"
         funding: public
+        checked:
+          funding:
+            on: 2026-08-31
+            outcome: confirmed
+            source: 'https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11099170/fullTextXML'
+            note: >-
+              "Funding: This study was funded by the National Taiwan University
+              Hospital, Bei-Hu Branch (11302, 113-BH002, 11304 and 113-BH004),
+              Ministry of Science and Technology, Taiwan (MOST
+              106-2314-B-002-180-MY3 and MOST 109-2314-B-002-114-MY3) and
+              National Science and Technology, Taiwan (NSTC
+              112-2314-B-002-134)." Competing interests: "The authors declare no
+              competing interests." The registry ID on this record was
+              re-checked against the paper's own methods in the same fetch and is
+              real: "The review was registered on Inplasy.com under number
+              (INPLASY2023120081)."
         registry: INPLASY2023120081
         outcome: systolic and diastolic blood pressure, fasting glucose, triglycerides, HDL-C
         note: >-

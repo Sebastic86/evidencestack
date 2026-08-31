@@ -35,12 +35,41 @@ claims:
         n: 4000
         duration: mixed
         dose: 2–4 g EPA+DHA/day
-        funding: public
+        funding: not-declared
+        checked:
+          funding:
+            on: 2026-08-31
+            outcome: corrected
+            source: 'https://web.archive.org/web/20210318211936id_/https://www.ahajournals.org/doi/full/10.1161/CIR.0000000000000709'
+            note: >-
+              Was public. The advisory declares no funding at all: the full text
+              was searched end to end and contains no "Sources of Funding"
+              section and no "supported by" sentence. The only provenance
+              statement is the footnote "This advisory was approved by the
+              American Heart Association Science Advisory and Coordinating
+              Committee on April 1, 2019, and the American Heart Association
+              Executive Committee on April 22, 2019." The writing-group
+              disclosure table is not empty, though: W.S. Harris is employed by
+              OmegaQuant Analytics, LLC and declares ownership interest in it,
+              T.A. Jacobson declares "Amarin (Steering Committee-REDUCE-IT
+              Trial)" as a research grant, and E.A. Brinton declares Amarin and
+              Kowa steering-committee grants plus Amarin honoraria. Those are
+              member disclosures, not a funder of the document, so they do not
+              make this industry.
         outcome: fasting triglycerides
         note: >-
           20–30% reduction at prescription doses, replicated for decades. Grade A
           — but note the flag: triglycerides are a biomarker, not an outcome you
-          feel.
+          feel. This is a professional-society advisory rather than a trial, and
+          it declares no funding at all: it carries no sources-of-funding
+          section, only a note that the American Heart Association's own
+          committees approved it. Its writing-group disclosure table is not
+          empty, though. One member is employed by OmegaQuant Analytics and
+          declares an ownership interest in it, and two members declare having
+          sat on the steering committee of REDUCE-IT — the trial whose result
+          this advisory leans on. Those are disclosures by individual authors
+          rather than a funder of the document, which is why the funding field
+          reads not-declared and not industry.
   - outcome: cardiovascular events
     cat: cardiovascular
     grade: B
@@ -57,6 +86,16 @@ claims:
         duration: 4.9 years median
         dose: 4 g/day icosapent ethyl
         funding: industry
+        checked:
+          funding:
+            on: 2026-08-31
+            outcome: confirmed
+            source: 'https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI%3A%2210.1056%2FNEJMoa1812792%22&resultType=core&format=json'
+            note: >-
+              The paper's own abstract closes "(Funded by Amarin Pharma;
+              REDUCE-IT ClinicalTrials.gov number, NCT01492361.)". Amarin makes
+              icosapent ethyl, the tested product. The same sentence confirms the
+              registry ID already on this record.
         registry: NCT01492361
         outcome: major adverse cardiovascular events
         note: >-
@@ -71,6 +110,22 @@ claims:
         duration: 3.5 years median
         dose: 4 g/day EPA+DHA carboxylic acid
         funding: industry
+        checked:
+          funding:
+            on: 2026-08-31
+            outcome: confirmed
+            source: 'https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pmc&id=7667577&retmode=xml'
+            note: >-
+              "Funding/Support: The trial was funded by AstraZeneca AB and
+              coordinated by the Cleveland Clinic Coordinating Center for
+              Clinical Research (C5Research)." The Role of the Funder section
+              adds that "The sponsor, AstraZeneca Inc, participated actively in
+              designing the study in collaboration with the steering committee",
+              maintained the trial database, and was permitted to review the
+              manuscript, while final decisions on content stayed with the
+              academic authors. Five co-authors give an AstraZeneca affiliation.
+              Europe PMC's fullTextXML 404s for this PMCID; NCBI efetch returns
+              the front matter, which is where JAMA puts the funding statement.
         registry: NCT02104817
         outcome: major adverse cardiovascular events
         note: >-
@@ -85,6 +140,26 @@ claims:
         duration: 7.4 years
         dose: 840 mg/day EPA+DHA
         funding: mixed
+        checked:
+          funding:
+            on: 2026-08-31
+            outcome: confirmed
+            source: 'https://web.archive.org/web/20200614134203id_/https://www.nejm.org/doi/full/10.1056/NEJMoa1804989'
+            note: >-
+              "Supported by grants to the University of Oxford from the British
+              Heart Foundation. The Clinical Trial Service Unit at the University
+              of Oxford receives support from the U.K. Medical Research Council
+              …, the British Heart Foundation, and Cancer Research U.K. Bayer
+              (Germany) provided aspirin and placebo tablets that were used in
+              the trial, and Solvay, Abbott, and Mylan provided the n−3 fatty
+              acids and placebo. The companies and Bayer U.S. provided some
+              funding for drug packaging." That last sentence is what makes this
+              genuinely mixed rather than donation-only: the companies paid for
+              part of the trial, not just supplied product. The methods add that
+              "Mylan, Solvay, and Abbott had nonvoting representation at meetings
+              of the steering committee and provided comments regarding the trial
+              design and draft manuscript". The paper also carries a second
+              registry ID this field cannot hold, ISRCTN60635500.
         registry: NCT00135226
         outcome: serious vascular events, diabetics without CVD
         note: >-
@@ -106,6 +181,24 @@ claims:
         duration: mixed
         dose: mixed, mostly EPA-heavy
         funding: public
+        checked:
+          funding:
+            on: 2026-08-31
+            outcome: unreachable
+            note: >-
+              Not verified. A Cochrane review's funding lives in its "Sources of
+              support" section, which is in the full review body, and that body
+              is not retrievable: Europe PMC and NCBI efetch both return front
+              matter only for PMC8612309, Unpaywall reports the review closed,
+              Crossref carries no funder record, and the Cochrane Library and
+              Wiley both serve 403s. The archived Cochrane Library page is a
+              JavaScript shell. The nearest thing found is the PubMed
+              competing-interests statement, in which one author writes that she
+              "Leads and has responsibility for Cochrane Common Mental
+              Disorders, which has supported parts of the review process and is
+              largely funded by a grant from the National Institute for Health
+              Research (NIHR) in the UK" — that describes the editorial group,
+              not this review's funding, so public stands unverified.
         outcome: depressive symptom scales
         note: >-
           Small-to-modest benefit over placebo with low-certainty evidence and
@@ -126,6 +219,20 @@ claims:
         duration: 6–40 months
         dose: mixed
         funding: public
+        checked:
+          funding:
+            on: 2026-08-31
+            outcome: unreachable
+            note: >-
+              Not verified against a funding statement. Same wall as the other
+              Cochrane review here: PMC11830470 returns front matter only from
+              both Europe PMC and NCBI efetch, and the Cochrane Library PDF and
+              full-review page both 403. The only funding evidence found is
+              publisher/PubMed-deposited grant metadata, a single UK Medical
+              Research Council award, MC_U122785832 — consistent with public but
+              not a sentence in the paper. The competing-interests statement
+              declares that one author is principal investigator of an included
+              trial (Dangour 2010, the OPAL study).
         outcome: cognitive test batteries
         note: >-
           No effect on cognition in cognitively healthy older adults. Tested

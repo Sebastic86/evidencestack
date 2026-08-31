@@ -21,6 +21,16 @@ claims:
     studies:
       - cite: Oe et al.
         year: 2017
+        checked:
+          funding:
+            on: 2026-08-31
+            outcome: confirmed
+            source: https://www.ebi.ac.uk/europepmc/webservices/rest/PMC5522662/fullTextXML
+            note: >-
+              "This study was funded by the Kewpie Corporation." The disclosure
+              adds that six of the seven authors "are employees of Kewpie
+              Coroporation" (the paper's spelling). Registry JMA-IIA00234
+              verified in the full text.
         url: https://doi.org/10.2147/CCID.S141845
         species: human
         design: RCT, double-blind
@@ -42,6 +52,22 @@ claims:
     studies:
       - cite: Tashiro et al.
         year: 2012
+        checked:
+          funding:
+            on: 2026-08-31
+            outcome: confirmed
+            source: https://www.ebi.ac.uk/europepmc/webservices/rest/PMC3512263/fullTextXML
+            note: >-
+              Confirmed by absence, against the complete open-access full text
+              rather than a rendered extract. A sweep of the raw XML for
+              funding-group, financial-disclosure and COI-statement elements
+              returned nothing, and a keyword sweep of the article text for
+              fund, grant, conflict, competing, sponsor, financial and
+              disclosure returned exactly one sentence, an unrelated remark
+              about glucosamine. The paper declares no funding and no conflicts.
+              No trial registry ID appears anywhere in it. The Kewpie
+              affiliation recorded in the note is an affiliation, not a declared
+              funding source.
         url: https://doi.org/10.1100/2012/167928
         species: human
         design: RCT, double-blind, placebo-controlled

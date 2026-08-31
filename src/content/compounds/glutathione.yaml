@@ -21,6 +21,27 @@ claims:
     studies:
       - cite: Richie et al.
         year: 2015
+        checked:
+          funding:
+            on: 2026-08-31
+            outcome: confirmed
+            source: https://link.springer.com/article/10.1007/s00394-014-0706-z
+            note: >-
+              "This work was supported by Kyowa Hakko Bio Co., Ltd (JR).
+              Glutathione (Setria®) supplements and placebo were provided by
+              Kyowa Hakko Bio Co., Ltd." The declared interest reads "JPR
+              received research support for this study and travel funds to
+              present previous research findings from Kyowa Hakko Bio Co., Ltd.
+              Kyowa Hakko Bio Co., Ltd is a biotechnology and fermentation
+              company that provides glutathione (Setria®)." The manufacturer
+              funded the trial and supplied the product. The same acknowledgment
+              adds that "Immunological analyses were supported in part by the
+              Penn State Hershey Cancer Institute through the Clinical
+              Correlative Immunology Laboratory", which is an argument for
+              mixed; industry was kept because that covers one set of assays,
+              not the trial. Read from the publisher's landing page, which
+              carries the back matter — the full text itself is paywalled and
+              was not read.
         url: https://doi.org/10.1007/s00394-014-0706-z
         species: human
         design: RCT, double-blind
@@ -42,20 +63,38 @@ claims:
     studies:
       - cite: Arjinpathana & Asawanonda
         year: 2012
+        checked:
+          funding:
+            on: 2026-08-31
+            outcome: corrected
+            source: https://www.tandfonline.com/doi/full/10.3109/09546631003801619
+            note: >-
+              not-declared → industry. "This study was supported in part by JSP
+              Pharmaceuticals, Bangkok, Thailand. The sponsors had no role in
+              the design and conduct of the study; in the collection, analysis,
+              and interpretation of data; or in the preparation, review, or
+              approval of the manuscript." A pharmaceutical company supported a
+              trial of the compound it sells, and the record read not-declared.
+              The paper separately states "Declaration of interest: The authors
+              report no conflicts of interest." Read from the publisher's
+              landing page, which carries the acknowledgment and declaration —
+              the full text itself is paywalled and was not read, so the
+              registry status of this trial is still unchecked.
         url: https://doi.org/10.3109/09546631003801619
         species: human
         design: RCT, double-blind, placebo-controlled
         n: 60
         duration: 4 weeks
         dose: 500 mg/day in two divided doses
-        funding: not-declared
+        funding: industry
         outcome: mean reduction in melanin index at six skin sites (primary); UV spots and other secondary outcomes recorded by VISIA imaging
         note: >-
           Melanin index fell at all six measured sites, but the reduction beat
           placebo at only two of them — the right side of the face and the
           sun-exposed left forearm (p = 0.021 and 0.036). Sixty medical students
           over four weeks, all of whom completed, measuring skin colour with
-          instruments rather than anything a person would notice. The paper is
-          paywalled: these fields were checked against the published abstract,
-          which carries no funding statement.
+          instruments rather than anything a person would notice. The full text
+          is paywalled, but the publisher's landing page carries the back
+          matter: the study was supported in part by JSP Pharmaceuticals,
+          Bangkok, Thailand, and the authors report no conflicts of interest.
 history: []

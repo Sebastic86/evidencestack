@@ -29,6 +29,19 @@ claims:
     studies:
       - cite: Zhang et al.
         year: 2016
+        checked:
+          funding:
+            on: 2026-08-31
+            outcome: confirmed
+            source: https://www.ahajournals.org/doi/pdf/10.1161/HYPERTENSIONAHA.116.07664
+            note: >-
+              "Sources of Funding: The project described was supported by the
+              Indiana University Health–Indiana University School of Medicine
+              Strategic Research Initiative (Drs Zhang and Song)." followed by
+              "Disclosures: None." An institutional academic research
+              initiative, with no company named. No registry ID and no
+              statement of protocol registration appears anywhere in the paper,
+              so no PROSPERO number was added.
         url: https://doi.org/10.1161/HYPERTENSIONAHA.116.07664
         species: human
         design: meta-analysis of 34 RCTs
@@ -49,6 +62,18 @@ claims:
     studies:
       - cite: Abbasi et al.
         year: 2012
+        checked:
+          funding:
+            on: 2026-08-31
+            outcome: confirmed
+            source: https://www.ebi.ac.uk/europepmc/webservices/rest/PMC3703169/fullTextXML
+            note: >-
+              "Source of Support: This study is funded by National Nutrition and
+              Food Technology Research Institute of Shahid Beheshti University
+              of Medical Sciences", with "Conflict of Interest: None declared."
+              This record has no DOI and so is reachable only by PMID: Europe
+              PMC EXT_ID:23853635 resolves it to PMC3703169. No trial registry
+              ID appears in the full text.
         url: https://pubmed.ncbi.nlm.nih.gov/23853635/
         species: human
         design: RCT, double-blind
@@ -62,6 +87,24 @@ claims:
           population likely to be deficient at baseline.
       - cite: Mah & Pitre
         year: 2021
+        checked:
+          funding:
+            on: 2026-08-31
+            outcome: confirmed
+            source: https://www.ebi.ac.uk/europepmc/webservices/rest/PMC8053283/fullTextXML
+            note: >-
+              "Funding: The authors have not declared a specific grant for this
+              research from any funding agency in the public, commercial or
+              not-for-profit sectors.", with "Competing interests: None
+              declared." Kept as not-declared rather than none, and the choice
+              is arguable: this is a declaration that no specific grant was
+              received, which is closer to none than to silence, but it is not
+              the flat "no sources of funding were used" that none is for, and
+              the acknowledgments do record scholarship support for the primary
+              author's graduate studies. Left for a human. The review states its
+              own protocol was not registered; CRD42019156594 appears in its
+              text but belongs to another group's melatonin review in the
+              reference list, so no registry ID was added.
         url: https://doi.org/10.1186/s12906-021-03297-z
         species: human
         design: systematic review of 3 RCTs
@@ -82,6 +125,20 @@ claims:
     studies:
       - cite: Peikert et al.
         year: 1996
+        checked:
+          funding:
+            on: 2026-08-31
+            outcome: unreachable
+            note: >-
+              Value left unchanged; nothing here verifies it. Tried and failed:
+              Europe PMC has no PMC copy (inEPMC N), Crossref carries no
+              deposited funder record, Unpaywall and Semantic Scholar both
+              report no open copy, PubMed holds no conflict-of-interest
+              statement for this record, and the SAGE landing page the DOI now
+              resolves to is marked "Restricted access" and serves the abstract
+              only. A 1996 trial predates routine funding statements, so a
+              reachable full text might still declare nothing. Do not spend
+              another fetch on these routes.
         url: https://doi.org/10.1046/j.1468-2982.1996.1604257.x
         species: human
         design: RCT, double-blind
@@ -102,6 +159,23 @@ claims:
     studies:
       - cite: Simental-Mendía et al.
         year: 2016
+        checked:
+          funding:
+            on: 2026-08-31
+            outcome: unreachable
+            note: >-
+              Value left unchanged; nothing here verifies it. The corrected DOI
+              resolves to the right paper, but the paper is fully closed. Tried
+              and failed: Europe PMC has no PMC copy (inEPMC N), Crossref
+              carries no deposited funder record, OpenAlex reports oa_status
+              closed with no repository full text, Elsevier returns 403 to both
+              the linkinghub and ScienceDirect routes, and the University of
+              Western Australia repository record is metadata only. Do not spend
+              another fetch on these routes. Separately flagged for item 1 and
+              not touched here: this record's design, n and duration appear
+              nowhere in the retrievable abstract, and the note below reports
+              improvement in fasting glucose where the abstract reports it null
+              overall.
         url: https://doi.org/10.1016/j.phrs.2016.06.019
         species: human
         design: meta-analysis of 18 RCTs

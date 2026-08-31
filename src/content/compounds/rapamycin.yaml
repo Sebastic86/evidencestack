@@ -33,6 +33,17 @@ claims:
         duration: from 20 months of age to death
         dose: 14 ppm in feed
         funding: public
+        checked:
+          funding:
+            on: 2026-08-31
+            outcome: confirmed
+            source: 'https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pmc&id=2786175&retmode=xml'
+            note: >-
+              Acknowledgements: "This work was supported by NIA grants AG022303
+              (RAM), AG025707 and AG022308 (DEH), and AG022307 and AG13319 (RS),
+              and the Department of Veterans Affairs (RAM and RS)." All
+              government. Europe PMC's fullTextXML 404s for this PMCID; NCBI
+              efetch returns the body.
         outcome: lifespan in genetically heterogeneous mice
         note: >-
           9–14% median lifespan extension, started late in life, replicated
@@ -55,6 +66,26 @@ claims:
         duration: 6 weeks
         dose: 0.5 mg/day – 5 mg/week everolimus
         funding: industry
+        checked:
+          funding:
+            on: 2026-08-31
+            outcome: unreachable
+            note: >-
+              Funding statement not reached, so industry is left standing but
+              unverified. Science Translational Medicine is closed: not in PMC,
+              no PMCID, Unpaywall and Semantic Scholar both report it closed,
+              Crossref holds no funder record, science.org 403s, and the
+              archived copies of both the abstract and the .full page stop at the
+              paywall before the Funding and Competing Interests sections. What
+              the archived page does show is the author block — of twelve
+              authors, nine give a Novartis affiliation (Novartis Institutes for
+              BioMedical Research, Novartis Vaccines and Diagnostics, Novartis
+              Pharmaceuticals) and the corresponding address is
+              joan.mannick@novartis.com. That is affiliation, not a funding
+              statement, and is recorded here as context rather than as the basis
+              for the value. No trial registration number appears on any page
+              retrieved, so none was added; the previously removed NCT01190800
+              stays removed.
         outcome: influenza vaccine antibody titers
         note: >-
           ~20% better vaccine response at low doses — the closest thing to a

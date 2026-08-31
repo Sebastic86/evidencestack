@@ -24,6 +24,22 @@ claims:
     studies:
       - cite: Martens et al.
         year: 2018
+        checked:
+          funding:
+            on: 2026-08-31
+            outcome: confirmed
+            source: https://www.ebi.ac.uk/europepmc/webservices/rest/PMC5876407/fullTextXML
+            note: >-
+              "This work was supported by NIH grants AG000279 and TR001082 and
+              was completed while C.R.M. was a Glenn/AFAR Postdoctoral Fellow.
+              Study pills, NR standards for metabolite analyses and partial
+              funding support were provided by ChromaDex, Inc." Public money
+              plus partial funding and the study product from a company that
+              sells nicotinamide riboside, which is what mixed records. The
+              paper separately states "Competing interests: The authors declare
+              no competing interests." Registry NCT02921659 verified as this
+              study's own: "This trial is registered on ClinicalTrials.gov under
+              the identifier NCT02921659."
         url: https://doi.org/10.1038/s41467-018-03421-7
         species: human
         design: RCT, double-blind crossover
@@ -45,6 +61,22 @@ claims:
     studies:
       - cite: Mills et al.
         year: 2016
+        checked:
+          funding:
+            on: 2026-08-31
+            outcome: confirmed
+            source: https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pmc&id=PMC5668137&retmode=xml
+            note: >-
+              "This work was conducted thoroughly under a sponsored research
+              agreement between Washington University and Oriental Yeast Co."
+              The same acknowledgment thanks seven named people "in Oriental
+              Yeast Co. for their support to this sponsored research project",
+              alongside NIH grants R01 AG047902, P30 DK020579 and P30 DK056341,
+              which is what mixed records. It also discloses that one author is
+              a co-founder of Metro Midwest Biotech and another consults for
+              ChromaDex. No registry — this is a mouse study. Europe PMC returns
+              an empty body for this PMC id despite listing it as present; NCBI
+              efetch serves the full text.
         url: https://doi.org/10.1016/j.cmet.2016.09.013
         species: rodent
         design: controlled long-term study
@@ -65,6 +97,28 @@ claims:
     studies:
       - cite: Yoshino et al.
         year: 2021
+        checked:
+          funding:
+            on: 2026-08-31
+            outcome: confirmed
+            source: https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pmc&id=PMC8550608&retmode=xml
+            note: >-
+              "Funding: This study was supported by National Institutes of
+              Health grants DK56341, DK104995, AG037457, AG047902, the UC San
+              Diego IGM Genomics Center utilizing an Illumina NovaSeq 6000 that
+              was purchased with funding from a National Institutes of Health
+              SIG grant (#S10 OD026929), and support from the Tanaka Fund and
+              the Foundation for Barnes-Jewish Hospital." No company appears
+              among the funders. The acknowledgments do thank "Oriental Yeast
+              Co., Ltd. (Tokyo, Japan) for providing placebo and NMN capsules",
+              which is in-kind supply of the tested product rather than funding;
+              calling that mixed would be inference, so public was kept. The
+              declared interests are real and worth reading — one author
+              receives patent-licensing fees relating to NMN and another is
+              named on an NMN patent application — but they are author
+              interests, not funding. Registry NCT03151239 verified in the full
+              text. Europe PMC returns an empty body for this PMC id; NCBI
+              efetch serves the full text.
         url: https://doi.org/10.1126/science.abe9985
         species: human
         design: RCT, double-blind

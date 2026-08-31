@@ -22,6 +22,24 @@ claims:
     studies:
       - cite: Mori et al.
         year: 2009
+        checked:
+          funding:
+            on: 2026-08-31
+            outcome: unreachable
+            note: >-
+              Value left unchanged; nothing here verifies it. The full text is
+              paywalled at Wiley. Tried and failed: Europe PMC has no PMC copy
+              (inEPMC N), Crossref carries no deposited funder record, Unpaywall
+              and Semantic Scholar both report no open copy anywhere, and the
+              publisher landing page — reachable with a cookie jar, which is
+              what gets past Wiley's cookieAbsent redirect — serves only the
+              abstract, author affiliations and reference list, with no funding
+              or conflict-of-interest section. Do not spend another fetch on
+              these routes. Worth a human's attention: four of the five authors
+              give their affiliation as the Mushroom Laboratory of Hokuto
+              Corporation, a mushroom producer, and the corresponding author is
+              one of them. That is an affiliation, not a declared funding
+              source, and it is not evidence of who paid for the trial.
         url: https://doi.org/10.1002/ptr.2634
         species: human
         design: RCT, double-blind
@@ -42,6 +60,19 @@ claims:
     studies:
       - cite: Wong et al.
         year: 2011
+        checked:
+          funding:
+            on: 2026-08-31
+            outcome: confirmed
+            source: https://www.ebi.ac.uk/europepmc/webservices/rest/PMC3176599/fullTextXML
+            note: >-
+              "Funding: University of Malaya for Fundamental Research Grant
+              Scheme FP023/2008C and Postgraduate Research Grant PS150/2008B;
+              Ministry of Science, Technology and Innovation, Malaysia for
+              Science Fund 12-02-03-2050." The acknowledgments separately thank
+              two named people "of Vita Agrotech for the continuous supply of
+              fresh H. erinaceus mushroom" — in-kind supply of the tested
+              material, not funding, and it does not change the value.
         url: https://doi.org/10.1093/ecam/neq062
         species: rodent
         design: controlled animal study, four groups of 10 rats

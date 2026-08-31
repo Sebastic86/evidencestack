@@ -23,18 +23,44 @@ claims:
     studies:
       - cite: Yamadera et al.
         year: 2007
+        checked:
+          funding:
+            on: 2026-08-31
+            outcome: corrected
+            source: https://onlinelibrary.wiley.com/doi/10.1111/j.1479-8425.2007.00262.x
+            note: >-
+              industry → not-declared. The complete text was read this session —
+              the article is Open Access under a Creative Commons Attribution
+              licence and runs Abstract, Introduction, Methods, Results,
+              Discussion, Acknowledgments, References. It contains no funding
+              statement and no conflict-of-interest declaration. The entire
+              acknowledgment is "The authors express their thanks to Ms Tomoko
+              Yagi, and Dr Mitsuo Sasaki, Ohta Memorial Sleep Center, Ohta
+              General Hospital, for their support in data collection and
+              valuable discussion." A sweep of the whole page for fund, grant,
+              conflict, competing, sponsor, financial and disclosure found
+              nothing but author affiliations. The previous value of industry
+              rested on those affiliations rather than on any sentence in the
+              paper. Reaching it needed a cookie jar against Wiley, which
+              otherwise redirects to a cookieAbsent wall; earlier passes
+              recorded it unreachable.
         url: https://doi.org/10.1111/j.1479-8425.2007.00262.x
         species: human
         design: RCT, single-blind crossover
         n: 11
         duration: acute (single nights)
         dose: 3 g before bed
-        funding: industry
+        funding: not-declared
         outcome: polysomnography, subjective sleep quality
         note: >-
-          Faster sleep onset and better-rated sleep — in eleven people, funded by
-          the amino-acid manufacturer. Cheap enough that nobody has run the big
-          trial.
+          Faster sleep onset and better-rated sleep, in eleven people. The paper
+          carries no funding statement and no conflict-of-interest declaration
+          of any kind — which is not the same as stating there was none. Three
+          of its six authors, including the corresponding author, work at
+          the Research Institute for Health Fundamentals of Ajinomoto Co. Inc.,
+          which manufactures amino acids. That is an affiliation, not a declared
+          funding source, and the record does not treat it as one. Cheap enough
+          that nobody has run the big trial.
   - outcome: oxidative stress in older adults (with NAC)
     cat: metabolic
     grade: C
@@ -44,6 +70,19 @@ claims:
     studies:
       - cite: Kumar et al.
         year: 2023
+        checked:
+          funding:
+            on: 2026-08-31
+            outcome: confirmed
+            source: https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pmc&id=PMC9879756&retmode=xml
+            note: >-
+              The PMC record's funding group reads "National Institutes of
+              Health … National Institute of Aging R01AG041782", and Crossref
+              carries the same publisher-deposited funder record. Registry
+              NCT01870193 confirmed against the same record. This is deposited
+              funding metadata, not a sentence from the paper: the publisher
+              releases only front matter to PMC, so the article's own funding
+              and conflict-of-interest statements were not read.
         url: https://doi.org/10.1093/gerona/glac135
         species: human
         design: RCT, placebo-controlled (isonitrogenous alanine placebo)

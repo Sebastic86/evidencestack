@@ -28,6 +28,21 @@ claims:
     studies:
       - cite: Clegg et al. (GAIT)
         year: 2006
+        checked:
+          funding:
+            on: 2026-08-31
+            outcome: confirmed
+            source: https://escholarship.org/content/qt7zw280cw/qt7zw280cw.pdf
+            note: >-
+              "Supported by a contract from the National Center for
+              Complementary and Alternative Medicine and the National Institute
+              of Arthritis and Musculoskeletal and Skin Diseases (NO1AR92236)."
+              Read from the published NEJM version deposited in an open
+              repository; the NEJM site itself was not used. Registry
+              NCT00032890 verified in the paper's own abstract. The paper also
+              thanks Ferro Pfanstiehl Laboratories for donating part of the
+              glucosamine hydrochloride and Bioiberica for the chondroitin —
+              in-kind supply of the tested products, not funding.
         url: https://doi.org/10.1056/NEJMoa052771
         species: human
         design: RCT, double-blind, 5-arm
@@ -42,6 +57,25 @@ claims:
           moderate-to-severe-pain subgroup responded — hypothesis, not proof.
       - cite: Towheed et al. (Cochrane)
         year: 2005
+        checked:
+          funding:
+            on: 2026-08-31
+            outcome: confirmed
+            source: https://www.cochranelibrary.com/cdsr/doi/10.1002/14651858.CD002946.pub2/information
+            note: >-
+              Sources of support — "Internal sources: Queens University Cochrane
+              Network Site. Kingston, Ontario, Canada. University of Ottawa,
+              Canada. External sources: No sources of support supplied." The
+              review's own funding is academic. Its Declarations of Interest are
+              a separate matter and do disclose industry ties at author level:
+              "Rotta Pharmaceuticals (whose product is glucosamine sulfate)
+              provided an unrestricted educational grant in support of the
+              program" at a symposium the lead author spoke at for an
+              honorarium, a co-author holds patents on glucosamine-type
+              substances, and another received a Wampole Canada grant for a 1999
+              trial. Those are author interests, not funding of this review.
+              Note that the funding sections live on the /information tab; the
+              /full tab is rendered by script and returns no text.
         url: https://doi.org/10.1002/14651858.CD002946.pub2
         species: human
         design: Cochrane review of 25 RCTs
@@ -63,6 +97,22 @@ claims:
     studies:
       - cite: Li et al. (UK Biobank)
         year: 2020
+        checked:
+          funding:
+            on: 2026-08-31
+            outcome: confirmed
+            source: https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7286049/fullTextXML
+            note: >-
+              "Funding: This work was supported by the National Natural Science
+              Foundation of China (81973109), the Project Supported by Guangdong
+              Province Universities and Colleges Pearl River Scholar Funded
+              Scheme (2019), the National Key Research and Development Program
+              of China (2018YFC2000400), the Construction of High-level
+              University of Guangdong (G619339521 and G618339167) and the
+              National Institutes of Health (NIH)/National Institute on Ageing
+              (NIA) of USA (P30-AG028716)." The paper also states "Competing
+              interests: None declared." No trial registry: this is a cohort
+              analysis of UK Biobank under application number 43795.
         url: https://doi.org/10.1136/annrheumdis-2020-217176
         species: human
         design: prospective cohort

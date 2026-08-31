@@ -31,6 +31,20 @@ claims:
         duration: 1 year
         dose: "400, 800, 1600, 2400, 3200, 4000 or 4800 IU/day vitamin D3, or placebo"
         funding: public
+        checked:
+          funding:
+            on: 2026-08-31
+            outcome: confirmed
+            source: 'https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI%3A%2210.7326%2F0003-4819-156-6-201203200-00005%22&resultType=core&format=json'
+            note: >-
+              The structured abstract carries it outright: "Primary funding
+              source: National Institute on Aging." Publisher-deposited grant
+              metadata names the award, R01-AG28168, NIA NIH HHS. The same
+              abstract confirms the registry ID already on this record —
+              "(ClinicalTrials.gov registration number: NCT00472823)". The full
+              text at Annals was not retrieved, so a second, unnamed funder
+              cannot be ruled out, but the declared primary source is
+              government.
         registry: NCT00472823
         outcome: serum 25-hydroxyvitamin D and parathyroid hormone at 6 and 12 months
         note: >-
@@ -62,11 +76,41 @@ claims:
         duration: 5.3 years median
         dose: 2000 IU/day
         funding: public
+        checked:
+          funding:
+            on: 2026-08-31
+            outcome: confirmed
+            source: 'https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pmc&id=6425757&retmode=xml'
+            note: >-
+              "Funding/Support: VITAL was supported by grants U01 CA138962 and
+              R01 CA138962, which included support from the National Cancer
+              Institute, National Heart, Lung and Blood Institute, Office of
+              Dietary Supplements, National Institute of Neurological Disorders
+              and Stroke, and the National Center for Complementary and
+              Integrative Health." The donation is real and immediately follows:
+              "Pharmavite LLC of Northridge, California (vitamin D) and Pronova
+              BioPharma of Norway and BASF (Omacor fish oil) donated the study
+              agents, matching placebos, and packaging in the form of calendar
+              packs. Quest Diagnostics (San Juan Capistrano, CA) measured serum
+              25-hydroxyvitamin D at no cost to the study." Product and a free
+              assay, no company money and no company role — the Role of the
+              Sponsor paragraph names only the NIH. Donation without funding
+              stays public, consistent with the earlier call; note that Quest's
+              free measurement is an in-kind service rather than product, and
+              contrast ASCEND on omega-3, where the companies did pay for
+              packaging and that record reads mixed.
         registry: NCT01169259
         outcome: invasive cancer, major cardiovascular events
         note: >-
           No effect on either primary endpoint in a generally replete population.
-          Tested at scale, found not to work — for this claim.
+          Tested at scale, found not to work — for this claim. NIH grants paid
+          for the trial, but two commercial contributions are worth knowing:
+          Pharmavite donated the vitamin D, the matching placebo and the
+          packaging, and Quest Diagnostics measured the participants' serum
+          25-hydroxyvitamin D at no cost to the study. Donated product and a
+          donated assay are not company money, and the funding field reads
+          public on that basis — but a commercial laboratory running the trial's
+          own blood measurements for free is a fact a reader should have.
   - outcome: fracture prevention in deficient or institutionalised elderly (with calcium)
     cat: other
     grade: B
@@ -82,7 +126,30 @@ claims:
         n: 3270
         duration: 18 months
         dose: 1.2 g elemental calcium + 800 IU (20 µg) vitamin D3 daily
-        funding: not-declared
+        funding: public
+        checked:
+          funding:
+            on: 2026-08-31
+            outcome: corrected
+            source: 'https://web.archive.org/web/20160612064920id_/http://www.nejm.org/doi/full/10.1056/NEJM199212033272305'
+            note: >-
+              Was not-declared, on the grounds that the paper is an image-only
+              scan. It is, at NEJM today — but an archived copy of NEJM's own
+              HTML full text is machine-readable and carries the statement:
+              "Supported by a grant from the Caisse Nationale d'Assurance Maladie
+              des Travailleurs Salariés—INSERM and the Ministère de la Recherche
+              et de l'Enseignement Supérieur-Aliment 2000. Duphar and Company
+              Laboratories provided the vitamin D3 (Devaron) and Merck—Clevenot
+              Laboratories the tricalcium phosphate (Ostram)." The national
+              health-insurance fund, INSERM and the research ministry are all
+              public; the two companies supplied product and are not described as
+              paying for anything, which is the same donation-without-funding
+              pattern as VITAL above. The record's own note still says funding
+              could not be verified past the abstract; that sentence is now
+              stale. The same text also settles a question 3b left open — it
+              thanks "all the physicians working in the 180 nursing homes", so
+              the nursing-home population that pass deleted as unsupportable is
+              in fact in the paper.
         outcome: radiologically confirmed hip and other nonvertebral fractures
         note: >-
           3270 healthy ambulatory women, mean age 84. Hip fractures were 43%
@@ -91,7 +158,14 @@ claims:
           Serum 25(OH)D rose 162% and parathyroid hormone fell 44%, and proximal
           femur bone density rose 2.7% against a 4.6% fall on placebo — mechanism
           and outcome agree, and a 162% rise is itself the signature of a
-          corrected deficiency rather than topping up the replete. The paper is
-          available only as an image scan with no machine-readable text, so
-          funding could not be verified past the abstract.
+          corrected deficiency rather than topping up the replete. NEJM serves
+          this paper today only as an image scan with no machine-readable text,
+          but an archived copy of NEJM's own HTML full text is readable, and it
+          settles two things earlier passes had to leave open. The population
+          was institutional: the paper thanks "all the physicians working in the
+          180 nursing homes" who cooperated, so the nursing-home detail a
+          previous review removed as unsupported is in the paper after all. And
+          the funding is stated — a grant from the French national health
+          insurance fund with INSERM and the research ministry, with Duphar
+          supplying the vitamin D3 and Merck—Clevenot the tricalcium phosphate.
 history: []

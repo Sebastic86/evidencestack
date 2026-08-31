@@ -36,6 +36,23 @@ claims:
         duration: mixed
         dose: mostly 900–1500 mg/day
         funding: public
+        checked:
+          funding:
+            on: 2026-08-31
+            outcome: confirmed
+            source: https://api.crossref.org/works/10.1016/j.jep.2014.09.049
+            note: >-
+              No funding sentence was read. The full text is paywalled and no
+              open copy exists. This rests entirely on publisher-deposited
+              funder metadata, which names six Chinese provincial and municipal
+              bodies: Natural Science Foundation of Zhejiang Province
+              (LY14H270001), Zhejiang Province Chinese Medicine Scientific
+              Research Fund (2013ZB121), Wenzhou Science & Technology Bureau
+              (Y20100222), Wenzhou Municipal Health Bureau (2010A012), Wenzhou
+              Municipal 551 Talented Grant, and Wenzhou Traditional Chinese
+              Medicine Laboratory Center. Europe PMC's grant list is identical.
+              Deposited metadata is a weaker source than a statement in the
+              paper: it records who is named, not what the authors declared.
         outcome: HbA1c, fasting glucose, lipids
         note: >-
           HbA1c reductions approaching oral antidiabetic drugs — from mostly
@@ -57,6 +74,20 @@ claims:
         duration: not stated in the abstract
         dose: not stated in the abstract
         funding: public
+        checked:
+          funding:
+            on: 2026-08-31
+            outcome: confirmed
+            source: https://api.crossref.org/works/10.1016/j.phymed.2018.09.212
+            note: >-
+              No funding sentence was read. The full text is paywalled and no
+              open copy exists. This rests entirely on publisher-deposited
+              funder metadata, which names the National Clinical Research Centre
+              of Traditional Chinese Medicine (JDZX2015263) and Capital's Funds
+              for Health Improvement and Research (2018-1-4171). Europe PMC's
+              grant list is identical. Deposited metadata is a weaker source
+              than a statement in the paper: it records who is named, not what
+              the authors declared.
         outcome: LDL cholesterol, total cholesterol, triglycerides, HDL cholesterol, adverse events
         note: >-
           LDL cholesterol fell by 0.38 mmol/l (95% CI −0.53 to −0.22). The

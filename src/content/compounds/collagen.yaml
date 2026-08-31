@@ -31,6 +31,19 @@ claims:
         duration: 8 weeks
         dose: 2.5 or 5 g/day
         funding: industry
+        checked:
+          funding:
+            on: 2026-08-31
+            outcome: unreachable
+            note: >-
+              No funding statement reached, so the existing value stands
+              unverified. Karger returns 403 on both the PDF
+              (karger.com/Article/Pdf/351376) and the article page; Unpaywall,
+              Semantic Scholar and OpenAlex all point only at that same blocked
+              PDF; the Wayback snapshot of the full-text page is abstract-only
+              and carries no funding section. The author affiliations list a
+              collagen research institute, but affiliation is not funding and
+              was deliberately not used to set this field.
         outcome: skin elasticity measurements
         note: >-
           Measurable elasticity improvement, replicated in later
@@ -52,6 +65,18 @@ claims:
         duration: 24 weeks
         dose: 10 g/day collagen hydrolysate (CH-Alpha) in 25 mL liquid
         funding: not-declared
+        checked:
+          funding:
+            on: 2026-08-31
+            outcome: unreachable
+            note: >-
+              No funding statement reached, so the existing value stands
+              unverified. Unpaywall, Semantic Scholar and OpenAlex all return
+              closed with no open copy anywhere; the Taylor & Francis page
+              serves no article text and its Wayback snapshot returns 403;
+              there is no PubMed Central record. This claim carries an
+              industry-funded flag over a study whose funding nobody has been
+              able to read, which remains an open disagreement for a human.
         outcome: visual-analogue joint pain, mobility and inflammation in athletes with no joint disease
         note: >-
           The only trial run in exactly this population — varsity and club
@@ -72,6 +97,17 @@ claims:
         duration: not stated in the abstract
         dose: not stated in the abstract
         funding: not-declared
+        checked:
+          funding:
+            on: 2026-08-31
+            outcome: unreachable
+            note: >-
+              No funding statement reached, so the existing value stands
+              unverified. Unpaywall lists a bronze open-access PDF at
+              oarsijournal.com, but that link and every variant of it redirect
+              into Elsevier's bot protection and return no document; there is
+              no PubMed Central record, and the abstract contains no funding or
+              registration text.
         outcome: osteoarthritis pain and physical function
         note: >-
           Much larger and more rigorous, but in osteoarthritis patients rather

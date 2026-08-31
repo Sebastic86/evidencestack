@@ -32,6 +32,23 @@ claims:
         duration: ~7 months average
         dose: 1 g/day (Rejuvant)
         funding: industry
+        checked:
+          funding:
+            on: 2026-08-31
+            outcome: confirmed
+            source: https://www.ebi.ac.uk/europepmc/webservices/rest/PMC8660611/fullTextXML
+            note: >-
+              Funding statement read in full text: "Data for the manuscript was
+              acquired from users of the Rejuvant product from Ponce de Leon
+              Health and DNA methylation analysis provided by TruMe Labs. Data
+              was provided to National University of Singapore for statistical
+              analysis, which provided funding support for this component of the
+              project." The named public body is the authors' own institution
+              covering its statisticians on one component; everything that
+              resourced the study — all the data, the assay — came from the two
+              companies. Kept at industry on that reading. The competing-
+              interests statement adds that a co-author "is a scientific
+              consultant and Board member for Ponce de Leon Health."
         outcome: TruAge DNA-methylation age
         note: >-
           Reported ~8 years of methylation-age reduction — with no control group,
@@ -53,6 +70,22 @@ claims:
         duration: from 18 months of age to death
         dose: 2% of chow (Ca-AKG)
         funding: mixed
+        checked:
+          funding:
+            on: 2026-08-31
+            outcome: confirmed
+            source: "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pmc&id=8508957&retmode=xml"
+            note: >-
+              Acknowledgements read in full text: "This work was supported by
+              The Weldon Foundation and by Ponce de Leon Health. This work was
+              also supported by NIH grant U01AG045844 (G.J.L.), NIA grant
+              R01AG051729, grant support from the Larry L. Hillblom Foundation,
+              and the Navigage Foundation." Industry money alongside real
+              external public grants, so mixed is earned here. The declaration
+              of interests is stronger than the field conveys: Ponce de Leon
+              Health sells the tested compound, four authors hold shares in it
+              and one is a board member. Europe PMC reports this paper as
+              in-database but 404s on its full text; NCBI efetch served it.
         outcome: median lifespan, frailty index in mice
         note: >-
           ~12% longer median lifespan in females and large frailty reductions in

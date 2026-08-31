@@ -27,6 +27,20 @@ claims:
         duration: 9 weeks of supplementation (10-week study)
         dose: 4 mg/day
         funding: industry
+        checked:
+          funding:
+            on: 2026-08-31
+            outcome: confirmed
+            source: https://www.ebi.ac.uk/europepmc/webservices/rest/PMC6073124/fullTextXML
+            note: >-
+              Competing-interests statement read in full text: "N.I., S.S. and
+              F.U. belong to FUJIFILM Corporation, a sponsor and funder of this
+              study." The paper's Funding line separately reads "This research
+              received no external funding" — that covers external money only,
+              and a keyword scan stopping there would invert the record. The
+              registered ID was read in the same text: "This study was
+              registered in the UMIN Clinical Trials Registry (ID:
+              UMIN000028925)."
         registry: UMIN000028925
         outcome: minimal erythema dose (primary); skin moisture and transepidermal water loss in irradiated skin, self-rated skin condition
         note: >-
@@ -55,6 +69,21 @@ claims:
         duration: lifelong, from 12 months of age
         dose: 1840 ± 520 ppm in feed
         funding: public
+        checked:
+          funding:
+            on: 2026-08-31
+            outcome: confirmed
+            source: https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10828146/fullTextXML
+            note: >-
+              Acknowledgements read in full text: "This work was funded in part
+              by NIA grants AG022308 (D.E.H.), AG022303 (R.A.M.), and AG022307
+              and AG013319 (R.S.), with important facilities supported by
+              CA034196 (JAX). Some of the studies at UM were supported by the
+              Glenn Foundation for Medical Research." Every funder is
+              government or philanthropy. The Cardax relationship is declared
+              separately as a competing interest, not as funding: "DMW and DGW
+              run Cardax, a pharmaceutical company that supplies Asta in a
+              special form." That is a conflict this field cannot express.
         outcome: median and maximum lifespan
         note: >-
           156 male and 132 female treated mice against 298 male and 282 female
@@ -77,6 +106,21 @@ claims:
         duration: lifelong, from 11 or 16 months of age
         dose: 880 ppm achieved in feed against an 800 ppm target
         funding: public
+        checked:
+          funding:
+            on: 2026-08-31
+            outcome: confirmed
+            source: "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pmc&id=13356140&retmode=xml"
+            note: >-
+              Funding statement read in full text: "This work was funded in part
+              by NIA grants AG022308 (RK), AG022303 (RAM), AG066346 (MB),
+              AG022307 and AG013319 (RS)… RS is supported by a Senior Research
+              Career Scientist Award from the Department of Veterans Affairs
+              Office of Research and Development." Declarations add: "The
+              authors declare no competing interests" — so unlike the 2024
+              report, there is no Cardax relationship here. Europe PMC still
+              lists this paper as closed and reports no PMCID; PMC13356140 was
+              found through the PMC ID converter and served by NCBI efetch.
         outcome: median and 90th-percentile lifespan
         note: >-
           The same programme, cohort 2022: two male astaxanthin arms of 210 and

@@ -35,6 +35,20 @@ claims:
         duration: 7–52 weeks
         dose: "3–5 g/day + resistance training"
         funding: not-declared
+        checked:
+          funding:
+            on: 2026-08-31
+            outcome: confirmed
+            source: https://www.ebi.ac.uk/europepmc/webservices/rest/PMC5679696/fullTextXML
+            note: >-
+              Full text read end to end. It carries no funding statement at all:
+              a search of the whole document returns zero occurrences of
+              "funding", "acknowledg", "grant", "supported by" or "financial".
+              The only back-matter declaration is "The authors report no
+              conflicts of interest in this work", which is a conflicts
+              statement, not a funding one. Crossref and Europe PMC deposit no
+              funder either. The paper is genuinely silent, which is what
+              not-declared means.
         outcome: lean tissue mass, upper/lower-body strength
         note: >-
           Older adults gained ~1.4 kg more lean mass with creatine than with
@@ -47,7 +61,22 @@ claims:
         n: 266
         duration: 4–12 weeks
         dose: "2–25 g/day"
-        funding: not-declared
+        funding: none
+        checked:
+          funding:
+            on: 2026-08-31
+            outcome: corrected
+            source: https://link.springer.com/article/10.1007/s40279-016-0571-4
+            note: >-
+              Ethics declarations read on the publisher's article page:
+              "Funding: No sources of funding were used to assist in the
+              preparation of this article", alongside a statement that all six
+              authors "declare that they have no conflicts of interest relevant
+              to the content of this review." This is the explicit-none case,
+              not silence, and the schema now has a value for it. The field
+              should read none rather than not-declared; it was left unchanged
+              only because this pass was instructed not to alter funding
+              values, and the change is left for a human.
         outcome: upper-limb maximal strength
         note: >-
           Strength gains replicated across independent labs and populations; the
@@ -61,6 +90,17 @@ claims:
         duration: mixed
         dose: mostly 20 g load then 2–5 g/day
         funding: not-declared
+        checked:
+          funding:
+            on: 2026-08-31
+            outcome: unreachable
+            note: >-
+              No funding statement reached, so the existing value stands
+              unverified. Unpaywall, Semantic Scholar and OpenAlex all report
+              closed with no open copy; the Human Kinetics article page serves
+              no text; there is no PubMed Central record; Crossref deposits no
+              funder. Whether the paper carries a funding statement at all is
+              unknown — nobody has been able to look.
         outcome: body composition & performance effect sizes
         note: >-
           Early quantitative summary; effect sizes largest for short, repeated
@@ -81,6 +121,20 @@ claims:
         duration: 5 days – 6 weeks
         dose: "5–20 g/day"
         funding: public
+        checked:
+          funding:
+            on: 2026-08-31
+            outcome: confirmed
+            source: "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:29704637&resultType=core&format=json"
+            note: >-
+              This is the weakest public value in the register and should be
+              read as such. The full text was retrieved and read via NCBI
+              efetch (PMC6093191) and it contains no funding statement, no
+              acknowledgements and no conflict-of-interest section anywhere.
+              Crossref and OpenAlex deposit no funder. The value rests entirely
+              on a single NLM-side grant linkage in Europe PMC's record — two
+              Intramural NIH awards, Z99 AG999999 and ZIA AG000975 — which is a
+              cataloguing association, not something the authors declared.
         outcome: memory, reasoning, reaction-time test batteries
         note: >-
           Short-term memory and intelligence/reasoning may improve; other domains
@@ -95,6 +149,19 @@ claims:
         duration: 6 weeks
         dose: 5 g/day
         funding: public
+        checked:
+          funding:
+            on: 2026-08-31
+            outcome: unreachable
+            note: >-
+              No funding statement reached, so the existing value stands
+              unverified. PubMed Central holds this paper as scanned page
+              images only — its record states "The publisher of this article
+              does not allow downloading of the full text in XML form", and the
+              PMC page carries the abstract with no body text and no funding
+              section. The Royal Society's own site returns 403. Crossref and
+              OpenAlex deposit no funder, so nothing supports the public value
+              except the record as drafted.
         outcome: working memory & processing speed in vegetarians
         note: >-
           Positive — but in vegetarians, who start with low creatine stores.
@@ -115,6 +182,27 @@ claims:
         duration: 8 weeks
         dose: 5 g/day + escitalopram
         funding: public
+        checked:
+          funding:
+            on: 2026-08-31
+            outcome: confirmed
+            source: "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pmc&id=4624319&retmode=xml"
+            note: >-
+              Funding statement read in full text: "This study was supported by
+              an independent investigator award from NARSAD…, grant 2011K000273
+              from the Brain Research Center of the 21st Century Frontier
+              Research Program…, grant KRF-2008-220-E00021 from the Global
+              Research Network Program, the Korea Research Foundation…, the
+              Mental Illness Research, Education and Clinical Center of Veterans
+              Integrated Service Network 19…, National Institute on Drug Abuse
+              grants DA-015116 and DA-031247… and DA-024070…, and NIMH grant
+              MH-058681", followed by "The sponsors of the study had no role in
+              the study design and conduct of the study." A senior author
+              declares industry consultancies separately, but no company funded
+              this trial. Registry ownership was checked against the
+              ClinicalTrials.gov API: NCT00729755 is "Creatine Augmentation
+              Treatment in Major Depressive Disorder Subjects" (Ewha Womans
+              University), which is this study.
         registry: NCT00729755
         outcome: depression rating scale (HDRS)
         note: >-
@@ -136,6 +224,23 @@ claims:
         duration: 104 weeks
         dose: "0.14 g/kg/day + exercise"
         funding: public
+        checked:
+          funding:
+            on: 2026-08-31
+            outcome: confirmed
+            source: https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10487398/fullTextXML
+            note: >-
+              Acknowledgements read in full text: "The study received funding
+              from the Canadian Institutes of Health Research (funding reference
+              number: 130235) and the Canada Foundation for Innovation." The
+              same paragraph declares that an author "has conducted
+              industry-sponsored research involving creatine supplementation"
+              and "serves on the Scientific Advisory Board for Alzchem (a
+              company that manufactures creatine)" — a competing interest, not a
+              funder of this trial. Registry ownership was checked against the
+              ClinicalTrials.gov API: NCT02047864 is "Effect of Creatine
+              Supplementation and Exercise on Bone Health" (University of
+              Saskatchewan, enrolment 237), which is this study.
         registry: NCT02047864
         outcome: DXA bone mineral density, postmenopausal women
         note: >-

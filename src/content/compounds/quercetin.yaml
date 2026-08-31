@@ -29,6 +29,23 @@ claims:
         duration: 11 days
         dose: dasatinib 100 mg + quercetin 1000 mg, 3 days
         funding: public
+        checked:
+          funding:
+            on: 2026-08-31
+            outcome: confirmed
+            source: 'https://www.ebi.ac.uk/europepmc/webservices/rest/PMC6796530/fullTextXML'
+            note: >-
+              "Funding sources: This work was supported by NIH grants DK109134 …
+              AG013925 … AG062413 … the Translational Geroscience Network
+              (AG061456) … Robert and Arlene Kogod, Satellite Healthcare, the
+              Connor Group, Robert J. and Theresa W. Ryan, and the Glenn, Ted
+              Nash Long Life, and Noaber Foundations. The study sponsors had no
+              role in the collection, analysis, or interpretation of data." NIH
+              plus philanthropy, no manufacturer — the same shape as the Harrison
+              2024 NIA/Glenn call, so public holds. Worth knowing separately from
+              funding: the competing-interests statement says four authors "have
+              a financial interest related to this research" and that "Patents on
+              senolytic drugs are held by Mayo Clinic."
         registry: NCT02848131
         outcome: senescence markers in adipose tissue
         note: >-
@@ -51,6 +68,22 @@ claims:
         duration: 12 weeks
         dose: "500 or 1000 mg/day"
         funding: industry
+        checked:
+          funding:
+            on: 2026-08-31
+            outcome: confirmed
+            source: 'https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7128946/fullTextXML'
+            note: >-
+              Re-fetched and confirmed verbatim. "Role of the funding source:
+              This work was supported by grants from Coca-Cola and Quercegen
+              Pharma. Coca-Cola and Quercegen Pharma were involved in designing
+              the study, but they had no role in the collection, analysis, and
+              interpretation of data; nor were they involved in the writing of
+              the report or the decision to submit the paper for publication."
+              And the conflict-of-interest section: "D. C. Nieman holds a
+              position on the science advisory board for Quercegen Pharma."
+              Quercegen sells quercetin. No trial registration number appears
+              anywhere in the full text.
         outcome: upper respiratory tract infection rates and symptom severity (WURSS diary)
         note: >-
           By far the largest trial here, and it was negative: no effect on
@@ -72,14 +105,41 @@ claims:
         n: 40
         duration: 3 weeks before, during, and 2 weeks after a 3-day cycling block
         dose: "1000 mg/day"
-        funding: not-declared
+        funding: public
+        checked:
+          funding:
+            on: 2026-08-31
+            outcome: corrected
+            source: 'https://web.archive.org/web/20190823220017id_/https://journals.lww.com/acsm-msse/Fulltext/2007/09000/Quercetin_Reduces_Illness_but_Not_Immune.18.aspx'
+            note: >-
+              Was not-declared, and the note still says the full text could not
+              be reached — it now has been, through an archived copy of the
+              publisher's own page. The paper's closing line reads "Partially
+              supported by a grant from the Defense Advanced Research Projects
+              Agency (DARPA) and the Army Research Office (ARO), award number
+              W911NF-06-0014." That is the only funder named, and it is
+              government. Read "partially" carefully: the remainder is not
+              attributed to anyone. The tested material was Quercegen Pharma's
+              product — "500 mg of pure quercetin powder (QU995, Quercegen
+              Pharma, Newton, MA)" — and the assay method came from Quercegen by
+              personal communication, but the paper does not say Quercegen
+              donated or paid for anything, and there is no conflict-of-interest
+              statement at all in this 2007 article.
         outcome: upper respiratory infection incidence and immune measures after intensified exercise
         note: >-
           One infection in 20 on quercetin versus nine in 20 on placebo. A
           striking difference in forty trained cyclists, with no accompanying
           change in any immune measure to explain it — and the same group's
           much larger community trial three years later found nothing. The full
-          text is paywalled with no open copy, so funding could not be verified
-          past the abstract; the senior author is the one recorded in that 2010
+          text has since been read, through an archived copy of the publisher's
+          own page, and the only funder it names is government: the paper was
+          "partially supported by a grant from the Defense Advanced Research
+          Projects Agency (DARPA) and the Army Research Office (ARO)". The word
+          "partially" is the paper's own, and the remainder is attributed to
+          nobody. The quercetin tested was Quercegen Pharma's QU995 product and
+          the plasma assay method came from Quercegen by personal
+          communication, though the paper does not say the company donated or
+          paid for anything. There is no conflict-of-interest statement in the
+          article at all; the senior author is the one recorded in that 2010
           trial as sitting on Quercegen Pharma's science advisory board.
 history: []

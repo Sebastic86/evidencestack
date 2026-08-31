@@ -30,6 +30,23 @@ claims:
         duration: 4 weeks
         dose: 200 mg/day
         funding: industry
+        checked:
+          funding:
+            on: 2026-08-31
+            outcome: confirmed
+            source: 'https://www.ebi.ac.uk/europepmc/webservices/rest/PMC6836118/fullTextXML'
+            note: >-
+              Funding: "This study was supported by funding received from Taiyo
+              Kagaku Co., Ltd., Mie, Japan." Conflicts of Interest: "Yasukawa Z.
+              and Ozeki M. are employees of Taiyo Kagaku Co., Ltd. which
+              supplied the L-theanine and placebo tablets used in this trial."
+              Both read from the full text, not from metadata. Recorded but not
+              adopted: the UMIN record (R000032739) lists the funding source as
+              an NCNP intramural research grant AND an unrestricted grant from
+              Taiyo Kagaku, which would read as mixed — but the paper itself
+              declares only Taiyo Kagaku, and the registry classifies its own
+              funding organisation as a profit organisation. The printed
+              statement governs.
         registry: UMIN000028603
         outcome: stress and sleep questionnaires
         note: >-
@@ -51,6 +68,21 @@ claims:
         duration: acute — measured 50 minutes after a single dose
         dose: 200 mg L-theanine with 160 mg caffeine
         funding: public
+        checked:
+          funding:
+            on: 2026-08-31
+            outcome: confirmed
+            source: 'https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12491391/fullTextXML'
+            note: >-
+              Acknowledgments: "This work was supported by the University of
+              Peradeniya Research Grant (URG/2023/13/D) and Ekhagastiftelsen
+              Foundation grant (2023-142)." The same section states "The
+              author(s) declare no conflicts of interest." Read from the full
+              text. Defensible but not pure, and recorded so it stays checkable:
+              the university grant is public, while Ekhagastiftelsen is a
+              private Swedish philanthropic foundation — no manufacturer of
+              theanine or caffeine is involved either way. Same shape as the
+              Harrison 2024 public/philanthropy call.
         registry: SLCTR/2023/006
         outcome: hit rate and target-distractor discriminability on a visual attention task, plus P3b event-related potentials
         note: >-
