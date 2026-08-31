@@ -8,6 +8,27 @@ Working state as of 2026-08-30: the site is **live** at https://evidencestack.se
 
 ## P0 — Integrity. The live site currently misleads.
 
+### 1a. How verification is recorded — **ADDED 2026-08-31, use this from now on**
+Before this, verification state lived only in prose in this file, so a `funding` field checked against a fetched paper was **indistinguishable in the data** from one nobody had ever opened. That is not a bookkeeping nicety: it is how a trial funded by the maker of the tested product sat on the live site reading `not-declared`. Item 1 runs across many sittings; the record has to be in the data or it is not a record.
+
+Each study may now carry a `checked` block, per field:
+
+```yaml
+checked:
+  funding:
+    on: 2026-08-31
+    outcome: confirmed        # confirmed | corrected | unreachable
+    source: https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7128946/fullTextXML
+    note: '"supported by grants from Coca-Cola and Quercegen Pharma"'
+```
+
+- **A `confirmed` or `corrected` check without a `source` fails the build.** You may not claim to have verified something without naming what you read. Proven to fire, both directions.
+- **`unreachable` is a real result, not a failure**, and the one case that may omit `source`. Recording it stops the next pass burning a fetch on a paywall someone already hit. Roughly 40% of full texts are unreachable.
+- Absent `checked` means **never checked**. Add further keys (`n`, `dose`, `note`…) as later passes happen; the shape is deliberately extensible.
+- This is provenance for the *record*, not editorial sign-off. `reviewer` and `reviewed` at the compound level remain the only thing that lifts the draft marker, and they stay a human's to set.
+
+Also added: **`funding: none`** for a paper that states outright it received no funding — a different fact from `not-declared`, which means the paper is silent. An explicitly unfunded independent trial is a meaningful signal to a reader and was previously flattened. Renders as "none received", because a bare "none" reads as *no funding data*, which is the opposite claim.
+
 ### 1. Editorially verify all 20 compound records
 Every record carries `reviewer: "draft — unverified"`. The citations, sample sizes, doses, funding sources, effect sizes and grades were drafted by an AI assistant from memory and **have not been checked against the primary sources**. Some may be subtly wrong; some may not exist.
 

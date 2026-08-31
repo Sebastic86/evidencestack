@@ -80,7 +80,7 @@ export interface StudyData {
   n: number;
   duration: string;
   dose: string;
-  funding: 'industry' | 'public' | 'mixed' | 'not-declared';
+  funding: 'industry' | 'public' | 'mixed' | 'not-declared' | 'none';
   registry?: string;
   outcome: string;
   note: string;
@@ -130,7 +130,10 @@ export function StudyCard({ study }: { study: StudyData }) {
         <Attr label="dose">{s.dose}</Attr>
         <Attr label="funding">
           <span style={{ color: s.funding === 'industry' ? 'var(--amber)' : 'var(--ink)' }}>
-            {s.funding}
+            {/* "none received" reads as the authors stating they had no funding;
+                bare "none" would be mistaken for "no funding data", which is the
+                opposite claim and is what "not-declared" means. */}
+            {s.funding === 'none' ? 'none received' : s.funding}
           </span>
         </Attr>
         {s.registry && (

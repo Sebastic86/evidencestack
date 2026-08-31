@@ -12,6 +12,44 @@ const flag = z.enum([
   'industry-funded', 'biomarker-only', 'rodent-only', 'dose-mismatch', 'safety-note', 'under-review',
 ]);
 
+// 'not-declared' means the paper is silent on funding. 'none' means the authors
+// state outright that they received none — a different fact, and a meaningful one
+// to a reader: an explicitly unfunded independent trial is not the same as an
+// undeclared one. Do not collapse them.
+const funding = z.enum(['industry', 'public', 'mixed', 'not-declared', 'none']);
+
+/**
+ * Per-field verification provenance.
+ *
+ * Item 1 is tens of hours of work across many sittings, and before this existed
+ * the state lived only in prose — so a field verified against a fetched paper
+ * was indistinguishable from one nobody had ever opened. That mismatch is how a
+ * study funded by the maker of the tested product sat on the site reading
+ * `not-declared`.
+ *
+ * `outcome: unreachable` is a real result worth recording, not a failure: it
+ * stops the next pass burning a fetch on a paywall someone already hit. Roughly
+ * 40% of full texts are unreachable.
+ */
+const fieldCheck = z
+  .object({
+    on: z.coerce.date(), // when it was checked
+    outcome: z.enum(['confirmed', 'corrected', 'unreachable']),
+    source: z.string().url().optional(), // what was actually read
+    note: z.string().optional(), // e.g. the quoted funding sentence, or why it could not be reached
+  })
+  .superRefine((c, ctx) => {
+    // You may not claim to have confirmed or corrected a field without naming
+    // what you read. Verification you cannot point at is not verification.
+    if (c.outcome !== 'unreachable' && !c.source) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        path: ['source'],
+        message: `a check with outcome "${c.outcome}" must cite the source it was verified against; only "unreachable" may omit it`,
+      });
+    }
+  });
+
 const study = z.object({
   cite: z.string(), // "First-author et al." — displayed with year
   year: z.number().int(),
@@ -21,10 +59,17 @@ const study = z.object({
   n: z.number().int().positive(),
   duration: z.string(),
   dose: z.string(),
-  funding: z.enum(['industry', 'public', 'mixed', 'not-declared']),
+  funding,
   registry: z.string().optional(),
   outcome: z.string(), // what was measured
   note: z.string(), // reviewer's note: what this study contributes to this claim
+  // Which of this record's fields have been checked against the primary source,
+  // and when. Absent means never checked. Add keys as further passes happen.
+  checked: z
+    .object({
+      funding: fieldCheck.optional(),
+    })
+    .optional(),
 });
 
 const claim = z.object({
