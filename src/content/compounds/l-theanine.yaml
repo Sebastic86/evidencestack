@@ -57,14 +57,14 @@ claims:
     cat: cognition
     grade: C
     effect: small
-    species: human-rct
+    species: human-trial
     flags: []
     studies:
       - cite: Nawarathna et al.
         year: 2025
         url: https://doi.org/10.1017/S0007114525104169
         species: human
-        design: RCT, double-blind, placebo-controlled two-way crossover
+        design: double-blind, placebo-controlled, counterbalanced two-way crossover — not randomised
         n: 37
         duration: acute — measured 50 minutes after a single dose
         dose: 200 mg L-theanine with 160 mg caffeine

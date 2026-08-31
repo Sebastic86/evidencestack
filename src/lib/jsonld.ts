@@ -140,7 +140,7 @@ export function registerDataset(summary: RegisterSummary, site: URL | string | u
         '@type': 'PropertyValue',
         name: 'species of best evidence',
         description:
-          'human-rct, observational, rodent or in-vitro — what the strongest evidence behind a claim was done in.',
+          'human-rct, human-trial, observational, rodent or in-vitro — what the strongest evidence behind a claim was done in. human-trial is interventional but not randomised.',
       },
     ],
     distribution: [

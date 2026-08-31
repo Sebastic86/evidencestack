@@ -29,6 +29,16 @@ checked:
 
 Also added: **`funding: none`** for a paper that states outright it received no funding — a different fact from `not-declared`, which means the paper is silent. An explicitly unfunded independent trial is a meaningful signal to a reader and was previously flattened. Renders as "none received", because a bare "none" reads as *no funding data*, which is the opposite claim.
 
+### 1b. `species: human-trial` — **ADDED 2026-08-31**
+The claim-species enum offered only `human-rct`, `observational`, `rodent`, `in-vitro`, and a study surfaced that is none of them. **Nawarathna 2025** (l-theanine → attention) was recorded `design: RCT`; the paper describes itself as *"a double-blind, placebo-controlled, counterbalanced, two-way crossover trial"* and never claims randomisation — treatment order was assigned by splitting participants in half. The Sri Lanka registry agrees and says outright it is not an RCT. **Paper and registry agreed; the record was simply wrong.**
+
+`human-trial` means interventional but **not** randomised: dosed, controlled, usually blinded, with allocation by counterbalancing, Latin square, alternation or open assignment. Calling such a study `human-rct` overstates it and `observational` understates it — participants were dosed and crossed over, which is nothing like a cohort. Crossover and counterbalanced designs are common in nutrition, so this will recur.
+
+- Renders as `HUMAN TRIAL`. Buckets with `human` in the register filter — the badge carries the randomised/not distinction, not the filter.
+- Verified through to the built output: the compound page, the register index and the per-compound JSON API all carry it.
+- **The grade did not move, and the rubric is why.** B requires "at least one well-conducted human RCT", which this is not; C is "human data only, but small, short, mixed, or limited to surrogate biomarkers", which describes an n=37 single-dose crossover in sleep-deprived participants exactly. Non-randomisation *supports* the C rather than undermining it. No history entry needed.
+- [ ] Worth a sweep during item 1: any other claim marked `human-rct` whose studies are crossover or counterbalanced. Nobody has checked the other 39.
+
 ### 1. Editorially verify all 20 compound records
 Every record carries `reviewer: "draft — unverified"`. The citations, sample sizes, doses, funding sources, effect sizes and grades were drafted by an AI assistant from memory and **have not been checked against the primary sources**. Some may be subtly wrong; some may not exist.
 

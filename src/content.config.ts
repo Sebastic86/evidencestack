@@ -3,7 +3,8 @@ import { glob } from 'astro/loaders';
 
 const grade = z.enum(['A', 'B', 'C', 'D', 'E']);
 const effect = z.enum(['large', 'moderate', 'small', 'negligible', 'unclear']);
-const claimSpecies = z.enum(['human-rct', 'observational', 'rodent', 'in-vitro']);
+// 'human-trial' — interventional but not randomised. See src/lib/species.ts.
+const claimSpecies = z.enum(['human-rct', 'human-trial', 'observational', 'rodent', 'in-vitro']);
 const studySpecies = z.enum(['human', 'rodent', 'in-vitro']);
 const category = z.enum([
   'muscle', 'cognition', 'metabolic', 'cardiovascular', 'sleep', 'joint', 'longevity', 'other',
