@@ -34,6 +34,7 @@ claims:
           funding:
             on: 2026-08-31
             outcome: corrected
+            basis: statement
             source: 'https://web.archive.org/web/20191228212052id_/https://academic.oup.com/jn/article/133/12/4135/4687457'
             note: >-
               Was public. The corrected DOI resolves, and the article's own
@@ -70,6 +71,7 @@ claims:
           funding:
             on: 2026-08-31
             outcome: corrected
+            basis: statement
             source: 'https://web.archive.org/web/20250531142805id_/https://www.tandfonline.com/doi/full/10.1080/02640414.2024.2423578'
             note: >-
               Was not-declared, which under-reported it. The paper does declare,

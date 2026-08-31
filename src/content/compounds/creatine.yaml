@@ -39,6 +39,7 @@ claims:
           funding:
             on: 2026-08-31
             outcome: confirmed
+            basis: absence
             source: https://www.ebi.ac.uk/europepmc/webservices/rest/PMC5679696/fullTextXML
             note: >-
               Full text read end to end. It carries no funding statement at all:
@@ -66,17 +67,18 @@ claims:
           funding:
             on: 2026-08-31
             outcome: corrected
+            basis: statement
             source: https://link.springer.com/article/10.1007/s40279-016-0571-4
             note: >-
               Ethics declarations read on the publisher's article page:
               "Funding: No sources of funding were used to assist in the
               preparation of this article", alongside a statement that all six
               authors "declare that they have no conflicts of interest relevant
-              to the content of this review." This is the explicit-none case,
-              not silence, and the schema now has a value for it. The field
-              should read none rather than not-declared; it was left unchanged
-              only because this pass was instructed not to alter funding
-              values, and the change is left for a human.
+              to the content of this review." Corrected not-declared → none: the
+              authors state outright that nobody funded this, which is a
+              different fact from the paper being silent. An explicitly unfunded
+              independent meta-analysis is the strongest funding provenance in
+              this file.
         outcome: upper-limb maximal strength
         note: >-
           Strength gains replicated across independent labs and populations; the
@@ -125,6 +127,7 @@ claims:
           funding:
             on: 2026-08-31
             outcome: confirmed
+            basis: metadata
             source: "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:29704637&resultType=core&format=json"
             note: >-
               This is the weakest public value in the register and should be
@@ -186,6 +189,7 @@ claims:
           funding:
             on: 2026-08-31
             outcome: confirmed
+            basis: statement
             source: "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pmc&id=4624319&retmode=xml"
             note: >-
               Funding statement read in full text: "This study was supported by
@@ -228,6 +232,7 @@ claims:
           funding:
             on: 2026-08-31
             outcome: confirmed
+            basis: statement
             source: https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10487398/fullTextXML
             note: >-
               Acknowledgements read in full text: "The study received funding

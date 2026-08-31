@@ -33,6 +33,7 @@ claims:
           funding:
             on: 2026-08-31
             outcome: confirmed
+            basis: statement
             source: 'https://www.ebi.ac.uk/europepmc/webservices/rest/PMC6796530/fullTextXML'
             note: >-
               "Funding sources: This work was supported by NIH grants DK109134 …
@@ -72,6 +73,7 @@ claims:
           funding:
             on: 2026-08-31
             outcome: confirmed
+            basis: statement
             source: 'https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7128946/fullTextXML'
             note: >-
               Re-fetched and confirmed verbatim. "Role of the funding source:
@@ -110,6 +112,7 @@ claims:
           funding:
             on: 2026-08-31
             outcome: corrected
+            basis: statement
             source: 'https://web.archive.org/web/20190823220017id_/https://journals.lww.com/acsm-msse/Fulltext/2007/09000/Quercetin_Reduces_Illness_but_Not_Immune.18.aspx'
             note: >-
               Was not-declared, and the note still says the full text could not

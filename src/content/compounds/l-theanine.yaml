@@ -19,7 +19,7 @@ claims:
     grade: C
     effect: small
     species: human-rct
-    flags: []
+    flags: [industry-funded]
     studies:
       - cite: Hidese et al.
         year: 2019
@@ -34,6 +34,7 @@ claims:
           funding:
             on: 2026-08-31
             outcome: confirmed
+            basis: statement
             source: 'https://www.ebi.ac.uk/europepmc/webservices/rest/PMC6836118/fullTextXML'
             note: >-
               Funding: "This study was supported by funding received from Taiyo
@@ -72,6 +73,7 @@ claims:
           funding:
             on: 2026-08-31
             outcome: confirmed
+            basis: statement
             source: 'https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12491391/fullTextXML'
             note: >-
               Acknowledgments: "This work was supported by the University of

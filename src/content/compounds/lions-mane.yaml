@@ -64,6 +64,7 @@ claims:
           funding:
             on: 2026-08-31
             outcome: confirmed
+            basis: statement
             source: https://www.ebi.ac.uk/europepmc/webservices/rest/PMC3176599/fullTextXML
             note: >-
               "Funding: University of Malaya for Fundamental Research Grant

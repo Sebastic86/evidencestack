@@ -34,6 +34,7 @@ claims:
           funding:
             on: 2026-08-31
             outcome: confirmed
+            basis: registry
             source: "https://www.isrctn.com/api/query/format/who?q=ISRCTN94506234"
             note: >-
               No funding sentence in the paper was read — the full text is
@@ -73,6 +74,7 @@ claims:
           funding:
             on: 2026-08-31
             outcome: confirmed
+            basis: statement
             source: https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12554813/fullTextXML
             note: >-
               Financial statement read in full text: "Financial support was

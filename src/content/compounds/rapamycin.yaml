@@ -37,6 +37,7 @@ claims:
           funding:
             on: 2026-08-31
             outcome: confirmed
+            basis: statement
             source: 'https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pmc&id=2786175&retmode=xml'
             note: >-
               Acknowledgements: "This work was supported by NIA grants AG022303

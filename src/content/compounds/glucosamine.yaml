@@ -32,6 +32,7 @@ claims:
           funding:
             on: 2026-08-31
             outcome: confirmed
+            basis: statement
             source: https://escholarship.org/content/qt7zw280cw/qt7zw280cw.pdf
             note: >-
               "Supported by a contract from the National Center for
@@ -61,6 +62,7 @@ claims:
           funding:
             on: 2026-08-31
             outcome: confirmed
+            basis: statement
             source: https://www.cochranelibrary.com/cdsr/doi/10.1002/14651858.CD002946.pub2/information
             note: >-
               Sources of support — "Internal sources: Queens University Cochrane
@@ -101,6 +103,7 @@ claims:
           funding:
             on: 2026-08-31
             outcome: confirmed
+            basis: statement
             source: https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7286049/fullTextXML
             note: >-
               "Funding: This work was supported by the National Natural Science

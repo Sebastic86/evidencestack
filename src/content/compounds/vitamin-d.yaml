@@ -35,6 +35,7 @@ claims:
           funding:
             on: 2026-08-31
             outcome: confirmed
+            basis: statement
             source: 'https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI%3A%2210.7326%2F0003-4819-156-6-201203200-00005%22&resultType=core&format=json'
             note: >-
               The structured abstract carries it outright: "Primary funding
@@ -80,6 +81,7 @@ claims:
           funding:
             on: 2026-08-31
             outcome: confirmed
+            basis: statement
             source: 'https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pmc&id=6425757&retmode=xml'
             note: >-
               "Funding/Support: VITAL was supported by grants U01 CA138962 and
@@ -131,6 +133,7 @@ claims:
           funding:
             on: 2026-08-31
             outcome: corrected
+            basis: statement
             source: 'https://web.archive.org/web/20160612064920id_/http://www.nejm.org/doi/full/10.1056/NEJM199212033272305'
             note: >-
               Was not-declared, on the grounds that the paper is an image-only

@@ -36,6 +36,7 @@ claims:
           funding:
             on: 2026-08-31
             outcome: confirmed
+            basis: statement
             source: https://www.ebi.ac.uk/europepmc/webservices/rest/PMC8660611/fullTextXML
             note: >-
               Funding statement read in full text: "Data for the manuscript was
@@ -74,6 +75,7 @@ claims:
           funding:
             on: 2026-08-31
             outcome: confirmed
+            basis: statement
             source: "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pmc&id=8508957&retmode=xml"
             note: >-
               Acknowledgements read in full text: "This work was supported by

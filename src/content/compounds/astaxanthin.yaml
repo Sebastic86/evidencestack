@@ -31,6 +31,7 @@ claims:
           funding:
             on: 2026-08-31
             outcome: confirmed
+            basis: statement
             source: https://www.ebi.ac.uk/europepmc/webservices/rest/PMC6073124/fullTextXML
             note: >-
               Competing-interests statement read in full text: "N.I., S.S. and
@@ -73,6 +74,7 @@ claims:
           funding:
             on: 2026-08-31
             outcome: confirmed
+            basis: statement
             source: https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10828146/fullTextXML
             note: >-
               Acknowledgements read in full text: "This work was funded in part
@@ -110,6 +112,7 @@ claims:
           funding:
             on: 2026-08-31
             outcome: confirmed
+            basis: statement
             source: "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pmc&id=13356140&retmode=xml"
             note: >-
               Funding statement read in full text: "This work was funded in part

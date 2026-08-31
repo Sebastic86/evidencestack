@@ -40,6 +40,7 @@ claims:
           funding:
             on: 2026-08-31
             outcome: confirmed
+            basis: metadata
             source: https://api.crossref.org/works/10.1016/j.jep.2014.09.049
             note: >-
               No funding sentence was read. The full text is paywalled and no
@@ -78,6 +79,7 @@ claims:
           funding:
             on: 2026-08-31
             outcome: confirmed
+            basis: metadata
             source: https://api.crossref.org/works/10.1016/j.phymed.2018.09.212
             note: >-
               No funding sentence was read. The full text is paywalled and no

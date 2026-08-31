@@ -28,6 +28,7 @@ claims:
           funding:
             on: 2026-08-31
             outcome: confirmed
+            basis: statement
             source: https://www.ebi.ac.uk/europepmc/webservices/rest/PMC5876407/fullTextXML
             note: >-
               "This work was supported by NIH grants AG000279 and TR001082 and
@@ -65,6 +66,7 @@ claims:
           funding:
             on: 2026-08-31
             outcome: confirmed
+            basis: statement
             source: https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pmc&id=PMC5668137&retmode=xml
             note: >-
               "This work was conducted thoroughly under a sponsored research
@@ -101,6 +103,7 @@ claims:
           funding:
             on: 2026-08-31
             outcome: confirmed
+            basis: statement
             source: https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pmc&id=PMC8550608&retmode=xml
             note: >-
               "Funding: This study was supported by National Institutes of

@@ -25,6 +25,7 @@ claims:
           funding:
             on: 2026-08-31
             outcome: confirmed
+            basis: statement
             source: https://www.ebi.ac.uk/europepmc/webservices/rest/PMC5522662/fullTextXML
             note: >-
               "This study was funded by the Kewpie Corporation." The disclosure
@@ -56,6 +57,7 @@ claims:
           funding:
             on: 2026-08-31
             outcome: confirmed
+            basis: absence
             source: https://www.ebi.ac.uk/europepmc/webservices/rest/PMC3512263/fullTextXML
             note: >-
               Confirmed by absence, against the complete open-access full text

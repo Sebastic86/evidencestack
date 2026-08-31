@@ -25,6 +25,7 @@ claims:
           funding:
             on: 2026-08-31
             outcome: confirmed
+            basis: statement
             source: https://link.springer.com/article/10.1007/s00394-014-0706-z
             note: >-
               "This work was supported by Kyowa Hakko Bio Co., Ltd (JR).
@@ -67,6 +68,7 @@ claims:
           funding:
             on: 2026-08-31
             outcome: corrected
+            basis: statement
             source: https://www.tandfonline.com/doi/full/10.3109/09546631003801619
             note: >-
               not-declared → industry. "This study was supported in part by JSP

@@ -31,21 +31,64 @@ const funding = z.enum(['industry', 'public', 'mixed', 'not-declared', 'none']);
  * stops the next pass burning a fetch on a paywall someone already hit. Roughly
  * 40% of full texts are unreachable.
  */
+/**
+ * What was actually read. `outcome` says what happened to the value; `basis`
+ * says how strong the evidence for it is, and the two are not the same thing.
+ *
+ * Without this, "confirmed" covered four different situations — a funding
+ * sentence quoted from the paper, a complete text containing no funding
+ * statement at all, a deposited grant record with no statement read, and a
+ * trial registry's own funding line. The weakest of those is thin enough to be
+ * worth seeing: one record's `public` rests on a single library-side grant
+ * linkage while its full text has no funding statement, no acknowledgements and
+ * no competing-interests section.
+ */
+const checkBasis = z.enum([
+  'statement', // a funding or competing-interests statement in the paper was read
+  'absence', // the complete text was read and contains no funding statement — supports silence, nothing more
+  'metadata', // deposited funder metadata (Crossref, Europe PMC grantsList); no statement read
+  'registry', // a trial or review registry record's own funding field
+]);
+
 const fieldCheck = z
   .object({
     on: z.coerce.date(), // when it was checked
     outcome: z.enum(['confirmed', 'corrected', 'unreachable']),
+    basis: checkBasis.optional(), // required unless unreachable — see the refine below
     source: z.string().url().optional(), // what was actually read
     note: z.string().optional(), // e.g. the quoted funding sentence, or why it could not be reached
   })
   .superRefine((c, ctx) => {
+    if (c.outcome === 'unreachable') {
+      // Nothing was read, so there is nothing to cite or characterise.
+      if (c.source || c.basis) {
+        ctx.addIssue({
+          code: z.ZodIssueCode.custom,
+          path: [c.source ? 'source' : 'basis'],
+          message: 'an "unreachable" check reached no source, so it must not name one',
+        });
+      }
+      return;
+    }
     // You may not claim to have confirmed or corrected a field without naming
     // what you read. Verification you cannot point at is not verification.
-    if (c.outcome !== 'unreachable' && !c.source) {
+    if (!c.source) {
       ctx.addIssue({
         code: z.ZodIssueCode.custom,
         path: ['source'],
         message: `a check with outcome "${c.outcome}" must cite the source it was verified against; only "unreachable" may omit it`,
+      });
+    }
+    // …and saying what kind of evidence it was is half the point. A quoted
+    // funding sentence and a bare deposited grant linkage are both "confirmed",
+    // and the difference between them is exactly what this block exists to
+    // record. Caught by a negative control: without this, `basis` could be
+    // omitted silently and the build stayed green.
+    if (!c.basis) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        path: ['basis'],
+        message: `a check with outcome "${c.outcome}" must say what it rests on (statement, absence, metadata or registry); only "unreachable" may omit it`,
       });
     }
   });
@@ -65,12 +108,31 @@ const study = z.object({
   note: z.string(), // reviewer's note: what this study contributes to this claim
   // Which of this record's fields have been checked against the primary source,
   // and when. Absent means never checked. Add keys as further passes happen.
+  //
+  // `registry` matters as much as `funding`: this repo has carried an invented
+  // registry ID, and two real IDs belonging to entirely different studies. It
+  // also distinguishes "no registration, verified absent in a full text I read"
+  // from "nobody has looked" — which the data could not express before.
   checked: z
     .object({
       funding: fieldCheck.optional(),
+      registry: fieldCheck.optional(),
     })
     .optional(),
-});
+})
+  .superRefine((s, ctx) => {
+    // Reading a paper and finding no funding statement establishes that the
+    // paper is silent. It cannot establish who paid for the study. So a check
+    // resting on absence may only support a funding value that asserts silence.
+    const basis = s.checked?.funding?.basis;
+    if (basis === 'absence' && s.funding !== 'not-declared') {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        path: ['funding'],
+        message: `funding is "${s.funding}" but its check rests on the absence of any funding statement, which can only support "not-declared" — cite a statement, deposited metadata or a registry record instead`,
+      });
+    }
+  });
 
 const claim = z.object({
   outcome: z.string(), // "muscle mass & strength"

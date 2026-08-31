@@ -33,6 +33,7 @@ claims:
           funding:
             on: 2026-08-31
             outcome: confirmed
+            basis: statement
             source: https://www.ahajournals.org/doi/pdf/10.1161/HYPERTENSIONAHA.116.07664
             note: >-
               "Sources of Funding: The project described was supported by the
@@ -66,6 +67,7 @@ claims:
           funding:
             on: 2026-08-31
             outcome: confirmed
+            basis: statement
             source: https://www.ebi.ac.uk/europepmc/webservices/rest/PMC3703169/fullTextXML
             note: >-
               "Source of Support: This study is funded by National Nutrition and
@@ -91,6 +93,7 @@ claims:
           funding:
             on: 2026-08-31
             outcome: confirmed
+            basis: statement
             source: https://www.ebi.ac.uk/europepmc/webservices/rest/PMC8053283/fullTextXML
             note: >-
               "Funding: The authors have not declared a specific grant for this

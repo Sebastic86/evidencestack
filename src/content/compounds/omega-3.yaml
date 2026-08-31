@@ -40,6 +40,7 @@ claims:
           funding:
             on: 2026-08-31
             outcome: corrected
+            basis: absence
             source: 'https://web.archive.org/web/20210318211936id_/https://www.ahajournals.org/doi/full/10.1161/CIR.0000000000000709'
             note: >-
               Was public. The advisory declares no funding at all: the full text
@@ -90,6 +91,7 @@ claims:
           funding:
             on: 2026-08-31
             outcome: confirmed
+            basis: statement
             source: 'https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI%3A%2210.1056%2FNEJMoa1812792%22&resultType=core&format=json'
             note: >-
               The paper's own abstract closes "(Funded by Amarin Pharma;
@@ -114,6 +116,7 @@ claims:
           funding:
             on: 2026-08-31
             outcome: confirmed
+            basis: statement
             source: 'https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pmc&id=7667577&retmode=xml'
             note: >-
               "Funding/Support: The trial was funded by AstraZeneca AB and
@@ -144,6 +147,7 @@ claims:
           funding:
             on: 2026-08-31
             outcome: confirmed
+            basis: statement
             source: 'https://web.archive.org/web/20200614134203id_/https://www.nejm.org/doi/full/10.1056/NEJMoa1804989'
             note: >-
               "Supported by grants to the University of Oxford from the British
@@ -222,17 +226,24 @@ claims:
         checked:
           funding:
             on: 2026-08-31
-            outcome: unreachable
+            outcome: confirmed
+            basis: metadata
+            source: "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1002/14651858.CD005379.pub3%22&resultType=core&format=json"
             note: >-
-              Not verified against a funding statement. Same wall as the other
-              Cochrane review here: PMC11830470 returns front matter only from
-              both Europe PMC and NCBI efetch, and the Cochrane Library PDF and
-              full-review page both 403. The only funding evidence found is
-              publisher/PubMed-deposited grant metadata, a single UK Medical
-              Research Council award, MC_U122785832 — consistent with public but
-              not a sentence in the paper. The competing-interests statement
-              declares that one author is principal investigator of an included
-              trial (Dangour 2010, the OPAL study).
+              No funding statement in the paper was read, and the value does not
+              rest on one. Europe PMC's record for this review (PMID 22696350)
+              deposits a single grant — "grantId":"MC_U122785832","agency":"Medical
+              Research Council" — which is consistent with public. That is a
+              deposited funder linkage, not something the authors declared, which
+              is what basis: metadata records.
+              The full text stayed out of reach: PMC11830470 returns front matter
+              only from both Europe PMC and NCBI efetch, and the Cochrane Library
+              PDF and full-review page both 403. Recorded as unreachable in the
+              first pass, before the basis field existed to say that metadata was
+              checked and did support the value.
+              The competing-interests statement declares that one author is
+              principal investigator of an included trial (Dangour 2010, the OPAL
+              study).
         outcome: cognitive test batteries
         note: >-
           No effect on cognition in cognitively healthy older adults. Tested

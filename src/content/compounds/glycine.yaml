@@ -27,6 +27,7 @@ claims:
           funding:
             on: 2026-08-31
             outcome: corrected
+            basis: absence
             source: https://onlinelibrary.wiley.com/doi/10.1111/j.1479-8425.2007.00262.x
             note: >-
               industry → not-declared. The complete text was read this session —
@@ -74,6 +75,7 @@ claims:
           funding:
             on: 2026-08-31
             outcome: confirmed
+            basis: metadata
             source: https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pmc&id=PMC9879756&retmode=xml
             note: >-
               The PMC record's funding group reads "National Institutes of
