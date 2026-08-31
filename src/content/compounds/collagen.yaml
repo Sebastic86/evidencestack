@@ -4,8 +4,9 @@ forms: "hydrolyzed peptides, bovine or marine"
 cats: [other, joint]
 blurb: >-
   Hydrolyzed protein from skin and bone. The trials are numerous and positive, and
-  nearly every one of them is funded by a peptide manufacturer — the funding column
-  is the reason the grades stop where they do.
+  who funded them mostly cannot be established: two of the three studies here are
+  paywalled with no reachable funding statement, and the readable one declares none
+  while the manufacturer supplied the product.
 typicalDose: "2.5–15 g/day"
 studiedDose: "2.5–15 g/day"
 ul: none established
@@ -70,9 +71,10 @@ claims:
               asserting industry money on this study, and it is a human's call.
         outcome: skin elasticity measurements
         note: >-
-          Measurable elasticity improvement, replicated in later
-          manufacturer-funded trials. Consistent enough for B; independent
-          replication would settle it.
+          Measurable elasticity improvement in 69 women over 8 weeks — the only
+          skin trial in the register, so nothing here replicates it. GELITA AG
+          supplied the tested product, VERISOL®, though the paper itself declares
+          no funding.
   - outcome: activity-related joint pain
     cat: joint
     grade: C
