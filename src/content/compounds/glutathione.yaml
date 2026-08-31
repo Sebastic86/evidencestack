@@ -22,6 +22,21 @@ claims:
       - cite: Richie et al.
         year: 2015
         checked:
+          design:
+            on: 2026-08-31
+            outcome: confirmed
+            basis: statement
+            source: https://link.springer.com/article/10.1007/s00394-014-0706-z
+            note: >-
+              "Methods: A 6-month randomized, double-blinded, placebo-controlled
+              trial of oral GSH (250 or 1,000 mg/day) on GSH levels in blood,
+              erythrocytes, plasma, lymphocytes and exfoliated buccal mucosal
+              cells was conducted in 54 non-smoking adults." Randomised and
+              double-blind as recorded. The record's design omits
+              placebo-controlled, which the paper states; not wrong, just less
+              specific, and left alone. Read from the publisher's landing page;
+              the full text is paywalled, so the methods section itself was not
+              read.
           funding:
             on: 2026-08-31
             outcome: confirmed
@@ -65,6 +80,21 @@ claims:
       - cite: Arjinpathana & Asawanonda
         year: 2012
         checked:
+          design:
+            on: 2026-08-31
+            outcome: confirmed
+            basis: statement
+            source: https://www.tandfonline.com/doi/full/10.3109/09546631003801619
+            note: >-
+              "Methods: This randomized, double-blind, two-arm,
+              placebo-controlled study was set in the King Chulalongkorn
+              Memorial Hospital, Bangkok, Thailand", and "Sixty otherwise
+              healthy medical students were randomized to receive either
+              glutathione capsules, 500 mg/day in two divided doses, or placebo
+              for 4 weeks." Randomised, double-blind and placebo-controlled as
+              recorded. Read from the publisher's landing page; the full text is
+              paywalled, so the methods section itself was not read and the
+              randomisation method is not known.
           funding:
             on: 2026-08-31
             outcome: corrected

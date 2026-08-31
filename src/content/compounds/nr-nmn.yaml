@@ -25,6 +25,25 @@ claims:
       - cite: Martens et al.
         year: 2018
         checked:
+          design:
+            on: 2026-08-31
+            outcome: confirmed
+            basis: statement
+            source: https://www.ebi.ac.uk/europepmc/webservices/rest/PMC5876407/fullTextXML
+            note: >-
+              "Here we provide the evidence in a 2 × 6-week randomized,
+              double-blind, placebo-controlled, crossover clinical trial that
+              chronic supplementation with the NAD+ precursor vitamin,
+              nicotinamide riboside (NR), is well tolerated." Sequence
+              allocation was itself randomised, which is the specific thing this
+              pass set out to check on a crossover: "15 subjects were randomized
+              to Group A, which received placebo capsules during the first 6
+              weeks of the study before crossing over to receive NR capsules for
+              the remaining 6 weeks. The other 15 subjects were randomized to
+              Group B, which received NR capsules first followed by placebo."
+              Randomised, double-blind and crossover as recorded — not a
+              counterbalanced allocation. Registry NCT02921659 was verified
+              against this same text last pass.
           funding:
             on: 2026-08-31
             outcome: confirmed
@@ -100,6 +119,21 @@ claims:
       - cite: Yoshino et al.
         year: 2021
         checked:
+          design:
+            on: 2026-08-31
+            outcome: confirmed
+            basis: statement
+            source: https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pmc&id=PMC8550608&retmode=xml
+            note: >-
+              "We conducted a 10-week, randomized, placebo-controlled,
+              double-blind trial to evaluate the effect of NMN supplementation
+              on metabolic function in postmenopausal women with prediabetes who
+              were overweight or obese", and the methods add "After baseline
+              studies were completed, participants were randomly assigned to 10
+              weeks of treatment with placebo or NMN." The allocation is given:
+              "12 were randomized to the placebo group and 13 to the NMN group".
+              Randomised and double-blind as recorded. Registry NCT03151239 was
+              verified against this same text last pass.
           funding:
             on: 2026-08-31
             outcome: confirmed

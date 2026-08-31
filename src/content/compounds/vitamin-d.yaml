@@ -46,6 +46,21 @@ claims:
               text at Annals was not retrieved, so a second, unnamed funder
               cannot be ruled out, but the declared primary source is
               government.
+          design:
+            on: 2026-08-31
+            outcome: confirmed
+            basis: statement
+            source: 'https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI%3A%2210.7326%2F0003-4819-156-6-201203200-00005%22&resultType=core&format=json'
+            note: >-
+              The structured abstract's design line reads "Design: Randomized,
+              placebo-controlled trial", and the intervention line gives the arms:
+              "Participants were randomly assigned to receive placebo or vitamin D(3),
+              400, 800, 1600, 2400, 3200, 4000, or 4800 IU once daily." That is eight
+              arms, seven of them vitamin D doses plus placebo, which is what "eight
+              dose arms" is counting. ClinicalTrials.gov NCT00472823 agrees on
+              allocation randomized, parallel assignment, masking triple. Note for a
+              later n check, not changed here: the registry records enrollment of 273
+              against the record's n of 163.
         registry: NCT00472823
         outcome: serum 25-hydroxyvitamin D and parathyroid hormone at 6 and 12 months
         note: >-
@@ -72,7 +87,7 @@ claims:
         year: 2019
         url: https://doi.org/10.1056/NEJMoa1809944
         species: human
-        design: RCT, double-blind
+        design: RCT, double-blind, 2x2 factorial (vitamin D and omega-3)
         n: 25871
         duration: 5.3 years median
         dose: 2000 IU/day
@@ -101,6 +116,24 @@ claims:
               free measurement is an in-kind service rather than product, and
               contrast ASCEND on omega-3, where the companies did pay for
               packaging and that record reads mixed.
+          design:
+            on: 2026-08-31
+            outcome: corrected
+            basis: statement
+            source: 'https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pmc&id=6425757&retmode=xml'
+            note: >-
+              Was "RCT, double-blind", which omitted the factorial. The paper: "The
+              VITamin D and OmegA-3 TriaL (VITAL) was a nationwide, randomized,
+              placebo-controlled, 2X2 factorial trial of vitamin D3 (cholecalciferol,
+              2000 IU/day) and marine omega-3 fatty acids (1 g/day) for the prevention
+              of cancer and cardiovascular disease." Everyone randomised to vitamin D
+              was simultaneously randomised to omega-3 or its placebo, and "This
+              article reports the results of the comparison of vitamin D with
+              placebo." That matters here because the same trial is the source of
+              omega-3 evidence elsewhere on this site. ClinicalTrials.gov NCT01169259
+              records intervention model factorial and masking triple, which is what
+              pins the double-blind wording; the paper's own design sentence does not
+              use the phrase.
         registry: NCT01169259
         outcome: invasive cancer, major cardiovascular events
         note: >-
@@ -124,7 +157,7 @@ claims:
         year: 1992
         url: https://doi.org/10.1056/NEJM199212033272305
         species: human
-        design: RCT, double-placebo
+        design: RCT, double-placebo; randomised in groups of four within each nursing home
         n: 3270
         duration: 18 months
         dose: 1.2 g elemental calcium + 800 IU (20 µg) vitamin D3 daily
@@ -153,6 +186,23 @@ claims:
               thanks "all the physicians working in the 180 nursing homes", so
               the nursing-home population that pass deleted as unsupportable is
               in fact in the paper.
+          design:
+            on: 2026-08-31
+            outcome: corrected
+            basis: statement
+            source: 'https://web.archive.org/web/20160612064920id_/http://www.nejm.org/doi/full/10.1056/NEJM199212033272305'
+            note: >-
+              Randomisation confirmed, but it was not individual: "In order to
+              minimize social, nutritional, and lifestyle differences between the
+              treatment groups, the women were randomly assigned to the vitamin
+              D3-calcium group or the placebo group in groups of four at each nursing
+              home." Allocation in blocks of four inside each home is closer to a
+              clustered allocation than to simple individual randomisation, and it is
+              worth stating rather than flattening to "RCT". The double placebo is
+              real: the treatment group got tricalcium phosphate powder in suspension
+              plus two 400 IU vitamin D3 pills, and "The 1636 women in the placebo
+              group received two pills containing lactose and a suspension of lactose,
+              kaolin, and starch each day."
         outcome: radiologically confirmed hip and other nonvertebral fractures
         note: >-
           3270 healthy ambulatory women, mean age 84. Hip fractures were 43%

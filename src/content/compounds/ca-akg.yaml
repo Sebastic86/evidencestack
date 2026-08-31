@@ -20,7 +20,11 @@ claims:
     cat: longevity
     grade: C
     effect: unclear
-    species: human-rct
+    # Not human-rct, and not human-trial either: nobody assigned treatment.
+    # Demidenko 2021 is a retrospective review of 42 people who had elected to
+    # buy the product, with no control group and no blinding. Allocation was
+    # self-selection by purchase, which makes it observational.
+    species: observational
     flags: [industry-funded, biomarker-only, under-review]
     studies:
       - cite: Demidenko et al.
@@ -33,6 +37,22 @@ claims:
         dose: 1 g/day (Rejuvant)
         funding: industry
         checked:
+          design:
+            on: 2026-08-31
+            outcome: confirmed
+            basis: statement
+            source: https://www.ebi.ac.uk/europepmc/webservices/rest/PMC8660611/fullTextXML
+            note: >-
+              The design field is correct and the claim above it is not. Abstract:
+              "Herein we report a retrospective analysis of DNA methylation age in
+              42 individuals taking Rejuvant®… for an average period of 7 months."
+              Results: "we reviewed 42 participants who had elected to take
+              Rejuvant®." Participants self-selected by buying the product; nobody
+              assigned treatment, there is no control group and no blinding. The
+              authors say so themselves: "While continued testing, particularly in
+              a placebo-controlled design, is required…" This is not randomised,
+              not controlled, and not even interventional — the claim's
+              species: human-rct is unsupported and needs a human decision.
           funding:
             on: 2026-08-31
             outcome: confirmed

@@ -31,6 +31,21 @@ claims:
         dose: 300 mg/day
         funding: industry
         checked:
+          design:
+            on: 2026-08-31
+            outcome: confirmed
+            basis: statement
+            source: "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:25282031&resultType=core&format=json"
+            note: >-
+              Title: "results from Q-SYMBIO: a randomized double-blind trial."
+              Abstract Methods: "Patients with moderate to severe HF were
+              randomly assigned in a 2-year prospective trial to either CoQ10
+              100 mg 3 times daily or placebo, in addition to standard therapy",
+              analysed "by intention-to-treat analysis". Randomisation is stated
+              twice. The record's design string omits that it was multicentre,
+              which the abstract states ("randomized controlled multicenter
+              trial") — not corrected, since the string is accurate as far as it
+              goes.
           funding:
             on: 2026-08-31
             outcome: confirmed
@@ -71,6 +86,18 @@ claims:
         dose: "100–600 mg/day"
         funding: mixed
         checked:
+          design:
+            on: 2026-08-31
+            outcome: confirmed
+            basis: statement
+            source: https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12554813/fullTextXML
+            note: >-
+              Full text read. Inclusion criteria: "Studies were selected for a
+              meta-analysis according to the following criteria: randomised
+              controlled trials (RCTs), adults taking statins (any type and
+              dose), supplementation of CoQ10, a comparable control group, and
+              muscle pain as outcome criterion", and "Seven RCTs with 389
+              patients in total were included." Count, design and n all match.
           funding:
             on: 2026-08-31
             outcome: confirmed
@@ -113,6 +140,19 @@ claims:
         dose: not stated in the abstract
         funding: not-declared
         checked:
+          design:
+            on: 2026-08-31
+            outcome: confirmed
+            basis: statement
+            source: "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:32179207&resultType=core&format=json"
+            note: >-
+              Abstract Methods: "Studies were screened to include randomised
+              controlled trials of oral CoQ10 supplementation versus a placebo in
+              adults with statin-associated myalgia", and Results: "Eight studies
+              were selected for review, and 7 of them (with 321 patients) were
+              included in the meta-analysis." The pooled seven are stated to be
+              randomised and the n matches. Design only — the funding statement
+              is still unreachable behind Elsevier's bot protection.
           funding:
             on: 2026-08-31
             outcome: unreachable

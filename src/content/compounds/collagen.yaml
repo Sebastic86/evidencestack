@@ -30,20 +30,44 @@ claims:
         n: 69
         duration: 8 weeks
         dose: 2.5 or 5 g/day
-        funding: industry
+        funding: not-declared
         checked:
+          design:
+            on: 2026-08-31
+            outcome: confirmed
+            basis: statement
+            source: "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:23949208&resultType=core&format=json"
+            note: >-
+              Abstract: "In this double-blind, placebo-controlled trial, 69 women
+              aged 35-55 years were randomized to receive 2.5 g or 5.0 g of CH or
+              placebo once daily for 8 weeks, with 23 subjects being allocated to
+              each treatment group." Randomisation is stated explicitly, so the
+              RCT label holds. Both this and the funding check now rest on the
+              same complete full text, recovered from the publisher's own
+              archived PDF after the live Karger page refused every route.
           funding:
             on: 2026-08-31
-            outcome: unreachable
+            outcome: corrected
+            basis: absence
+            source: "https://web.archive.org/web/20160303030120id_/http://www.karger.com:80/Article/Pdf/351376"
             note: >-
-              No funding statement reached, so the existing value stands
-              unverified. Karger returns 403 on both the PDF
-              (karger.com/Article/Pdf/351376) and the article page; Unpaywall,
-              Semantic Scholar and OpenAlex all point only at that same blocked
-              PDF; the Wayback snapshot of the full-text page is abstract-only
-              and carries no funding section. The author affiliations list a
-              collagen research institute, but affiliation is not funding and
-              was deliberately not used to set this field.
+              Corrected industry → not-declared. The complete paper was read
+              this time, from the publisher's own archived PDF, and it declares
+              no funding: "funding", "funded", "grant", "financial",
+              "acknowledgement", "disclosure", "conflict", "competing",
+              "sponsor" and "declaration" appear nowhere in it, and the
+              Discussion runs straight into the References with no end matter.
+              The one industry link the paper does state is material support,
+              not funding: "The product was provided by GELITA AG (Eberbach,
+              Germany), commercially available under the name VERISOL®." That is
+              the same shape as Cardax supplying the compound in the astaxanthin
+              ITP records, which is recorded there as a competing interest while
+              funding stays what the paper declares — so the same rule is
+              applied here. Two authors give their affiliation as CRI, Collagen
+              Research Institute, but affiliation is not funding and was
+              deliberately not used to set this field. The claim above still
+              carries an industry-funded flag; that flag is now the only thing
+              asserting industry money on this study, and it is a human's call.
         outcome: skin elasticity measurements
         note: >-
           Measurable elasticity improvement, replicated in later
@@ -66,6 +90,18 @@ claims:
         dose: 10 g/day collagen hydrolysate (CH-Alpha) in 25 mL liquid
         funding: not-declared
         checked:
+          design:
+            on: 2026-08-31
+            outcome: confirmed
+            basis: statement
+            source: "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:18416885&resultType=core&format=json"
+            note: >-
+              Abstract Design and setting: "A prospective, randomized,
+              placebo-controlled, double-blind study was conducted at Penn State
+              University." Intervention: "One hundred and forty-seven subjects
+              (72 male, 75 female) were randomly assigned to two groups." Both
+              sentences state randomisation, so the RCT label holds. Design only
+              — the funding statement is still unreachable on this record.
           funding:
             on: 2026-08-31
             outcome: unreachable
@@ -98,6 +134,18 @@ claims:
         dose: not stated in the abstract
         funding: not-declared
         checked:
+          design:
+            on: 2026-08-31
+            outcome: confirmed
+            basis: statement
+            source: "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:38218227&resultType=core&format=json"
+            note: >-
+              Abstract Design: databases were "searched till June 2023 for
+              randomized controlled trials (RCTs) investigating collagen
+              derivatives for treating osteoarthritis", and Results: "A total of
+              35 RCTs involving 3165 patients were included." Both the count and
+              the trial-sequential meta-analysis framing match the record.
+              Design only — the funding statement is still unreachable.
           funding:
             on: 2026-08-31
             outcome: unreachable

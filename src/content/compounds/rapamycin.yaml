@@ -62,7 +62,7 @@ claims:
         year: 2014
         url: https://doi.org/10.1126/scitranslmed.3009892
         species: human
-        design: RCT, double-blind (everolimus)
+        design: RCT, observer-blind, placebo-controlled (everolimus)
         n: 218
         duration: 6 weeks
         dose: 0.5 mg/day – 5 mg/week everolimus
@@ -70,23 +70,72 @@ claims:
         checked:
           funding:
             on: 2026-08-31
-            outcome: unreachable
+            outcome: confirmed
+            basis: statement
+            source: 'https://health.uconn.edu/aging/wp-content/uploads/sites/6/2016/04/mTOR-inhibition-improves-immune-function-in-the-elderly.pdf'
             note: >-
-              Funding statement not reached, so industry is left standing but
-              unverified. Science Translational Medicine is closed: not in PMC,
-              no PMCID, Unpaywall and Semantic Scholar both report it closed,
-              Crossref holds no funder record, science.org 403s, and the
-              archived copies of both the abstract and the .full page stop at the
-              paywall before the Funding and Competing Interests sections. What
-              the archived page does show is the author block — of twelve
-              authors, nine give a Novartis affiliation (Novartis Institutes for
-              BioMedical Research, Novartis Vaccines and Diagnostics, Novartis
-              Pharmaceuticals) and the corresponding address is
-              joan.mannick@novartis.com. That is affiliation, not a funding
-              statement, and is recorded here as context rather than as the basis
-              for the value. No trial registration number appears on any page
-              retrieved, so none was added; the previously removed NCT01190800
+              "Funding: Supported by Novartis Institutes for BioMedical
+              Research." Novartis developed RAD001, the tested compound, so this
+              is the manufacturer funding a trial of its own product. Read from a
+              complete copy of the published paper hosted by the University of
+              Connecticut Center on Aging, after Science Translational Medicine
+              itself refused every route — not in PMC, no PMCID, Unpaywall and
+              Semantic Scholar both report it closed, Crossref holds no funder
+              record, science.org 403s, and the archived abstract and .full pages
+              both stop at the paywall before the back matter. Identity checked
+              before use: DOI 10.1126/scitranslmed.3009892, Sci. Transl. Med. 6,
+              268ra179 (2014), and the trial's 218 subjects, 6-week treatment and
+              0.5 mg daily / 5 mg weekly / 20 mg weekly arms all match this
+              record. Corroborating and consistent, though not the basis for the
+              value: nine of twelve authors give a Novartis affiliation and the
+              corresponding address is joan.mannick@novartis.com.
+          registry:
+            on: 2026-08-31
+            outcome: confirmed
+            basis: absence
+            source: 'https://health.uconn.edu/aging/wp-content/uploads/sites/6/2016/04/mTOR-inhibition-improves-immune-function-in-the-elderly.pdf'
+            note: >-
+              No registration, verified against the complete full text rather
+              than merely not found: a regex sweep of the extracted text for NCT,
+              ACTRN, ISRCTN, EudraCT and UMIN identifiers returns nothing, and the
+              paper carries no trial-registration section. Registry searches also
+              came back empty — ClinicalTrials.gov (five queries covering RAD001,
+              everolimus, immunosenescence and vaccination in the elderly), the EU
+              Clinical Trials Register, and the WHO ICTRP portal. One gap remains
+              honest: ANZCTR could not be searched directly, its results loading
+              through a postback that could not be driven, and the trial ran in
+              New Zealand and Australia. So "no registration exists" is strongly
+              evidenced but not absolutely closed. The previously removed
+              NCT01190800 — which belongs to an unrelated Alzheimer's study —
               stays removed.
+          design:
+            on: 2026-08-31
+            outcome: corrected
+            basis: statement
+            source: 'https://health.uconn.edu/aging/wp-content/uploads/sites/6/2016/04/mTOR-inhibition-improves-immune-function-in-the-elderly.pdf'
+            note: >-
+              Was "RCT, double-blind". Randomised is right; double-blind is not,
+              and the paper says so itself. Study design: "From December 2011 to
+              April 2012, 218 elderly volunteers ≥65 years of age without
+              unstable underlying medical diseases were enrolled in a randomized,
+              observer-blind, placebo-controlled trial at nine sites in New
+              Zealand and Australia." Allocation: "The subjects were randomized
+              to treatment arms, using a validated automated randomization system
+              with a ratio of RAD001 to placebo of 5:2 in each treatment arm."
+              And the blinding, explicitly: "The trial was observer-blind because
+              the placebo in the RAD001 0.5 mg daily and 20 mg weekly cohorts
+              differed slightly from the RAD001 tablets in those cohorts. The
+              study personnel evaluating the subjects did not see the study
+              medication and therefore were fully blinded." So assessors were
+              blinded and participants were not — the phrase "double-blind"
+              appears nowhere in the paper. Reached through a copy of the
+              published PDF hosted by the University of Connecticut Center on
+              Aging after the publisher, PMC and the archived publisher pages all
+              failed; identity checked against the record before use — DOI
+              10.1126/scitranslmed.3009892, Sci. Transl. Med. 6, 268ra179 (2014),
+              all twelve authors, and the trial's own 218 subjects, 6-week
+              treatment and 0.5 mg daily / 5 mg weekly / 20 mg weekly arms all
+              match this record's n, duration and dose.
         outcome: influenza vaccine antibody titers
         note: >-
           ~20% better vaccine response at low doses — the closest thing to a

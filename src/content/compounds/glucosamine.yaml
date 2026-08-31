@@ -29,6 +29,23 @@ claims:
       - cite: Clegg et al. (GAIT)
         year: 2006
         checked:
+          design:
+            on: 2026-08-31
+            outcome: confirmed
+            basis: statement
+            source: https://escholarship.org/content/qt7zw280cw/qt7zw280cw.pdf
+            note: >-
+              "We randomly assigned 1583 patients with symptomatic knee
+              osteoarthritis to receive 1500 mg of glucosamine daily, 1200 mg of
+              chondroitin sulfate daily, both glucosamine and chondroitin
+              sulfate, 200 mg of celecoxib daily, or placebo for 24 weeks."
+              Five arms as recorded. The method is stated and concealed:
+              "Permuted-block randomization was used with random block sizes,
+              stratified according to the 16 clinical centers and baseline
+              WOMAC pain stratum", and "During data collection, neither the
+              clinical centers nor the coordinating center at the University of
+              Utah had access to the randomization codes." This is the
+              strongest design documentation of any study in these seven files.
           funding:
             on: 2026-08-31
             outcome: confirmed
@@ -59,6 +76,25 @@ claims:
       - cite: Towheed et al. (Cochrane)
         year: 2005
         checked:
+          design:
+            on: 2026-08-31
+            outcome: confirmed
+            basis: statement
+            source: https://www.cochranelibrary.com/cdsr/doi/10.1002/14651858.CD002946.pub2/full
+            note: >-
+              "Selection criteria: RCTs evaluating the effectiveness and safety
+              of glucosamine in OA." "This update includes 25 studies with 4963
+              patients." "Collectively, the 25 RCTs favoured glucosamine with a
+              22% (change from baseline) improvement in pain." Review type and
+              trial count both confirmed. One citation oddity found while
+              reading and left for a human, because year is not this pass's
+              field: the .pub2 DOI serves content from a search run to January
+              2008 under a masthead reading "Version published: 20 April 2005",
+              and the version history records "2008 Nov 12 New search has been
+              performed — 5 new studies included in this update." No .pub3
+              exists (Crossref 404). So the 25 studies and 4963 patients are
+              what the cited DOI serves today, while the 2005-dated version the
+              record names examined roughly twenty.
           funding:
             on: 2026-08-31
             outcome: confirmed

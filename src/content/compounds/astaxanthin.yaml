@@ -28,6 +28,22 @@ claims:
         dose: 4 mg/day
         funding: industry
         checked:
+          design:
+            on: 2026-08-31
+            outcome: confirmed
+            basis: statement
+            source: https://www.ebi.ac.uk/europepmc/webservices/rest/PMC6073124/fullTextXML
+            note: >-
+              Methods section 2.1 "Study Design, Randomization and Blinding"
+              reads: "We performed a randomized, double-blind,
+              placebo-controlled, parallel-group comparison trial." Allocation
+              is described concretely rather than asserted: "Participants were
+              enrolled and randomly allocated by practitioners into the
+              astaxanthin or placebo group using a random number table
+              considering the sex, age, MED, and moisture and TEWL at
+              non-irradiated areas. Allocation was concealed until all
+              participants finished the tests." Genuinely randomised with
+              concealed allocation.
           funding:
             on: 2026-08-31
             outcome: confirmed

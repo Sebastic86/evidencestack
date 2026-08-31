@@ -114,10 +114,15 @@ const study = z.object({
   // registry ID, and two real IDs belonging to entirely different studies. It
   // also distinguishes "no registration, verified absent in a full text I read"
   // from "nobody has looked" — which the data could not express before.
+  // `design` is here because a record claiming "RCT" is not evidence that the
+  // study was randomised. One said so while the paper described itself as
+  // counterbalanced and the trial registry stated outright it was not an RCT —
+  // and the claim above it asserted human-rct to readers on that basis.
   checked: z
     .object({
       funding: fieldCheck.optional(),
       registry: fieldCheck.optional(),
+      design: fieldCheck.optional(),
     })
     .optional(),
 })

@@ -37,6 +37,17 @@ claims:
         dose: mostly 900–1500 mg/day
         funding: public
         checked:
+          design:
+            on: 2026-08-31
+            outcome: confirmed
+            basis: statement
+            source: "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:25498346&resultType=core&format=json"
+            note: >-
+              Abstract Results: "Twenty-seven randomized controlled clinical
+              trials were included with 2569 patients." The pooled trials are
+              stated to be randomised and the count matches the record. Read
+              from the abstract; the full text is paywalled, so the trial-level
+              randomisation quality could not be inspected.
           funding:
             on: 2026-08-31
             outcome: confirmed
@@ -76,6 +87,21 @@ claims:
         dose: not stated in the abstract
         funding: public
         checked:
+          design:
+            on: 2026-08-31
+            outcome: confirmed
+            basis: statement
+            source: "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:30466986&resultType=core&format=json"
+            note: >-
+              Abstract Study design: "A systematic review and meta-analysis of
+              randomized clinical trials", with "Sixteen trials with total of
+              2147 participants were judged to be eligible and were included in
+              the meta-analysis." Count and design match the record. The same
+              abstract qualifies how well randomised they were: "The
+              methodological quality of the majority of the trials was generally
+              low in terms of random sequence generation, allocation concealment,
+              blinding and incomplete outcome data." Nominally RCTs, weakly
+              randomised.
           funding:
             on: 2026-08-31
             outcome: confirmed

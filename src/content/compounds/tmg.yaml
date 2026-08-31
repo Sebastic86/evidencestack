@@ -47,6 +47,18 @@ claims:
               mixed, not public. Reached through an archived copy of the Oxford
               Academic page; the live publisher pages (OUP, ScienceDirect) both
               403, which is why the earlier pass recorded this as unreachable.
+          design:
+            on: 2026-08-31
+            outcome: confirmed
+            basis: statement
+            source: 'https://web.archive.org/web/20191228212052id_/https://academic.oup.com/jn/article/133/12/4135/4687457'
+            note: >-
+              Genuinely randomised, and parallel rather than crossover: subjects were
+              stratified "by gender, plasma homocysteine concentration, blood pressure
+              and smoking (yes or no), then randomly assigned to one of four treatment
+              groups (n = 19 per group)", in what the paper calls a "double-blind
+              placebo-controlled intervention study". The four arms were 1.5, 3 or 6
+              g/d of betaine, or placebo.
         outcome: plasma homocysteine
         note: >-
           Dose-dependent ~10–20% reduction, well replicated. Whether lowering
@@ -62,7 +74,7 @@ claims:
         year: 2024
         url: https://doi.org/10.1080/02640414.2024.2423578
         species: human
-        design: systematic review and meta-analysis of 17 RCTs
+        design: systematic review and meta-analysis of 17 double-blind placebo-controlled trials (15 randomised, 2 unstated)
         n: 317
         duration: at least 7 days of chronic supplementation
         dose: not stated in the abstract
@@ -87,6 +99,32 @@ claims:
               abstract and the end matter but not the methods, so the absence of
               a PROSPERO registration could not be confirmed either way and none
               was added.
+          design:
+            on: 2026-08-31
+            outcome: corrected
+            basis: statement
+            source: 'https://www.fisiologiadelejercicio.com/wp-content/uploads/2024/11/Effects-of-chronic-betaine-supplementation-on.pdf'
+            note: >-
+              Was "17 RCTs", which overstated it, though not by much. The full text
+              was reached on a second attempt and says: "Of these, two studies do not
+              clearly state whether they were randomized (Yang et al., 2020, 2022)
+              while 15 were randomized clinical trials. All the chosen studies
+              followed a double-blinded and placebo-controlled approach. Eight
+              studies utilized a cross-over design, while the remaining nine employed
+              parallel groups." So 15 of the 17 are randomised, two are not stated
+              either way, and every one was double-blind and placebo-controlled — the
+              blinding was the part the record never mentioned. The eligibility table
+              asked for "Clinical trials with parallel and crossover design", and
+              crossovers needed "at least a 2-week washout period". Also worth
+              knowing, and not a design matter: "Sixteen studies were published in
+              peer-reviewed journals, while one study was a master's thesis (Apicella,
+              2011)", and the trials are small — "sample sizes varied, ranging from 10
+              to 43 participants … with a median of 17". Reached through a copy of the
+              published PDF hosted by fisiologiadelejercicio.com after Taylor &
+              Francis, Unpaywall, OpenAlex and Semantic Scholar all failed; the file
+              carries the correct DOI, title and author list, and two sentences of its
+              abstract match the Europe PMC record word for word, which is how the
+              copy was checked before use.
         outcome: maximal strength, sprint and throw power, muscular endurance, vertical jump
         note: >-
           Splits the claim in two. Maximal strength improved (SMD 0.47), driven

@@ -30,6 +30,24 @@ claims:
       - cite: Zhang et al.
         year: 2016
         checked:
+          design:
+            on: 2026-08-31
+            outcome: confirmed
+            basis: statement
+            source: https://www.ahajournals.org/doi/pdf/10.1161/HYPERTENSIONAHA.116.07664
+            note: >-
+              "We identified 34 eligible randomized double-blind
+              placebo-controlled trials that included a total of 2028
+              normotensive or hypertensive participants", and the discussion
+              repeats "In this meta-analysis of 34 randomized double-blind
+              placebo-controlled trials involving a total of 2028
+              participants". The stated selection criteria are narrower than the
+              record claims, in the record's favour: "we conducted a
+              comprehensive meta-analysis to synthesize only direct evidence
+              from randomized, double-blind, placebo-controlled trials." Trial
+              count and design both confirmed. The authors also ran a subgroup
+              analysis on "success of randomization", assessed by baseline
+              comparability, so randomisation was examined rather than assumed.
           funding:
             on: 2026-08-31
             outcome: confirmed
@@ -64,6 +82,25 @@ claims:
       - cite: Abbasi et al.
         year: 2012
         checked:
+          design:
+            on: 2026-08-31
+            outcome: confirmed
+            basis: statement
+            source: https://www.ebi.ac.uk/europepmc/webservices/rest/PMC3703169/fullTextXML
+            note: >-
+              "Study design and measurements. The study was performed in a
+              double-blind randomized placebo-controlled parallel design, in
+              January to March 2012 in Health Divisions of Cultural Centers of
+              Tehran's 1, 10, and 14 districts", and the methods add that
+              subjects were "randomly allocated into the magnesium or the
+              placebo group and received 500 mg elemental magnesium or placebo
+              daily for 8 weeks." Randomised and double-blind as recorded, read
+              in the complete open-access text. The paper says "Simple sampling
+              method was used to select patients" and "Investigators assigned
+              consecutive code numbers to participants from a prespecified
+              list", which describes selection and coding rather than the
+              sequence generation method; allocation concealment is not
+              described.
           funding:
             on: 2026-08-31
             outcome: confirmed
@@ -90,6 +127,26 @@ claims:
       - cite: Mah & Pitre
         year: 2021
         checked:
+          design:
+            on: 2026-08-31
+            outcome: confirmed
+            basis: statement
+            source: https://www.ebi.ac.uk/europepmc/webservices/rest/PMC8053283/fullTextXML
+            note: >-
+              "Results: Three randomized control trials (RCT) were identified
+              comparing oral magnesium to placebo in 151 older adults in three
+              countries." Eligibility was "Studies were RCTs of parallel-group
+              or cross-over design", and a validated RCT search filter was
+              applied. Review type and trial count confirmed. The finding that
+              matters most here is one the review states about its own included
+              trials: "While all studies were 'double-blind' RCTs, zero studies
+              reported methods of randomization sequence, allocation concealment
+              or blinding; this placed all studies at some concern for bias."
+              So the three pooled trials are called RCTs on their own say-so and
+              none documents how it randomised — the same gap, one level down,
+              as the counterbalanced-not-randomised error found in
+              l-theanine/Nawarathna 2025. The review itself is honest about it;
+              the claim above rests on it.
           funding:
             on: 2026-08-31
             outcome: confirmed
@@ -129,6 +186,23 @@ claims:
       - cite: Peikert et al.
         year: 1996
         checked:
+          design:
+            on: 2026-08-31
+            outcome: confirmed
+            basis: statement
+            source: https://journals.sagepub.com/doi/10.1046/j.1468-2982.1996.1604257.x
+            note: >-
+              The paper describes its own design in its title: "Prophylaxis of
+              Migraine with Oral Magnesium: Results From A Prospective,
+              Multi-Center, Placebo-Controlled and Double-Blind Randomized
+              Study." Randomised and double-blind as recorded. This is the
+              weakest design confirmation in these seven files and should be
+              read as such: the evidence is the title and the abstract, because
+              the full text is behind SAGE's "Restricted access" and could not
+              be read. The abstract body does not itself use the word
+              randomised, and nothing about sequence generation, allocation
+              concealment or who was blinded is known. Funding for the same
+              paper remains unreachable.
           funding:
             on: 2026-08-31
             outcome: unreachable
@@ -163,6 +237,32 @@ claims:
       - cite: Simental-Mendía et al.
         year: 2016
         checked:
+          design:
+            on: 2026-08-31
+            outcome: confirmed
+            basis: statement
+            source: https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:27329332&resultType=core&format=json
+            note: >-
+              Confirms the study type only, not the count, and the difference
+              matters. The paper's own title is "A systematic review and
+              meta-analysis of randomized controlled trials on the effects of
+              magnesium supplementation on insulin sensitivity and glucose
+              control", and the abstract says it searched four databases "to
+              identify RCTs evaluating the effect of magnesium on insulin
+              sensitivity and glucose control". So it is a meta-analysis of
+              RCTs. The figure 18 appears in no source anyone has retrieved:
+              the abstract instead reports that the effect "was assessed in 22,
+              14, 12 and 10 treatment arms" for glucose, HbA1c, insulin and
+              HOMA-IR respectively, which are per-outcome arm counts and not a
+              single trial total. The design string was left unchanged because
+              18 is unverified rather than contradicted, and deleting it would
+              be a change made on absence. The full text is closed — routes
+              exhausted are Europe PMC, NCBI efetch, Crossref, OpenAlex,
+              Unpaywall, Semantic Scholar, Elsevier by both linkinghub and
+              ScienceDirect (403), the University of Western Australia
+              repository, and the Wayback Machine, whose only snapshots are
+              linkinghub redirect stubs. TODO 3d's flag on this record's n and
+              duration stands unresolved.
           funding:
             on: 2026-08-31
             outcome: unreachable

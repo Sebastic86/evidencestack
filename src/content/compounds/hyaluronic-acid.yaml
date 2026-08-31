@@ -22,6 +22,23 @@ claims:
       - cite: Oe et al.
         year: 2017
         checked:
+          design:
+            on: 2026-08-31
+            outcome: confirmed
+            basis: statement
+            source: https://www.ebi.ac.uk/europepmc/webservices/rest/PMC5522662/fullTextXML
+            note: >-
+              "Clinical trial design. This study was conducted by Kewpie
+              Corporation, who carried out a randomized, double-blind,
+              placebo-controlled trial." The method is given: "Subjects were
+              randomly assigned to either the HA 2k, HA 300k, or placebo group
+              before starting the study according to stratified randomization
+              based on age by the study coordinator", with allocation
+              "documented in an electronic file accessible only to the study
+              coordinator" and the investigators handing out samples "who did
+              not know the allocation". Randomised and double-blind as recorded.
+              Note it is a three-arm trial — two hyaluronan molecular weights
+              plus placebo — which the design string does not say.
           funding:
             on: 2026-08-31
             outcome: confirmed
@@ -54,6 +71,22 @@ claims:
       - cite: Tashiro et al.
         year: 2012
         checked:
+          design:
+            on: 2026-08-31
+            outcome: confirmed
+            basis: statement
+            source: https://www.ebi.ac.uk/europepmc/webservices/rest/PMC3512263/fullTextXML
+            note: >-
+              "Study Design. The study was conducted as a randomised
+              double-blind placebo-controlled trial", and "The 60 subjects
+              enrolled in the study were assigned to either the HA or the
+              placebo group, each consisting of 30 subjects by means of
+              stratified randomisation to equalize age, sex ratio, and K/L grade
+              between the groups." Randomised, double-blind and
+              placebo-controlled as recorded, read in the complete open-access
+              text. Design is sound; what the record's own note already
+              documents is that 22 of the 60 randomised were dropped before
+              analysis, which is an attrition problem rather than a design one.
           funding:
             on: 2026-08-31
             outcome: confirmed

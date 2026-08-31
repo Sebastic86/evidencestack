@@ -23,6 +23,22 @@ claims:
       - cite: Mori et al.
         year: 2009
         checked:
+          design:
+            on: 2026-08-31
+            outcome: confirmed
+            basis: statement
+            source: https://onlinelibrary.wiley.com/doi/10.1002/ptr.2634
+            note: >-
+              "After 2 weeks of preliminary examination, 30 subjects were
+              randomized into two 15-person groups, one of which was given
+              Yamabushitake and the other given a placebo", and the paper titles
+              itself "a double-blind placebo-controlled clinical trial".
+              Randomised and double-blind as recorded. This is one of the two
+              weakest design confirmations in these seven files: it rests on the
+              abstract alone, since the full text is paywalled, so the
+              randomisation method, allocation concealment and who was blinded
+              were never read. Funding for the same paper stays unreachable —
+              the abstract answers design and says nothing about money.
           funding:
             on: 2026-08-31
             outcome: unreachable

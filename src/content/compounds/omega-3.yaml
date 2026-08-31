@@ -31,7 +31,7 @@ claims:
         year: 2019
         url: https://doi.org/10.1161/CIR.0000000000000709
         species: human
-        design: review of RCTs
+        design: science advisory; narrative review of trial evidence, no stated search strategy
         n: 4000
         duration: mixed
         dose: 2–4 g EPA+DHA/day
@@ -57,6 +57,23 @@ claims:
               Kowa steering-committee grants plus Amarin honoraria. Those are
               member disclosures, not a funder of the document, so they do not
               make this industry.
+          design:
+            on: 2026-08-31
+            outcome: corrected
+            basis: statement
+            source: 'https://web.archive.org/web/20210318211936id_/https://www.ahajournals.org/doi/full/10.1161/CIR.0000000000000709'
+            note: >-
+              Was "review of RCTs", which this document is not. It calls itself a
+              science advisory and cites itself as one — "Omega-3 fatty acids for the
+              management of hypertriglyceridemia: a science advisory from the American
+              Heart Association" — and says of its scope only "This advisory focuses
+              specifically on the use of n-3 FA agents to treat HTG and VHTG." There
+              is no search strategy, no inclusion criteria and no literature-search
+              section anywhere in the text; the AHA's own permissions note lists
+              "scientific statements, clinical practice guidelines, systematic
+              reviews" as distinct document types from this one. It summarises trial
+              evidence narratively, so it is not a systematic review and it is not
+              itself a trial.
         outcome: fasting triglycerides
         note: >-
           20–30% reduction at prescription doses, replicated for decades. Grade A
@@ -98,6 +115,19 @@ claims:
               REDUCE-IT ClinicalTrials.gov number, NCT01492361.)". Amarin makes
               icosapent ethyl, the tested product. The same sentence confirms the
               registry ID already on this record.
+          design:
+            on: 2026-08-31
+            outcome: confirmed
+            basis: statement
+            source: 'https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI%3A%2210.1056%2FNEJMoa1812792%22&resultType=core&format=json'
+            note: >-
+              "We performed a multicenter, randomized, double-blind,
+              placebo-controlled trial involving patients with established
+              cardiovascular disease or with diabetes and other risk factors …", and
+              "The patients were randomly assigned to receive 2 g of icosapent ethyl
+              twice daily (total daily dose, 4 g) or placebo." ClinicalTrials.gov
+              NCT01492361 agrees: allocation randomized, parallel assignment, masking
+              triple (participant, investigator, outcomes assessor), enrollment 8179.
         registry: NCT01492361
         outcome: major adverse cardiovascular events
         note: >-
@@ -129,6 +159,17 @@ claims:
               academic authors. Five co-authors give an AstraZeneca affiliation.
               Europe PMC's fullTextXML 404s for this PMCID; NCBI efetch returns
               the front matter, which is where JAMA puts the funding statement.
+          design:
+            on: 2026-08-31
+            outcome: confirmed
+            basis: statement
+            source: 'https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pmc&id=7667577&retmode=xml'
+            note: >-
+              "A double-blind, randomized, multicenter trial (enrollment October 30,
+              2014, to June 14, 2017 …) comparing omega-3 CA with corn oil in
+              statin-treated participants". ClinicalTrials.gov NCT02104817 agrees:
+              allocation randomized, parallel assignment, masking triple, enrollment
+              13078.
         registry: NCT02104817
         outcome: major adverse cardiovascular events
         note: >-
@@ -138,7 +179,7 @@ claims:
         year: 2018
         url: https://doi.org/10.1056/NEJMoa1804989
         species: human
-        design: RCT, double-blind
+        design: RCT, double-blind, 2x2 factorial (n-3 fatty acids and aspirin)
         n: 15480
         duration: 7.4 years
         dose: 840 mg/day EPA+DHA
@@ -164,6 +205,26 @@ claims:
               of the steering committee and provided comments regarding the trial
               design and draft manuscript". The paper also carries a second
               registry ID this field cannot hold, ISRCTN60635500.
+          design:
+            on: 2026-08-31
+            outcome: corrected
+            basis: statement
+            source: 'https://web.archive.org/web/20200614134203id_/https://www.nejm.org/doi/full/10.1056/NEJMoa1804989'
+            note: >-
+              Was "RCT, double-blind", which is true but hides the trial's shape. The
+              randomisation is confirmed — "We randomly assigned 15,480 patients with
+              diabetes but without evidence of atherosclerotic cardiovascular disease
+              to receive 1-g capsules containing either n-3 fatty acids (fatty acid
+              group) or matching placebo (olive oil) daily" — and so is the second
+              factor: "Using a factorial design in the same trial, we also randomly
+              assigned the patients to receive a daily regimen of either 100 mg of
+              aspirin or placebo, findings that are now reported elsewhere in the
+              Journal." So every participant was simultaneously randomised to aspirin
+              or placebo, which the record did not say. ClinicalTrials.gov NCT00135226
+              records intervention model factorial and masking quadruple (participant,
+              care provider, investigator, outcomes assessor), which is where the
+              double-blind wording is pinned; the paper's own methods do not use the
+              phrase.
         registry: NCT00135226
         outcome: serious vascular events, diabetics without CVD
         note: >-
@@ -203,6 +264,21 @@ claims:
               largely funded by a grant from the National Institute for Health
               Research (NIHR) in the UK" — that describes the editorial group,
               not this review's funding, so public stands unverified.
+          design:
+            on: 2026-08-31
+            outcome: confirmed
+            basis: statement
+            source: 'https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI%3A%2210.1002%2F14651858.CD004692.pub5%22&resultType=core&format=json'
+            note: >-
+              The review states its own inclusion rule: "We included studies in the
+              review if they: used a randomised controlled trial design; provided
+              n-3PUFAs as an intervention; used a comparator; measured depressive
+              symptomology as an outcome; and were conducted in adults with MDD." The
+              count also holds: "The review includes 35 relevant studies". Note for a
+              later n check, not changed here: those 35 split into 34
+              placebo-comparison studies totalling 1924 participants and one
+              40-participant study comparing against an antidepressant, so the
+              record's n of 1924 covers the placebo comparison only.
         outcome: depressive symptom scales
         note: >-
           Small-to-modest benefit over placebo with low-certainty evidence and
@@ -244,6 +320,20 @@ claims:
               The competing-interests statement declares that one author is
               principal investigator of an included trial (Dangour 2010, the OPAL
               study).
+          design:
+            on: 2026-08-31
+            outcome: confirmed
+            basis: statement
+            source: 'https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI%3A%2210.1002%2F14651858.CD005379.pub3%22&resultType=core&format=json'
+            note: >-
+              Selection criteria: "Randomised controlled trials of an omega-3 PUFA
+              intervention which was provided for a minimum of six months to
+              participants aged 60 years and over who were free from dementia or
+              cognitive impairment at the beginning of the study." Three trials, as
+              recorded: "Information on cognitive function at the start of a study was
+              available on 4080 participants randomised in three trials." Note for a
+              later n check, not changed here: that sentence gives 4080 randomised
+              against the record's n of 3536.
         outcome: cognitive test batteries
         note: >-
           No effect on cognition in cognitively healthy older adults. Tested

@@ -86,6 +86,17 @@ claims:
               position on the science advisory board for Quercegen Pharma."
               Quercegen sells quercetin. No trial registration number appears
               anywhere in the full text.
+          design:
+            on: 2026-08-31
+            outcome: confirmed
+            basis: statement
+            source: 'https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7128946/fullTextXML'
+            note: >-
+              "The purpose of this randomized, double-blinded, placebo-controlled
+              trial was to measure the influence of two quercetin doses (500 and 1000
+              mg/day) compared to placebo on upper respiratory tract infection (URTI)
+              rates in a large community group (N=1002)". Randomisation, blinding and
+              the placebo arm are all the paper's own words.
         outcome: upper respiratory tract infection rates and symptom severity (WURSS diary)
         note: >-
           By far the largest trial here, and it was negative: no effect on
@@ -128,6 +139,17 @@ claims:
               personal communication, but the paper does not say Quercegen
               donated or paid for anything, and there is no conflict-of-interest
               statement at all in this 2007 article.
+          design:
+            on: 2026-08-31
+            outcome: confirmed
+            basis: statement
+            source: 'https://web.archive.org/web/20190823220017id_/https://journals.lww.com/acsm-msse/Fulltext/2007/09000/Quercetin_Reduces_Illness_but_Not_Immune.18.aspx'
+            note: >-
+              "Trained male cyclists (N = 40) were randomized to quercetin (N = 20) or
+              placebo (N = 20) groups and, under double-blind procedures, received 3
+              wk quercetin (1000 mg/d) or placebo before, during, and for 2 wk after a
+              3-d period in which subjects cycled for 3 h/d". Parallel groups, not a
+              crossover.
         outcome: upper respiratory infection incidence and immune measures after intensified exercise
         note: >-
           One infection in 20 on quercetin versus nine in 20 on placebo. A

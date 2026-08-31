@@ -24,6 +24,21 @@ claims:
       - cite: Yamadera et al.
         year: 2007
         checked:
+          design:
+            on: 2026-08-31
+            outcome: confirmed
+            basis: statement
+            source: https://onlinelibrary.wiley.com/doi/10.1111/j.1479-8425.2007.00262.x
+            note: >-
+              The paper's own methods heading and first sentence: "Study design.
+              The study design was a randomized single-blinded crossover trial."
+              Randomised, single-blind and crossover, exactly as recorded. Read
+              in the complete open-access text, not an abstract. This record was
+              checked specifically because a single-blind crossover in eleven
+              people is the shape that hid the counterbalanced-not-randomised
+              error found in l-theanine/Nawarathna 2025; here the paper does
+              claim randomisation in its own words. What it does not report is
+              how the sequence was generated or concealed.
           funding:
             on: 2026-08-31
             outcome: corrected
@@ -72,6 +87,25 @@ claims:
       - cite: Kumar et al.
         year: 2023
         checked:
+          design:
+            on: 2026-08-31
+            outcome: confirmed
+            basis: registry
+            source: https://clinicaltrials.gov/api/v2/studies/NCT01870193
+            note: >-
+              The trial's own registry record, NCT01870193 "Glutathione and Fuel
+              Oxidation in Aging", gives studyType INTERVENTIONAL, allocation
+              RANDOMIZED, interventionModel PARALLEL, and masking QUADRUPLE
+              (participant, care provider, investigator, outcomes assessor).
+              Randomised and placebo-controlled as recorded, and blinded more
+              thoroughly than the record says. The paper's own methods section
+              was not read — the publisher releases only front matter to PMC —
+              so this rests on the registry, not on the article. One
+              discrepancy worth knowing: the registry gives an estimated
+              enrolment of 36 against the record's n of 24. That is the split
+              TODO 3b already explained (24 randomised, plus 12 young adults
+              studied as a non-randomised reference), so it is consistent, but n
+              is not this pass's field and was not touched.
           funding:
             on: 2026-08-31
             outcome: confirmed

@@ -36,6 +36,17 @@ claims:
         dose: "3–5 g/day + resistance training"
         funding: not-declared
         checked:
+          design:
+            on: 2026-08-31
+            outcome: confirmed
+            basis: statement
+            source: https://www.ebi.ac.uk/europepmc/webservices/rest/PMC5679696/fullTextXML
+            note: >-
+              Full text read: "We conducted a systematic review and meta-analysis
+              of randomized controlled trials of creatine supplementation during
+              resistance training in older adults… Twenty-two studies were
+              included in our meta-analysis with 721 participants." Count, design
+              and n all match the record.
           funding:
             on: 2026-08-31
             outcome: confirmed
@@ -64,6 +75,21 @@ claims:
         dose: "2–25 g/day"
         funding: none
         checked:
+          design:
+            on: 2026-08-31
+            outcome: confirmed
+            basis: statement
+            source: "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:27328852&resultType=core&format=json"
+            note: >-
+              Abstract Methods: "We conducted a systematic review and
+              meta-analyses of all randomized controlled trials comparing
+              creatine supplementation with a placebo, with strength performance
+              measured in exercises shorter than 3 min in duration." The pooled
+              studies are stated to be randomised, so the design string holds.
+              Unresolved and outside this pass: the same abstract reports "We
+              included 53 studies (563 individuals in the creatine
+              supplementation group and 575 controls)", which does not obviously
+              reconcile with this record's n of 266.
           funding:
             on: 2026-08-31
             outcome: corrected
@@ -87,12 +113,28 @@ claims:
         year: 2003
         url: https://doi.org/10.1123/ijsnem.13.2.198
         species: human
-        design: meta-analysis of 100 studies
+        design: meta-analysis of 100 randomized, placebo-controlled studies
         n: 1847
         duration: mixed
         dose: mostly 20 g load then 2–5 g/day
         funding: not-declared
         checked:
+          design:
+            on: 2026-08-31
+            outcome: corrected
+            basis: statement
+            source: "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:12945830&resultType=core&format=json"
+            note: >-
+              Corrected "meta-analysis of 100 studies" → "meta-analysis of 100
+              randomized, placebo-controlled studies". Abstract Methods: "A
+              search of MEDLINE and SPORTDiscus using the phrase 'creatine
+              supplementation' revealed 96 English-language, peer-reviewed papers
+              (100 studies), which included randomized group formation, a placebo
+              control, and human subjects who were blinded to treatments." The
+              old string named a count without saying the pooled studies were
+              randomised, so it did not support the claim's human-rct label on
+              its face. The source does. The full text remains paywalled; this is
+              the abstract's own Methods sentence.
           funding:
             on: 2026-08-31
             outcome: unreachable
@@ -124,6 +166,20 @@ claims:
         dose: "5–20 g/day"
         funding: public
         checked:
+          design:
+            on: 2026-08-31
+            outcome: confirmed
+            basis: statement
+            source: "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pmc&id=6093191&retmode=xml"
+            note: >-
+              Full text read. Title: "Effects of creatine supplementation on
+              cognitive function of healthy individuals: A systematic review of
+              randomized controlled trials", six studies included. The record's
+              string is right, but one of the six is Rae 2003, which this review
+              labels "One study was a 'cross-over' RCT (Rae et al., 2003)" while
+              Rae's own paper never states that anyone was randomised — see the
+              Rae record below. So this review's count of six randomised trials
+              is itself likely one too many, on the primary sources.
           funding:
             on: 2026-08-31
             outcome: confirmed
@@ -147,24 +203,54 @@ claims:
         year: 2003
         url: https://doi.org/10.1098/rspb.2003.2492
         species: human
-        design: RCT, double-blind crossover
+        design: double-blind, placebo-controlled crossover
         n: 45
         duration: 6 weeks
         dose: 5 g/day
         funding: public
         checked:
+          design:
+            on: 2026-08-31
+            outcome: corrected
+            basis: statement
+            source: "https://web.archive.org/web/20191026210524id_/https://royalsocietypublishing.org/doi/pdf/10.1098/rspb.2003.2492"
+            note: >-
+              Corrected "RCT, double-blind crossover" → "double-blind,
+              placebo-controlled crossover". The paper never claims
+              randomisation. Its Study design section reads in full: "The study
+              followed a double-blind, placebo-controlled, cross-over design.
+              Subjects were seen on four separate occasions, at six-week
+              intervals" — and that is the whole of it. Across the complete text
+              the word "random" occurs once, about something else entirely
+              ("Blood glucose levels were measured randomly, by finger prick");
+              "allocated", "counterbalanced", "Latin square" and "washout" do not
+              appear at all, and "assigned" appears only of test versions. Two
+              treatment orders existed, since the analysis reports an effect of
+              treatment order, but how subjects reached them is never stated.
+              This is the same shape as the l-theanine defect. Recovered from the
+              publisher's own archived PDF after Europe PMC, NCBI efetch and the
+              archived HTML all failed — PubMed Central holds page scans only.
           funding:
             on: 2026-08-31
-            outcome: unreachable
+            outcome: confirmed
+            basis: statement
+            source: "https://web.archive.org/web/20191026210524id_/https://royalsocietypublishing.org/doi/pdf/10.1098/rspb.2003.2492"
             note: >-
-              No funding statement reached, so the existing value stands
-              unverified. PubMed Central holds this paper as scanned page
-              images only — its record states "The publisher of this article
-              does not allow downloading of the full text in XML form", and the
-              PMC page carries the abstract with no body text and no funding
-              section. The Royal Society's own site returns 403. Crossref and
-              OpenAlex deposit no funder, so nothing supports the public value
-              except the record as drafted.
+              Funding sentence read in the paper: "This work was supported by
+              the Australian National Health and Medical Research Council" — a
+              government research council, so public is correct. It is easy to
+              miss: there is no acknowledgements section and no
+              conflict-of-interest section, and the sentence sits unlabelled as
+              the last line of the Discussion, immediately before the references.
+              The words "funding", "grant" and "acknowledg" appear nowhere in the
+              paper. Previously recorded as unreachable, and the routes that
+              failed are worth keeping: PubMed Central holds this paper as
+              scanned page images only — its record states "The publisher of this
+              article does not allow downloading of the full text in XML form" —
+              the Royal Society's live site returns 403, the archived HTML is a
+              login wall, and Crossref and OpenAlex deposit no funder. What
+              worked was the publisher's own archived PDF via the Wayback
+              Machine.
         outcome: working memory & processing speed in vegetarians
         note: >-
           Positive — but in vegetarians, who start with low creatine stores.
@@ -186,6 +272,18 @@ claims:
         dose: 5 g/day + escitalopram
         funding: public
         checked:
+          design:
+            on: 2026-08-31
+            outcome: confirmed
+            basis: statement
+            source: "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pmc&id=4624319&retmode=xml"
+            note: >-
+              Full text read. Study Design and Procedures: "The enrolled subjects
+              were randomly assigned in a 1:1 ratio to receive escitalopram plus
+              creatine supplementation (the creatine group) or escitalopram plus
+              placebo (the placebo group) according to a randomization log." The
+              abstract and title say the same. Randomisation is stated with its
+              mechanism, and the trial is registered as NCT00729755.
           funding:
             on: 2026-08-31
             outcome: confirmed
@@ -229,6 +327,19 @@ claims:
         dose: "0.14 g/kg/day + exercise"
         funding: public
         checked:
+          design:
+            on: 2026-08-31
+            outcome: confirmed
+            basis: statement
+            source: https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10487398/fullTextXML
+            note: >-
+              Full text read. Methods, Study design: "The study used a
+              randomized, double-blind, placebo-controlled, parallel-group,
+              repeated measures design at two centers: the University of
+              Saskatchewan and University of Regina. Participants were randomized
+              using a computer-generated allocation schedule to one of two groups
+              (on a 1/1 ratio) for a 2-yr intervention." Randomisation, blinding
+              and duration all match the record, and the mechanism is named.
           funding:
             on: 2026-08-31
             outcome: confirmed

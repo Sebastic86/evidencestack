@@ -89,6 +89,21 @@ claims:
               re-checked against the paper's own methods in the same fetch and is
               real: "The review was registered on Inplasy.com under number
               (INPLASY2023120081)."
+          design:
+            on: 2026-08-31
+            outcome: confirmed
+            basis: statement
+            source: 'https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11099170/fullTextXML'
+            note: >-
+              "This meta-analysis of randomized controlled trials (RCTs) aimed to
+              evaluate the effects of taurine supplementation on MetS-related
+              parameters", and the count matches: "Our analysis included 1024
+              participants from 25 RCTs." Risk of bias was assessed "using the
+              Cochrane risk of bias tool for RCTs (RoB 2 …), which evaluates six main
+              domains: randomization process, intervention adherence …". Some of the
+              pooled trials are crossovers — a table footnote reads "Treatment period
+              of placebo or taurine in a crossover study" — which is a randomised
+              design and does not change the meta-analysis label.
         registry: INPLASY2023120081
         outcome: systolic and diastolic blood pressure, fasting glucose, triglycerides, HDL-C
         note: >-
