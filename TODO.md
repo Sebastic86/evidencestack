@@ -323,7 +323,7 @@ A `Dataset` node on `/compounds/` and one per compound page, built in `src/lib/j
 
 - Nothing about it lives in this repo, so there is no credential in git and nothing to strip out. Turning it off is the same two fields in the Coolify UI.
 - It is **not** a substitute for the noindex below, and vice versa. Auth stops crawlers with a 401; the noindex still stands if auth is ever lifted for a demo or a stakeholder. Two independent switches, deliberately.
-- Not verified by anyone but you: that the credentials actually *admit* someone. A mis-entered password looks identical from outside — 401 either way.
+- Credentials confirmed working 2026-08-31. Worth knowing for next time: an outside check can only prove auth *denies* — a mis-entered password looks identical from there, 401 either way. Someone has to log in to prove the other half.
 
 ### Undo the beta noindex
 
